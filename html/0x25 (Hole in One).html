@@ -1,0 +1,121 @@
+<html><body style = "font-family: monospace;">Hole in One
+<br>---------------------
+<br>0x100 X - Spawn Ball
+<br>	0 - Small (Monkey)
+<br>	1 - Big (Mandrill)
+<br>
+<br>0x101<X> Y - Zoom
+<br>	X = Interpolation
+<br>	0 - Smooth
+<br>	1 - Snap
+<br>	Y = View
+<br>	0 - Zoomed in on Monkey (Leftover)
+<br>	1 - Zoom out to show Golfer (Leftover)
+<br>	2 - Normal View
+<br>
+<br>0x102 - Golfer Ready
+<br>0x102<1> - Beat Animation
+<br>0x102<2> X - Golfer Visibility
+<br>	0 - Invisible
+<br>	1 - Visible
+<br>0x102<3> - Golfer Miss animation and sfx if he's currently in Ready animation (Leftover)
+<br>0x102<4> - Golfer Wait (Leftover)
+<br>0x102<5> - Golfer Look (Leftover)
+<br>0x102<6> - Golfer Greet (Leftover)
+<br>
+<br>0x103<0> - Monkey Ready
+<br>0x103<1> - Monkey Throw
+<br>0x103<2> X - Monkey Talks X times (Leftover)
+<br>0x103<3> X - Direction (Leftover)
+<br>	0 - Right?
+<br>	1 - Left?
+<br>0x103<4> - Beat Animation
+<br>0x103<5> 0xXXXXXX, Y - Remix 1 Intro (Leftover)
+<br>	X = Animation (Uses animation name in quotations, for example "monkey_inst_talk") (goes to monkey_inst_wait after playing Y times, then randomly calls monkey_inst_blink)
+<br>	Y = Number of times to do the animation before going to wait
+<br>	0 plays the animation infinitely, negative numbers play it only once
+<br>
+<br>0x104 X - Mandrill Animations
+<br>	0 - Ready 1
+<br>	1 - Ready 2
+<br>	2 - Ready 3
+<br>0x104<1> X - Mandrill Visibility
+<br>	0 - Invisible
+<br>	1 - Visible
+<br>0x104<2> - Beat Animation
+<br>0x104<3> X - Beat Animation Type
+<br>	0 - Normal
+<br>	1 - Energetic
+<br>	2 - Arm Pumping
+<br>0x104<4> X, Y - Play animation X for Y times (Leftover)
+<br>
+<br>0x105 - Nothing (Unused)
+<br>
+<br>0x106 P, Q, R, S, T, U, V, W, X, Y, Z - Background Objects
+<br>	P = Animation
+<br>	Used Values:
+<br>	0x50A238 - "bg_bird"
+<br>	0x50A312 - "bg_cloud"
+<br>	0x50A31B - "bg_airplane"
+<br>	0x50B173 - "bg_sea_gull"
+<br>	Q = Animation frame (-1 causes this to play the animation, while other values use the specified frame of the animation)
+<br>	Used Values: -1, 0, 1, 2, 3
+<br>	R = Time to get to the new position
+<br>	S = Layer
+<br>	Used Values: 0 (Incorrect Value)
+<br>	(0x1E+ will put the clouds behind the sea as intended, actual value unknown)
+<br>	(Values from Fever (halved) include 0x5F0, 0x5FA, closest to intended)
+<br>	T = Destinaion Effect (What will this object do when it reaches the new position)
+<br>	0 - Loop movement (Unused)
+<br>	1 - Disappear
+<br>	2 - Stay in place
+<br>	U = X Position
+<br>	Used Values: -0x7D, -0x6E, -0xAF, -0x4B, 0, 0x64, 0x96, 0xFA, 0x1C2
+<br>	V = Y Position
+<br>	Used Values: -0x46, -0x32, -0x19, -0xA, 0, 0x32
+<br>	W = Size
+<br>	Used Values: 0x10, 0x100
+<br>	X = New X position
+<br>	Used Values: -0x1DB, -0x1C2, -0xFA, -0x7D, -0x6E, -0x4B, 0, 0x64
+<br>	Y = New Y position
+<br>	Used Values: -0x7D, -0x46, -0x32, -0x19, -0x14, -0xA, 0
+<br>	Z = New Size
+<br>	Used Values: 0x100
+<br>
+<br>0x107 - Whale hides
+<br>
+<br>0x108<X> - Unknown Counter (Unused)
+<br>	X = Action
+<br>	0 - Reset counter to 0
+<br>	1 - Set counter to condvar
+<br>	2 - Increment counter by 1
+<br>
+<br>0x109 - Sets condvar based on performance (Leftover)
+<br>	0 - Just
+<br>	1 - Early
+<br>	2 - Late
+<br>	3 - Miss
+<br>
+<br>0x10A W, X, Y, Z - Geysers
+<br>0x10A<1> W - Remove Geyser
+<br>	W = Slot (Used Values: 0, 1, 2)
+<br>	X = X Position (Used Values: -0x64, 0, 0x64)
+<br>	Y = Y Position (Used Values: 0x19, 0x28)
+<br>	Z = Z Position (Used Values: 0xC0, 0xF0)
+<br>
+<br>0x10B X, Y, Z - Rainbow
+<br>	X = Starting Opacity (Used Value: 0)
+<br>	Y = Ending Opacity (Used Value: 0xC0)
+<br>	Z = Time in Ticks (Used Value: 0xC00)
+<br>
+<br>0x10C X - Consecutive Shots (Doesn't seem to actually do anything)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>---------------------
+<br>Subs:
+<br>0x56 - Monkey
+<br>0x57 - Mandrill
+<br>0x58 - Hole in One (Practice)
+<br>0x59 - Hole in One (Real Game)
+<br>0x5A - Hole in One 2 (Real Game)
+<br>0x5B - Hole in One (Skipped Practice)</body>

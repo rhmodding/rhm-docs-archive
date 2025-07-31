@@ -1,0 +1,111 @@
+<html><body style = "font-family: monospace;">Flipper-Flop
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Time in Ticks (Used Value: 0x30)
+<br>	Y = Type
+<br>	0 - Press A
+<br>	1 - Press B (Flipper Roll)
+<br>
+<br>0x101 - Seals (Beat Animation)
+<br>
+<br>0x102 X, Y - Raise Flipper
+<br>	X = Type
+<br>	0 - Right
+<br>	1 - Left
+<br>	Y = Speed
+<br>	0 - Smooth
+<br>	1 - Instant (Leftover)
+<br>
+<br>0x103 - Seals (Flip)
+<br>
+<br>0x104 X - Seals (Flipper Roll)
+<br>	0 - Continuous rolls
+<br>	1 - Last roll
+<br>
+<br>0x105<0> - Captain Tuck (Steps Forward)
+<br>0x105<1> - Captain Tuck (Beat Animation)
+<br>0x105<2> X - Captain Tuck (Mouth Animation)
+<br>	0 - "Attention, Company!"
+<br>	1 - "That's it!"
+<br>0x105<3> X, Y - Captain Tuck (Flipper Roll Animation)
+<br>	X = Beat Animation
+<br>	0x50B2B1 - beat_just_00
+<br>	0x50B2CB - beat_just_01
+<br>	0x50B2E5 - beat_just_02
+<br>	0x50B2FF - beat_miss_00
+<br>	0x50B319 - beat_miss_01
+<br>	Y = Face Animation
+<br>	0 - No Face Change
+<br>	0x50B2A4 - face_just_00
+<br>	0x50B2BE - face_just_01
+<br>	0x50B2D8 - face_just_02
+<br>	0x50B2F2 - face_miss_00
+<br>	0x50B30C - face_miss_01
+<br>0x105<4> - Already in Place (Remixes)
+<br>
+<br>0x106 - Switch Captain Tuck's counting SFX
+<br>	0 - Low (1~4) (Miss)
+<br>	1 - Normal (1~4)
+<br>	2 - High (5~10)
+<br>
+<br>0x107 - Captain Tuck miss face(?)
+<br>
+<br>0x108 - Captain Tuck counting SFX changing after the first four rolls(?)
+<br>
+<br>0x109 X - Captain Tuck (Praise Animation)
+<br>	X = Number of Random Choice Cases (Used value: 5)
+<br>	case 0 - "Iizo!"/"Good job!"
+<br>	case 1 - "Yosi!"/"Good!"
+<br>	case 2 - "Sou!"/"Nice!"
+<br>	case 3 - "Soda!"/"Well done!"
+<br>	case 4 - "Sha!"/"Yes!"
+<br>
+<br>0x10A X, Y - Sneaky Spirit (Barbershop Remix)
+<br>	X = Appearence
+<br>	0 - Disable (Unused)
+<br>	1 - Enable
+<br>	Y = Unknown
+<br>	0 - Disable (Unused)
+<br>	1 - Enable
+<br>---------------------
+<br>Subs:
+<br>0x56 - 1x"SE_DRUM_SD1_L" (Unused)
+<br>0x57 - 2x"SE_DRUM_CYM" (Unused)
+<br>0x58 - 2x"SE_DRUM_RIDE_CYM" (Unused)
+<br>0x59 - "Attention, company!" (Count-in)
+<br>0x5A - Captain Tuck (Just_00)
+<br>0x5B - Captain Tuck (Just_01)
+<br>0x5C - Captain Tuck (Just_02)
+<br>0x5D - Captain Tuck (Miss_00)
+<br>0x5E - Captain Tuck (Miss_01)
+<br>0x5F - Captain Tuck (Just_00) (No Face Change) (Unused)
+<br>0x60 - Captain Tuck (Just_01) (No Face Change)
+<br>0x61 - Captain Tuck (Just_02) (No Face Change)
+<br>0x62 - Rest (2.0 Beats) (Empty Beat Sub)
+<br>0x63 - Flip (Input after 4.0 Beats)
+<br>0x64 - Triple Flip (Input after 4.0 Beats)
+<br>0x65 - Flip (Practice) (Input after 2.0 Beats)
+<br>0x66 - Triple Flip (Practice) (Input after 2.0 Beats)
+<br>0x67 - "Now Flipper Roll!" (Practice)
+<br>0x68 - "2 Flipper Rolls!" (Practice)
+<br>0x69 - "1 Flipper Roll!"
+<br>0x6A - "1 Flipper Roll!" No Praise (Flipper-Flop 2)
+<br>0x6B - "2 Flipper Rolls!"
+<br>0x6C - "2 Flipper Rolls!" No Praise (Flipper-Flop, Right-Hand Remix)
+<br>0x6D - "2 Flipper Rolls!" No Praise (Barbershop Remix)
+<br>0x6E - "3 Flipper Rolls!"
+<br>0x6F - "3 Flipper Rolls!" No Praise (Unused)
+<br>0x70 - "4 Flipper Rolls!"
+<br>0x71 - "4 Flipper Rolls!" No Praise (Barbershop Remix)
+<br>0x72 - "5 Flipper Rolls!"
+<br>0x73 - "6 Flipper Rolls!"
+<br>0x74 - "7 Flipper Rolls!"
+<br>0x75 - "8 Flipper Rolls!"
+<br>0x76 - "9 Flipper Rolls!"
+<br>0x77 - "10 Flipper Rolls!"
+<br>0x78 - Flipper-Flop (Practice)
+<br>0x79 - Flipper-Flop 2 (Practice)
+<br>0x7A - Flipper-Flop (Real Game)
+<br>0x7B - Flipper-Flop 2 (Real Game)
+<br>0x7C - Flipper-Flop (Skipped Practice)
+<br>0x7D - Flipper-Flop 2 (Skipped Practice)</body>

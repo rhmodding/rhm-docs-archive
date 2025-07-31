@@ -1,0 +1,116 @@
+<html><body style = "font-family: monospace;">Tongue Lashing
+<br>---------------------
+<br>0x100 - Spawn Yellow Bug
+<br>0x100<1> Y, X1, X2, 0xZZZZZZZ - Yellow Bug Path (Positions relative to the Chameleon)
+<br>	Y = Starting Distance (Y Position)
+<br>	Used Values: -0xBB8, -0xA8C, -0x7D0, -0x73A, -0x546, -0x3B6, -0x384, -0x28A, -0x1C2,
+<br>	0x118, 0x12C, 0x1C2,  0x1E0,  0x258,  0x28A,  0x2BC,  0x30C,  0x384,  0x3B6,  0x3E8,
+<br>	0x438, 0x44C, 0x4B0,  0x546,  0x564,  0x73A,  0x7D0
+<br>	X1 = Distance from Chameleon (X Position) (Start)
+<br>	X2 = Distance from Chameleon (X Position) (End)
+<br>	Used Values: -0x823, -0x62F, -0x503, -0x49F, -0x48B, -0x43B, -0x409, -0x3EB, -0x39B,
+<br>		     -0x373, -0x34B, -0x2FB, -0x2BC, -0x2AB, -0x25B, -0x20B, -0x1BB, -0x19A, -0x190,
+<br>		     -0x172, -0x16B, -0x15B, -0x14A, -0x140, -0x12C, -0x122, -0x11B, -0x118, -0x110,
+<br>		     -0x10B, -0xFA,  -0xF0,  -0xE9,  -0xE8,  -0xCB,  -0xC8,  -0xC0,  -0xBB,  -0xBE,
+<br>		     -0xB4,  -0xAA,  -0xA0,  -0x8C,  -0x7B,  -0x70,  -0x6B,  -0x64,  -0x5A,  -0x50,
+<br>		      0xC8,   0xD9,  0x1A1,  0x237,  0x2CD,  0x331,  0x45D,  0x651,  0xA8C,  0xBB8
+<br>	0xZZZZZZZ = SFX
+<br>	0x1001134 - SE_CTR_CHAMELEON_EAT
+<br>	0x1001135 - SE_CTR_CHAMELEON_EAT_FAST
+<br>0x100<2> X - Sets Bug Moving, to be Eaten in X Ticks (Used Value: 0xC0)
+<br>0x100<3> - Beat Animation
+<br>0x100<4> X - Sign
+<br>	0 - Normal
+<br>	1 - No Sign (Unused)
+<br>0x100<5> - Despawn Bug
+<br>
+<br>0x101 - Spawn Red Bug
+<br>0x101<1> Y1, X1, Y2, X2, Y3, X3, 0xZZZZZZZ - Red Bug Path (Positions relative to the Chameleon)
+<br>	X1 = Start Distance (X Position) (Used Value: -0x64, 0x64, 0x78)
+<br>	Y1 = Start Distance (Y Position) (Used Value: -0x2DD, -0x2C6, -0x1F4, 0x10B)
+<br>	X2 = Sign Distance (X Position) (Used Value: -0x64, 0x64, 0x78)
+<br>	Y2 = Sign Distance (Y Position) (Used Value: -0x190, -0x14D, -0xE9, -0xA0)
+<br>	X3 = Tongue Distance (X Position) (Used Value: -0x190, -0xE9, -0xA0, -0x85)
+<br>	Y3 = Tongue Distance (Y Position) (Used Value: 0, 0x30, 0x60)
+<br>	0xZZZZZZZ = SFX
+<br>	0x1001134 - SE_CTR_CHAMELEON_EAT
+<br>	0x1001135 - SE_CTR_CHAMELEON_EAT_FAST
+<br>0x101<2> X - Sets Bug Moving, to be Eaten in X Ticks (Used Value: 0x90)
+<br>0x101<3> - Beat Animation
+<br>0x101<4> X - Sign
+<br>	0 - Normal
+<br>	1 - Final
+<br>0x101<5> X - Move from Sign to Tongue in X Ticks (Used Value: 0xC)
+<br>0x101<6> - Stop the Bug
+<br>
+<br>0x102 - Zoom
+<br>0x102<1> X - Set Zoom to X/0x100 (Used Value: 0xB4)
+<br>
+<br>0x103 X1, Y1, X2, Y2 - Chameleon Position
+<br>	X1 = Starting X Position (Used Value: -0x6E)
+<br>	Y1 = Starting Y Position (Used Value: 0)
+<br>	X2 = Ending X Position (Used Value: 0)
+<br>	Y2 = Ending Y Position (Used Value: 0)
+<br>
+<br>0x104 - Chameleon Beat Animation
+<br>0x104<1> X1, X2, Y - Move
+<br>0x104<2> X1, X2, Y, Z - Move with a Delay
+<br>	X1 = Starting Position (Used Values: -0x14A, -0xC8)
+<br>	X2 = Ending Position (Used Value: 0)
+<br>	Y = Time in Ticks (Used Values: 0x60, 0x90, 0x210)
+<br>	Z = Delay in Ticks (Used Value: 0x60)
+<br>
+<br>0x105 W, X1, Y1, X2, Y2, Z - Zoom + Position
+<br>	W = Set Zoom to W/0x100 (Used Values: 0x50, 0x82, 0xA0, 0xAA, 0xB4, 0xDC, 0xF0)
+<br>	X1 = Chameleon X Position
+<br>Used Values: -0x1F4, -0xC8, -0xBE, -0x82, -0x3C, 0, 0x82, 0xA0, 0xC8
+<br>	Y1 = Chameleon Y Position (Used Values: -0x78, -0x60, 0, 0x1E, 0x4E, 0x78, 0x12C)
+<br>	X2 = X Position the chameleon points to (Used Value: 0, 0x410)
+<br>	Y2 = Y Position the chameleon points to (Used Values: -0x276, 0, 0x1E)
+<br>	Z = Delay in Ticks (Used Value: 0x60)
+<br>
+<br>0x106<X> - Chameleon Reaction
+<br>	0 - Record Performance
+<br>	1 - Happy or Sad
+<br>	2 - Stop Recording
+<br>
+<br>0x107 X - Finger
+<br>0x107<1> X, Y - Finger w/ Delay
+<br>	X = Type
+<br>	0 - Finger
+<br>	1 - Foot
+<br>	Y = Delay in Ticks (Used Value: 0x60)
+<br>
+<br>0x108 X, Y, Z, D - Global Camera
+<br>	X = X Position (Used Value: 0)
+<br>	Y = Y Position (Used Value: 0)
+<br>	Z = Zoom (Used Value: 0x100)
+<br>	D = Delay in Ticks (Used Value: 0x60)
+<br>
+<br>0x109 - Update Effect Locations
+<br>
+<br>0x10A W, V - Yankees
+<br>0x10A<1> W, X, Y - Set Position
+<br>0x10A<2> W, X1, X2, Z - Move from X1 to X2 over Z Ticks
+<br>	W = Which One
+<br>	0 - Right
+<br>	1 - Left
+<br>	V = Visible
+<br>	0 - Disable
+<br>	1 - Enable
+<br>	X = X Position (Used Values: -0x190, 0x190)
+<br>	Y = Y Position (Used Value: 0x32)
+<br>	X1 = Starting Position (Used Values: -0x1F4, 0x1F4)
+<br>	X2 = Ending Position (Used Values: -0xBE, 0xBE)
+<br>	Z = Time in Ticks (Used Value: 0x90)
+<br>0x10A<3> - Bug Hits Right One's Nose
+<br>0x10A<4> - Left One is Unhappyx
+<br>---------------------
+<br>Subs:
+<br>0x56 - Yellow Bug (Input After 4 Beats)
+<br>0x57 - Red Bug (Input After 6 Beats)
+<br>0x58 - Red Bug + Yankees
+<br>0x59 - Chameleon Performance
+<br>0x5A - Tongue Lashing (Practice)
+<br>0x5B - Tongue Lashing (Real Game)
+<br>0x5C - Tongue Lashing (Skipped Practice)</body>

@@ -1,0 +1,111 @@
+<html><body style = "font-family: monospace;">Cheer Readers
+<br>---------------------
+<br>0x100 X, Y, Z - Input
+<br>	X = Type
+<br>	0 - Press A (White) (Unused)
+<br>	1 - Press A (Black) (Unused)
+<br>	2 - Hold B (Spin)
+<br>	3 - Release B (Open)
+<br>	4 - None (Unused)
+<br>	5 - Press A (Flip)
+<br>	Y = Time in Ticks (Used Values: 0x30, 0x3C, 0x60, 0x78)
+<br>	Z = Effect
+<br>	0 - Nothing
+<br>	1 - "Yay!" (Solo)
+<br>	2 - "Yay!" (Girls) (Unused)
+<br>	3 - "Yay!" (All)
+<br>	4 - "BOOM!"
+<br>
+<br>0x101 X, Y - Flip Book
+<br>0x102 X, Y - Spin Book
+<br>0x103 X, Y - Open Book
+<br>	Xth Column, Yth, Row
+<br>0x102<1> - All Flip (Unused)
+<br>0x102<1> - All Spin
+<br>0x103<1> - All Open
+<br>
+<br>0x104<X> - Book Flipping SFX
+<br>	X = Type
+<br>	0 - Horizontal
+<br>	1 - Vertical
+<br>	2 - Diagonal
+<br>
+<br>0x105 - Nothing (Unused)
+<br>
+<br>0x106 X - Image
+<br>	0 - panel_image_00 (Rhythm Tweezers/Fillbots)
+<br>	1 - panel_image_01 (DJ School)
+<br>	2 - panel_image_02 (Lockstep)
+<br>
+<br>0x107 X - Beat Animation
+<br>	0 - Normal
+<br>	1 - Closed Books
+<br>
+<br>0x108 0 - Books Gleam (Unused)
+<br>
+<br>0x109<X> Y - Mouth Movement
+<br>	X = Type
+<br>	0 - Solo
+<br>	1 - Girls
+<br>	2 - All
+<br>	Y = Lip Sync
+<br>	0x61 - AO
+<br>	0x65 - IE
+<br>	0x69 - IE
+<br>	0x6F - AO
+<br>	0x75 - U
+<br>
+<br>0x10A - Raise Books (Used in Practice)
+<br>
+<br>0x10B - Nothing (Was Lights (Remix 9) in Fever)
+<br>---------------------
+<br>Subs:
+<br>The following are subtitles, these also use the second argument with 0x18
+<br>0x56 - Clear Upper Row (After 3.5 Beats)
+<br>0x57 - Clear Lower Row (After 3.5 Beats)
+<br>0x58 - "One! Two! Three!" (Upper)
+<br>0x59 - "One! Two! Three!" (Lower)
+<br>0x5A - "It's up to you!" (Upper)
+<br>0x5B - "It's up to you!" (Lower)
+<br>0x5C - "Rah-rah sis boom bah-BOOM!" (Upper)
+<br>0x5D - "Rah-rah sis boom bah-BOOM!" (Lower)
+<br>0x5E - "Let's go read a buncha books!" (Upper)
+<br>0x5F - "Let's go read a buncha books!" (Lower)
+<br>0x60 - "OK, it's on!" (Upper)
+<br>0x61 - "OK, it's on!" (Lower)
+<br>The following is gameplay
+<br>0x62 - "One! Two! Three!"
+<br>0x63 - "It's up to you!"
+<br>0x64 - "It's up to you! Yay!" (Solo) (Leftover)
+<br>0x65 - "It's up to you! Yay!" (Girls) (Unused)
+<br>0x66 - "It's up to you! Yay!" (All) (Leftover)
+<br>0x67 - "Rah-rah sis boom bah-BOOM!"
+<br>0x68 - "Let's go read a buncha books!"
+<br>0x69 - "Let's go read a buncha books! Yay!" (Solo)
+<br>0x6A - "Let's go read a buncha books! Yay!" (Girls) (Unused)
+<br>0x6B - "Let's go read a buncha books! Yay!" (All)
+<br>0x6C - "OK, it's on!"
+<br>0x6D - "OK, it's on!" (To be followed with "Let's go read a buncha books!")
+<br>The following is mouth movement
+<br>0x6E - "One! Two! Three!" (Solo)
+<br>0x6F - "One! Two! Three!" (Girls)
+<br>0x70 - "One! Two! Three!" (All)
+<br>0x71 - "It's up to you!" (Solo)
+<br>0x72 - "It's up to you!" (Girls)
+<br>0x73 - "It's up to you!" (All)
+<br>0x74 - "Rah-rah sis boom bah-BOOM!" (Solo)
+<br>0x75 - "Rah-rah sis boom bah-BOOM!" (Girls)
+<br>0x76 - "Rah-rah sis boom bah-BOOM!" (All)
+<br>0x77 - "Let's go read a buncha books!" (Solo)
+<br>0x78 - "Let's go read a buncha books!" (Girls)
+<br>0x79 - "Let's go read a buncha books!" (All)
+<br>0x7A - "OK, it's on!" (Solo)
+<br>0x7B - "OK, it's on!" (Girls)
+<br>0x7C - "OK, it's on!" (All)
+<br>0x7D - Single Mouth Movement (Solo) (Unused)
+<br>0x7E - Single Mouth Movement (Girls) (Unused)
+<br>0x7F - Single Mouth Movement (All) (Unused)
+<br>0x80 - Practice Speech
+<br>0x81 - Cheer Readers (Practice)
+<br>0x82 - Cheer Readers (Real Game)
+<br>0x83 - Cheer Readers (Skipped Practice)</body>

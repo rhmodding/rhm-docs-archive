@@ -1,0 +1,97 @@
+<html><body style = "font-family: monospace;">Fan Club
+<br>---------------------
+<br>0x100<X> - Input
+<br>	0 - Press A (0.5 beats delay)
+<br>	1 - Hold A (0.5 beats delay)
+<br>	2 - Release A (1.0 beats delay)
+<br>
+<br>0x101<X> Y - Monkey Beat Animation
+<br>0x102<X> Y - Monkey Ready for Clapping
+<br>0x102<2> - Monkeys Shake ("Ohh...")
+<br>0x103<X> Y - Monkey Clap
+<br>0x104<X> Y - Monkey Free (Stop Clapping)
+<br>0x105<X> Y - Monkey Charge
+<br>0x106<X> Y - Monkey Jump
+<br>	X = Which Monkey
+<br>	0 - Specific one (uses Y argument)
+<br>	1 - All (Doesn't use Y argument)
+<br>	Y = Which Monkey (Used: 0~0xA, 0xC)
+<br>
+<br>0x107 X - Pop Singer "Beat"
+<br>0x108 X - Pop Singer "Peace" ("Yeah, yeah, yeah!")
+<br>0x109 Y, X - Pop Singer "Wink" (Twirls Hand), Y = 1 adds stars
+<br>0x10A X - Pop Singer "Clap"
+<br>0x10B X - Pop Singer "Squat"
+<br>0x10C X - Pop Singer "Jump"
+<br>0x10D X - Pop Singer "Land"
+<br>	0 - Pop Singer
+<br>	1 - Left Backup
+<br>	2 - Right Backup
+<br>
+<br>0x10E - Pop Singer "Call" ("I suppose!")
+<br>0x10E<1> - Pop Singer "BigCall" (Last "I suppose!")
+<br>
+<br>0x10F - Pop Singer "Response" ("I suppose!")
+<br>
+<br>0x110 X, Y, Z - Backup Movements (Fan Club 2)
+<br>	X = Which Singer
+<br>	0 - Pop Singer
+<br>	1 - Left Backup
+<br>	2 - Right Backup
+<br>	Y = Distance in units (Used Value: 0xA)
+<br>	Z = Animation
+<br>	0 - Walk A
+<br>	1 - Walk B
+<br>
+<br>0x111 X, Y - Singer Visibility
+<br>	X = Visible
+<br>	0 - No
+<br>	1 - Yes
+<br>	Y = Which Singer
+<br>	0 - Pop Singer
+<br>	1 - Left Backup
+<br>	2 - Right Backup
+<br>
+<br>0x112 - Flash the Lights (Fan Club)
+<br>0x112<1> X - Flash the Stars (Fan Club 2)
+<br>	0 - Stop
+<br>	1 - Start (also makes the monkeys hold glowsticks)
+<br>0x112<2> - Blue and Yellow Lights (Fan Club 2)
+<br>0x112<3> - Pink and Green Lights (Fan Club 2)
+<br>
+<br>0x113 - Record inputs (Meant for if you don't clap during the Applause)
+<br>0x113<1> X - Monkey looks at you if you don't clap after X beats (Used Value: 6)
+<br>
+<br>0x114 X - Background
+<br>	0 - Normal
+<br>	1 - Darker
+<br>
+<br>0x115 - Select random lyrics for the Practice (sets the conditional variable to 0~4)
+<br>
+<br>0x116 - Confetti Poppers (Fan Club 2)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nothing (Unused)
+<br>0x57 - "Yeah, yeah, yeah!"
+<br>0x58 - "I suppose!"
+<br>0x59 - "Wonderful!" 1
+<br>0x5A - "Wonderful!" 2
+<br>0x5B - "Wonderful!" 3
+<br>0x5C - "Wonderful!" 4
+<br>0x5D - "Ohh..."
+<br>0x5E - "Yeah, yeah, yeah!" (Inputs)
+<br>0x5F - "I suppose!" (Inputs)
+<br>0x60 - "Ohh..." (Inputs)
+<br>0x61 - Applause (Fan Club 2)
+<br>0x62 - Fan Club (Practice)
+<br>0x63 - Fan Club 2 (Practice)
+<br>0x64 - Fan Club (Gameplay)
+<br>0x65 - Fan Club 2 (Gameplay)
+<br>0x66 - Fan Club (Skipped Practice)
+<br>0x67 - Fan Club 2 (Skipped Practice)
+<br>0x68 - Fan Club (Gameplay)
+<br>0x69 - Fan Club (Pop Idol Animations)
+<br>0x6A - Fan Club (Lyrics)
+<br>0x6B - Fan Club 2 (Gameplay)
+<br>0x6C - Fan Club 2 (Pop Idol Animations)
+<br>0x6D - Fan Club 2 (Lyrics)</body>

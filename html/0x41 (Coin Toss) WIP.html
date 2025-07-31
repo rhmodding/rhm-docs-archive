@@ -1,0 +1,120 @@
+<html><body style = "font-family: monospace;">Coin Toss
+<br>---------------------
+<br>0x100 X - Input
+<br>	Used Value: 0x30
+<br>
+<br>0x101<X> - Hand Animation
+<br>	0 - Reset(?)
+<br>	1 - ???
+<br>	2 - ???
+<br>	3 - Open Hand (Unused)
+<br>	4 - Disable Hand Out Animation (?)
+<br>	5 - Open Hand Coin (Unused)
+<br>
+<br>0x102 X - Set Progress
+<br>0x102<1> - Check Progress
+<br>	0 - Before Flick
+<br>	1 - Can Flick
+<br>	2 - After Flick
+<br>	3 - Caught the Coin
+<br>	4 - Miss
+<br>	5 - Game Clear
+<br>	6 - Game Over
+<br>
+<br>0x103 X - Watch
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x104 X - Tempo
+<br>	Used Values: 0x50, 0x5A, 0x5F, 0x64, 0x69, 0x6E, 0x78
+<br>
+<br>0x105 X, Y - Music
+<br>	X = Variant (Used Values: 0, 1, 3, 4, 5, 0x14, 0x15, 0x16)
+<br>	Y = Pitch (Used Values: 0, 1)
+<br>
+<br>0x106<X> - ???
+<br>	0 - 
+<br>	1 - Check game progress, set condvar to 0 if you miss
+<br>
+<br>0x107 - Show Score Counter (Leftover, not the global counter)
+<br>0x107<1> - Add 1 Point
+<br>0x107<2> - Reset Score
+<br>0x107<3> - ??? Random?
+<br>0x107<4> - Save Score
+<br>0x107<5> X - Set Score
+<br>
+<br>0x108 X - Lives
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x108<1> X - Set Amount
+<br>0x108<2> - ??? (Unused)
+<br>0x108<3> - Remove Life
+<br>0x108<4> - Check Amount
+<br>
+<br>0x109 - Real Game (Removes timer, plays music instead of the tick-tocks, removes tutorial text)
+<br>
+<br>0x10A<X> - Final Remix
+<br>	0 - Player Off-Screen
+<br>	1 - Man On-Screen
+<br>	2 - Player Slides In
+<br>	3 - Man Flicks
+<br>	4 - Man Slides Away
+<br>	5 - Remix Illustration
+<br>	6 - Remix Illustration Fades Out
+<br>---------------------
+<br>Subs:
+<br>0x56 - Cowbells (Unused)
+<br>0x57 - Cowbells + Watch (Unused)
+<br>0x58 - Cowbells + Watch + Music 1-1 (Unused)
+<br>0x59 - Cowbells + Drum Beat (Unused)
+<br>0x5A - Music 1-1 (Unused)
+<br>0x5B - Music 2-1 (Unused)
+<br>0x5C - Music 3-1 (Unused)
+<br>0x5D - Music 4-1 (Unused)
+<br>0x5E - Music 5-1 (Unused)
+<br>0x5F - Music 6-1 (Unused)
+<br>0x60 - Drum Beat (Unused)
+<br>0x61 - No Watch (Unused)
+<br>0x62 - No Watch (Unused)
+<br>0x63 - No Watch (Unused)
+<br>0x64 - No Watch (Unused)
+<br>0x65 - No Watch (Unused)
+<br>0x66 - No Watch (Unused)
+<br>0x67 - No Watch (Unused)
+<br>0x68 - No Watch (Unused)
+<br>0x69 - No Watch (Unused)
+<br>0x6A - No Watch (Unused)
+<br>0x6B - Practice Text 1 (Unused)
+<br>0x6C - Practice No Text (Unused)
+<br>0x6D - Practice Text 2 (Unused)
+<br>0x6E - Inputs (Unused)
+<br>0x6F - Practice (Unused)
+<br>0x70 - Cowbells + Watch (Unused)
+<br>0x71 - Cowbells + No Watch (Unused)
+<br>0x72 - Cowbells + Drum Beat (Unused)
+<br>0x73 - Music 1-2 (Unused)
+<br>0x74 - Music 2-2 (Unused)
+<br>0x75 - Music 3-2 (Unused)
+<br>0x76 - Music 4-2 (Unused)
+<br>0x77 - Music 5-2 (Unused)
+<br>0x78 - Music 6-2 (Unused)
+<br>0x79 - Coin Toss (Saffron Trial)
+<br>0x7A - Coin Toss (Saltwater Trial)
+<br>0x7B - Coin Toss (Paprika Trial)
+<br>0x7C - Coin Toss (Endless Game)
+<br>0x7D - Coin Toss (Saffron Trial, Progress)
+<br>0x7E - Coin Toss (Saltwater Trial, Progress)
+<br>0x7F - Coin Toss (Paprika Trial, Progress)
+<br>0x80 - Coin Toss (Endless Game, Progress)
+<br>0x81 - Coin Toss (Saffron Trial, Music)
+<br>0x82 - Coin Toss (Saltwater Trial, Music)
+<br>0x83 - Coin Toss (Paprika Trial, Music)
+<br>0x84 - Coin Toss (Endless Game, Music)
+<br>0x85 - Coin Toss (Saffron Trial, Practice)
+<br>0x86 - Coin Toss (Saltwater Trial, Practice)
+<br>0x87 - Coin Toss (Paprika Trial, Practice)
+<br>0x88 - Coin Toss (Gate, Practice)
+<br>0x89 - Coin Toss (Saffron Trial, Skipped Practice)
+<br>0x8A - Coin Toss (Saltwater Trial, Skipped Practice)
+<br>0x8B - Coin Toss (Paprika Trial, Skipped Practice)
+<br>0x8C - Coin Toss (Practice)</body>

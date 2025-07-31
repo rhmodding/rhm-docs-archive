@@ -1,0 +1,65 @@
+<html><body style = "font-family: monospace;">Pajama Party
+<br>---------------------
+<br>0x100 X, Y - Inputs
+<br>	X = Type
+<br>	0 - A (Jump)
+<br>	1 - A (Lie Down)
+<br>	2 - A (Lie Down, Ending)
+<br>	3 - B (Ready)
+<br>	4 - B (Throw)
+<br>	Y = Time in Ticks (Used Value: 0x30, 0x60, 0xC0)
+<br>
+<br>0x101 X - Jump (Back to Front)
+<br>	X = Position (0~4, from the back)
+<br>0x101<1> X - Jump (Side to Side)
+<br>	X = Position (0~4, from the right)
+<br>0x101<2> X, Y - Lie Down
+<br>	X = Position (0~4, from the right)
+<br>	Y = Animation
+<br>	0 - Place Pillow
+<br>	1 - Face Screen
+<br>	2 - Head bob
+<br>	3 - Lie Down
+<br>0x101<3> - Wake Up
+<br>0x101<4> - Ready
+<br>0x101<5> - Throw
+<br>
+<br>0x102 X - Girl Animation (for Inputs)
+<br>	0 - A (Jump)
+<br>	1 - A (Lie Down)
+<br>	2 - A (Lie Down, Ending)
+<br>	3 - B (Ready)
+<br>	4 - B (Throw)
+<br>
+<br>0x103 - Reset the current jump interpolation handler? (Reset current jumping row?) (Used only at the beginning of the game)
+<br>
+<br>0x104<X> - Background
+<br>	0 - Open
+<br>	1 - Close
+<br>
+<br>0x105 X - Hot-Air Balloons (sets which step of the "baloon" animation to use)
+<br>	0 - Close
+<br>	1 - Far
+<br>
+<br>0x106 X - Scene (change scene if player successfully throws the pillow)
+<br>	0 - Bedroom
+<br>	1 - Dreamland
+<br>0x106<1> - Reset the player thrown/player ready vars
+<br>
+<br>0x107<X> - Flying balloons
+<br>	0 - Lauch
+<br>	1 - Reset
+<br>
+<br>0x108 - Nothing
+<br>
+<br>0x109 - Reset girl animation if "girl_ready" is playing (used in the practice to stop her from charging a throw while text is displayed)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Jump (Side to Side)
+<br>0x57 - Jump (Back to Front)
+<br>0x58 - Lie Down
+<br>0x59 - Lie Down (Ending)
+<br>0x5A - Throw
+<br>0x5B - Pajama Party (Practice)
+<br>0x5C - Pajama Party (Real Game)
+<br>0x5D - Pajama Party (Skipped Practice)</body>

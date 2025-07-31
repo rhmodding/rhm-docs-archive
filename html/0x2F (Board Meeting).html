@@ -1,0 +1,51 @@
+<html><body style = "font-family: monospace;">Board Meeting
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Time in Ticks (Used values: 0x24, 0x30, 0x48, 0x60, 0x90, 0x120)
+<br>	Y = Type of Stop
+<br>	0 - Individual
+<br>	1 - Together
+<br>
+<br>0x101<X> Y - Pig Animations (Individual)
+<br>0x102<X> - Pig Animations (All)
+<br>	X = Animation
+<br>	0 - Beat Animation
+<br>	1 - Ready
+<br>	2 - Start Spinning
+<br>	3 - Stop Spinning
+<br>	Y = Which one (0~3, left to right)
+<br>
+<br>0x103 X - Beat Animation
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x104 X - Glasses Shine
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x105 - Assistant (Beat Animation)
+<br>0x105<1> X - Talking (X Times)
+<br>0x105<2> - Down (Unused)
+<br>0x105<3> - Up (Return w/ cups) (Unused)
+<br>0x105<4> - End (Talk w/ cups) (Unused)
+<br>0x105<5> - "One-two-three!"
+<br>---------------------
+<br>Subs:
+<br>0x56 - "One-two-three!" Voice
+<br>0x57 - "One-two-three!" Voice (Offbeat)
+<br>0x58 - Pigs Spin (Individual) (2.0 Beats) (Unused)
+<br>0x59 - Pigs Spin (Individual) (1.0 Beats)
+<br>0x5A - Pigs Spin (Individual) (0.5 Beats) (Leftover)
+<br>0x5B - Pigs Spin (Individual) (1/3 Beats) (Unused)
+<br>0x5C - Pigs Spin (Individual) (0.25 Beats) (Leftover)
+<br>0x5D - Pigs Spin (Together)
+<br>0x5E - Pigs Stop (Individual) (2.0 Beats)
+<br>0x5F - Pigs Stop (Individual) (1.0 Beats)
+<br>0x60 - Pigs Stop (Individual) (0.5 Beats) (Leftover)
+<br>0x61 - Pigs Stop (Individual) (1/3 Beats) (Unused)
+<br>0x62 - Pigs Stop (Individual) (0.25 Beats) (Leftover)
+<br>0x63 - Pigs Stop (Together)
+<br>0x64 - Pigs Stop (Together) (Offbeat)
+<br>0x65 - Board Meeting (Real Game)
+<br>0x66 - Board Meeting (Practice)
+<br>0x67 - Board Meeting (Skipped Practice)</body>

@@ -1,0 +1,77 @@
+<html><body style = "font-family: monospace;">Packing Pests
+<br>---------------------
+<br>0x100 X - Spawn Object
+<br>	0 - Candy
+<br>	1 - Spider
+<br>	2 - Bonus
+<br>
+<br>0x101 X, Y - Spawn Object
+<br>0x101<1> Y - Spawn Object (All)
+<br>0x101<2> Z, Y - Spawn Random Objects
+<br>0x101<3> Z - Spawn Random Objects (All)
+<br>	X = Which Worker
+<br>	Y = Object
+<br>	0 - Candy
+<br>	1 - Spider
+<br>	2 - Bonus
+<br>	Z = Time in Ticks
+<br>	Used values: 0x180, 0x240, 0x300
+<br>
+<br>0x102<X> Y - Camera Angle
+<br>	X = Variable
+<br>	0 - Default (Unused, doesn't use Y)
+<br>	1 - Normal (Unused, doesn't use Y)
+<br>	2 - Normal View
+<br>	3 - Pulled Forward (Unused)
+<br>	4 - Pulled Back
+<br>	Y = Time in Ticks (Used values: 0x48, 0x60)
+<br>
+<br>0x103 - Clap
+<br>
+<br>0x104<0> - Despawn Background Workers (Unused)
+<br>0x104<1> - Spawn Background Workers (Leftover)
+<br>0x104<2> X - Move Workers into view over X ticks (Used value: 0xC0)
+<br>0x104<3> X - Move Workers out of view over X ticks (Leftover)
+<br>0x104<4> X - Player Moves with Background Workers (Leftover)
+<br>	0 - Disabled
+<br>	1 - Enabled
+<br>0x104<5> - Workers stay Hidden in the back
+<br>
+<br>0x105<X> - Worker Animations
+<br>	0 - Beat Animation
+<br>	1 - "Double up!" Animation
+<br>
+<br>0x106 X - Curtain
+<br>	0 - Disabled
+<br>	1 - Enabled
+<br>0x106<1> - Curtain slides to the left
+<br>
+<br>0x107 X, Y - Signal
+<br>	X = Flag
+<br>	0 - Disable
+<br>	1 - Enable
+<br>	Y = Type
+<br>	0 - "Double up!"
+<br>	1 - "!!"
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Double up!"
+<br>0x57 - "!!" (Leftover)
+<br>0x58 - Candy (Practice)
+<br>0x59 - Spider (Practice)
+<br>0x5A - Bonus (Practice) (Unused)
+<br>0x5B - Normal Pattern
+<br>0x5C - Altered Pattern (Leftover)
+<br>0x5D - Offbeat Pattern (Leftover)
+<br>0x5E - Bonus
+<br>0x5F - Double up!
+<br>0x60 - !! (Appears 3.5 beats later) (Leftover)
+<br>0x61 - Candy (Background) (Unused)
+<br>0x62 - Spider (Background)
+<br>0x63 - Bonus (Background)
+<br>0x64 - Normal Pattern (Background)
+<br>0x65 - Double up! (Background)
+<br>0x66 - Altered Pattern (Background) (Leftover)
+<br>0x67 - Packing Pests (Practice)
+<br>0x68 - Packing Pests (Real Game)
+<br>0x69 - Packing Pests (Skipped Practice)</body>

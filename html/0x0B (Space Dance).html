@@ -1,0 +1,81 @@
+<html><body style = "font-family: monospace;">Space Dance
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Time in Ticks (Used Value: 0x30)
+<br>	Y = Type
+<br>	0 - Pose
+<br>	1 - Squat
+<br>	2 - Punch
+<br>
+<br>0x101<X> - Beat Animation (Dancers)
+<br>0x102<X> - Pose Animation
+<br>0x103<X> - Squat Animation
+<br>0x104<X> - Punch Animation
+<br>0x105<X> - Pre-Pose Animation
+<br>0x106<X> - Pre-Squat Animation
+<br>0x107<X> Y - Pre-Punch Animation
+<br>	X = Which Dancer (0~3, from the right)
+<br>	Y = Which Pre-Animation
+<br>	0 - PrePunchA
+<br>	1 - PrePunchB
+<br>
+<br>0x108 - Beat Animation (Gramps/Girl)
+<br>0x109 - Pose Animation
+<br>0x10A - Squat Animation
+<br>0x10B - Punch Animation
+<br>0x10C - Pre-Pose Animation
+<br>0x10D - Pre-Squat Animation
+<br>0x10E<X> - Pre-Punch Animation
+<br>	X = Which Pre-Animation
+<br>	0 - PrePunchA
+<br>	1 - PrePunchB
+<br>0x10F - Talking
+<br>0x10F<1> - Talking (Practice)
+<br>0x110 - Blinking
+<br>
+<br>0x111 W, X, Y, Z - Background Movement
+<br>	W = Horizontal Speed (Used Values: 0, 5, 0x3C, 0x64)
+<br>	X = Direction
+<br>	0 - Right
+<br>	1 - Left
+<br>	Y = Vertical Speed (Used Values: 0, 5, 0xA, 0x32)
+<br>	Z = Direction
+<br>	0 - Down
+<br>	1 - Up
+<br>0x111<1> X - Sync Background Layers (Cosmic Dance)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x112 - Dim half of the background to reduce seizures (Cosmic Dance)
+<br>0x112<1> - Restore original background
+<br>
+<br>0x113 - Shooting Star
+<br>---------------------
+<br>This games uses getrest 0 and getrest 1	for the timing
+<br>Space Dance:
+<br>setrest 0, 0x18
+<br>setrest 1, 0x18
+<br>Cosmic Dance:
+<br>setrest 0, 0x20
+<br>setrest 1, 0x10
+<br>Subs:
+<br>0x56 - Punch (Woman Voice)
+<br>0x57 - Punch (Man Voice)
+<br>0x58 - Punch (Both Voice)
+<br>0x59 - Pose (Woman Voice)
+<br>0x5A - Pose (Man Voice)
+<br>0x5B - Pose (Both Voice)
+<br>0x5C - Squat (Woman Voice)
+<br>0x5D - Squat (Man Voice)
+<br>0x5E - Squat (Both Voice)
+<br>0x5F - Space Gramps Punch (timing depends on getrest)
+<br>0x60 - Space Dance (Real Game)
+<br>0x61 - Space Dance (Practice)
+<br>0x62 - Space Dance (Skipped Practice)
+<br>0x63 - Cosmic Dance (Real Game)
+<br>0x64 - Space Dance (Gameplay)
+<br>0x65 - Space Dance (Space Gramps Animations)
+<br>0x66 - Space Dance (Background Movement)
+<br>0x67 - Cosmic Dance (Gameplay)
+<br>0x68 - Cosmic Dance (Cosmic Girl Animations)
+<br>0x69 - Cosmic Dance (Background Movement)</body>

@@ -1,0 +1,36 @@
+<html><body style = "font-family: monospace;">Spaceball
+<br>---------------------
+<br>0x100 0xXX, Y - Input
+<br>	X = Time in Ticks (Used Values: 0x30, 0x60)
+<br>	Y = Object Type
+<br>	0 - Baseball
+<br>	1 - Rice ball
+<br>	2 - Alien
+<br>
+<br>0x101 X - Costume
+<br>	0 - Normal
+<br>	1 - Red Head
+<br>	2 - Bunny
+<br>
+<br>0x102<X> Y, Z - Camera
+<br>	X = Interpolation
+<br>	0 - Instant Zoom
+<br>	1 - Linear Zoom
+<br>	2 - Smooth Zoom
+<br>	Y = Predetermined Position (0~0xB, 4 is default)
+<br>	Z = Time in ticks (Used Values: 0x18, 0x30, 0x60, 0x90, 0xC0, 0x120, 0x180, 0x240, 0x2A0)
+<br>
+<br>0x103<X> - Alien
+<br>	0 - Opening Animation
+<br>	1 - Closing Animation
+<br>	2 - Gone
+<br>
+<br>0x104 X - Unused Animation
+<br>	0 - dance00
+<br>	1 - dance01
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nothing (Unused)
+<br>0x57 - Spaceball (Practice)
+<br>0x58 - Spaceball (Real Game)
+<br>0x59 - Spaceball (Skipped Practice)</body>

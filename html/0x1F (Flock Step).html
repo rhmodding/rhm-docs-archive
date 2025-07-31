@@ -1,0 +1,77 @@
+<html><body style = "font-family: monospace;">Flock Step
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - A Press
+<br>	1 - B Hold
+<br>	2 - B Release
+<br>	3 - Nothing (Unused)
+<br>	4 - A Release
+<br>	Y = Time in Ticks (Used value: 0xC)
+<br>
+<br>0x101 - All birds march in single file (Practice)
+<br>
+<br>0x102 X, Y - Other Bird Animations
+<br>	X = Angle (Odd = Front, Even = Back)
+<br>	Used values: 0, 5
+<br>	Y = Type
+<br>	0 - Walk
+<br>	1 - Lift Leg
+<br>0x102<1> X - Squat (Used value: 5)
+<br>0x102<2> X - Jump (Used value: 5)
+<br>0x102<3> X - Number of Other Birds (Used value: 0)
+<br>0x102<4> - Remove Other Birds (Unused)
+<br>0x102<5> X - X Birds Land (Used value: 1, 2, 6, 7, 8, 9)
+<br>
+<br>0x103 X - Set Angle
+<br>	0 - Back (Unused)
+<br>	1 - Front
+<br>
+<br>0x104 X - Beat Animation (All Birds)
+<br>	X = Random Animation Delay (Used value: 0)
+<br>
+<br>0x105 X - Move Camera X units left (Used value: 0, but should be 9)
+<br>
+<br>0x106 X - Move Camera X units left (Used with jumps) (Used value: 0, but should be 9)
+<br>
+<br>0x107 X - Color Variety
+<br>	0 - Disable (All Pink)
+<br>	1 - Enable
+<br>
+<br>0x108 X - Stage Effect (Used values: 0, 1, 2, 3, 4, 5)
+<br>0x108<1> - Reset View
+<br>
+<br>0x109<X> - Earth Image in Bird's Eye
+<br>	0 - Enable
+<br>	1 - Disable
+<br>
+<br>0x10A<X> - Stamping Noise
+<br>	0 - Walk
+<br>	1 - Squat
+<br>	2 - Jump
+<br>
+<br>0x10B X - "You" icon
+<br>	0 - Disable
+<br>	1 - Enable
+<br>---------------------
+<br>Subs:
+<br>0x56 - Count-in (Cowbells)
+<br>0x57 - Count-in (Cowbells) + Flock Step Tempo File
+<br>0x58 - Walk (Inputs)
+<br>0x59 - Squat (Inputs)
+<br>0x5A - Jump (Inputs)
+<br>0x5B - Walk (Animations)
+<br>0x5C - Squat (Animations)
+<br>0x5D - Jump (Animations)
+<br>0x5E - Walk (Full)
+<br>0x5F - Squat (Full)
+<br>0x60 - Jump (Full)
+<br>0x61 - Flock Step (Practice)
+<br>0x62 - Flock Step (Real Game)
+<br>0x63 - Flock Step (Skipped Practice)
+<br>0x64 - Walk (Inputs, Practice)
+<br>0x65 - Walk (Animations, Practice)
+<br>0x66 - Squat (Inputs, Practice)
+<br>0x67 - Squat (Animations, Practice)
+<br>0x68 - Jump (Inputs, Practice)
+<br>0x69 - Jump (Animations, Practice)</body>

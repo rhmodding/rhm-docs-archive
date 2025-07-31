@@ -1,0 +1,158 @@
+<html><body style = "font-family: monospace;">Frog Hop
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Input
+<br>	0 - Press A
+<br>	1 - Hold B
+<br>	2 - Release B
+<br>	Y = Time in ticks
+<br>
+<br>0x101<X> - Spotlight
+<br>	0 - Off
+<br>	1 - Front
+<br>	2 - Back
+<br>
+<br>0x102 0xXXXXXXX - Play SFX (Depends on player performance)
+<br>
+<br>0x103<X> Y, Z - Frog Animations
+<br>	X = Animation
+<br>	0 - Beat Animation
+<br>	1 - Shake (Fast)
+<br>	2 - Shake (Slow)
+<br>	3 - Charge Spin
+<br>	4 - Spin
+<br>	5 - Singing
+<br>	6 - Stop player's beat animation during triple shake?
+<br>	7 - Stop player's beat animation during spins?
+<br>	8 - (Used in the practice)
+<br>	Y = Position (Left to Right)
+<br>	0 - Bandleader (Blue)
+<br>	1 - Lady (Orange)
+<br>	2 - Dancer 1 (Green)
+<br>	3 - Dancer 2 (Green)
+<br>	4 - Dancer 3 (Green)
+<br>	5 - Dancer 4 (Green) (You)
+<br>	Z = Mouth Movement (used when X = 5 or 8)
+<br>	0 - Narrow
+<br>	1 - Wide
+<br>	2 - Narrow (Loop)
+<br>	3 - Wide (Loop)
+<br>
+<br>0x104<X> - Bird (Songbird Remix)
+<br>	0 - Spawn Bird
+<br>	1 - Bird Animation (Uses argument 0~2)
+<br>	2 - Bird Fly Away
+<br>	3 - Spawn Leaves
+<br>	4 - Remove Leaves
+<br>
+<br>0x105 - Set condvar to X depending on system language settings
+<br>	0 - Japanese
+<br>	1 - English
+<br>	2 - French
+<br>	3 - German
+<br>	4 - Italian
+<br>	5 - Spanish
+<br>	6 - Korean
+<br>	default = any other language (uses English)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Beat Animation (must be called with "call" or "sub", not "async_call" or "async_sub")
+<br>0x57 - Shake (Short) (Front)
+<br>0x58 - Shake (Short) (Back)
+<br>0x59 - Shake (Long) (Front)
+<br>0x5A - Shake (Long) (Back)
+<br>0x5B - Charge Spin (Front)
+<br>0x5C - Charge Spin (Back)
+<br>0x5D - Spin (Front)
+<br>0x5E - Spin (Back)
+<br>0x5F - Spotlight changes to back after 1 beat, then front after 2 beats
+<br>0x60 - Shake (SFX)
+<br>0x61 - "Yeah" (Lady) (Frog Hop)
+<br>0x62 - "Ya-" (Lady)
+<br>0x63 - "-hoo!" (Lady) (Frog Hop)
+<br>0x64 - "-hoo!" (Lady) (Jumpin' Jazz)
+<br>0x65 - "Yeah, yeah, yeah!" (Lady) (Jumpin' Jazz)
+<br>0x66 - "Spin it" (Lady)
+<br>0x67 - "boys!" (Lady)
+<br>0x68 - "Yeah" (Dancers) (Frog Hop)
+<br>0x69 - "Ya-" (Dancers)
+<br>0x6A - "-hoo!" (Dancers) (Frog Hop)
+<br>0x6B - "-hoo!" (Dancers) (Jumpin' Jazz)
+<br>0x6C - "Yeah, yeah, yeah!" (Dancers) (Jumpin' Jazz)
+<br>0x6D - "Spin it" (Dancers) (Frog Hop)
+<br>0x6E - "Spin it" (Dancers) (Jumpin' Jazz)
+<br>0x6F - "boys!" (Dancers)
+<br>0x70 - 4 Shakes (Front)
+<br>0x71 - 4 Shakes (Back)
+<br>0x72 - 4 Shakes (Player)
+<br>0x73 - 4 Shakes (SFX)
+<br>0x74 - 4 Shakes (Full)
+<br>0x75 - 2 Shakes (Front)
+<br>0x76 - 2 Shakes (Back)
+<br>0x77 - 2 Shakes (Player)
+<br>0x78 - 2 Shakes (SFX)
+<br>0x79 - 2 Shakes (Full)
+<br>0x7A - "Yeah, yeah, yeah!" (Front)
+<br>0x7B - "Yeah, yeah, yeah!" (Back)
+<br>0x7C - "Yeah, yeah, yeah!" (Player)
+<br>0x7D - "Yeah, yeah, yeah!" (SFX) (Frog Hop)
+<br>0x7E - "Yeah, yeah, yeah!" (Full) (Frog Hop)
+<br>0x7F - "Yeah, yeah, yeah!" (SFX) (Jumpin' Jazz)
+<br>0x80 - "Yeah, yeah, yeah!" (Full) (Jumpin' Jazz)
+<br>0x81 - 1 Shake + "Yeah, yeah, yeah!" (Front)
+<br>0x82 - 1 Shake + "Yeah, yeah, yeah!" (Back)
+<br>0x83 - 1 Shake + "Yeah, yeah, yeah!" (Player)
+<br>0x84 - 1 Shake + "Yeah, yeah, yeah!" (SFX) (Frog Hop)
+<br>0x85 - 1 Shake + "Yeah, yeah, yeah!" (Full) (Frog Hop)
+<br>0x86 - 1 Shake + "Yeah, yeah, yeah!" (SFX) (Jumpin' Jazz)
+<br>0x87 - 1 Shake + "Yeah, yeah, yeah!" (Full) (Jumpin' Jazz)
+<br>0x88 - 1 Beat + "Yeah, yeah, yeah!" (Front)
+<br>0x89 - 1 Beat + "Yeah, yeah, yeah!" (Back)
+<br>0x8A - 1 Beat + "Yeah, yeah, yeah!" (Player)
+<br>0x8B - 1 Beat + "Yeah, yeah, yeah!" (SFX) (Frog Hop)
+<br>0x8C - 1 Beat + "Yeah, yeah, yeah!" (Full) (Frog Hop)
+<br>0x8D - 1 Beat + "Yeah, yeah, yeah!" (SFX) (Jumpin' Jazz)
+<br>0x8E - 1 Beat + "Yeah, yeah, yeah!" (Full) (Jumpin' Jazz)
+<br>0x8F - 1 Shake + "Yahoo!" (Front)
+<br>0x90 - 1 Shake + "Yahoo!" (Back)
+<br>0x91 - 1 Shake + "Yahoo!" (Player)
+<br>0x92 - 1 Shake + "Yahoo!" (SFX) (Frog Hop)
+<br>0x93 - 1 Shake + "Yahoo!" (Full) (Frog Hop)
+<br>0x94 - 1 Shake + "Yahoo!" (SFX) (Jumpin' Jazz)
+<br>0x95 - 1 Shake + "Yahoo!" (Full) (Jumpin' Jazz)
+<br>0x96 - 1 Beat + "Yahoo!" (Front)
+<br>0x97 - 1 Beat + "Yahoo!" (Back)
+<br>0x98 - 1 Beat + "Yahoo!" (Player)
+<br>0x99 - 1 Beat + "Yahoo!" (SFX) (Frog Hop)
+<br>0x9A - 1 Beat + "Yahoo!" (Full) (Frog Hop)
+<br>0x9B - 1 Beat + "Yahoo!" (SFX) (Jumpin' Jazz)
+<br>0x9C - 1 Beat + "Yahoo!" (Full) (Jumpin' Jazz)
+<br>0x9D - 3 Shakes (Front)
+<br>0x9E - 3 Shakes (Back)
+<br>0x9F - 3 Shakes (Player)
+<br>0xA0 - 3 Shakes (SFX)
+<br>0xA1 - 3 Shakes (Full)
+<br>0xA2 - 1 Beat + 1 Shake (Front)
+<br>0xA3 - 1 Beat + 1 Shake (Back)
+<br>0xA4 - 1 Beat + 1 Shake (Player)
+<br>0xA5 - 1 Beat + 1 Shake (SFX)
+<br>0xA6 - 1 Beat + 1 Shake (Full)
+<br>0xA7 - "Spin it, boys!" (Front)
+<br>0xA8 - "Spin it, boys!" (Back)
+<br>0xA9 - "Spin it, boys!" (Player)
+<br>0xAA - "Spin it, boys!" (SFX) (Frog Hop)
+<br>0xAB - "Spin it, boys!" (Full) (Frog Hop)
+<br>0xAC - "Spin it, boys!" (SFX) (Jumpin' Jazz)
+<br>0xAD - "Spin it, boys!" (Full) (Jumpin' Jazz)
+<br>0xAE - 1 Beat + "Spin it, boys!" (Front)
+<br>0xAF - 1 Beat + "Spin it, boys!" (Back)
+<br>0xB0 - 1 Beat + "Spin it, boys!" (Player)
+<br>0xB1 - 1 Beat + "Spin it, boys!" (SFX) (Frog Hop)
+<br>0xB2 - 1 Beat + "Spin it, boys!" (Full) (Frog Hop)
+<br>0xB3 - 1 Beat + "Spin it, boys!" (SFX) (Jumpin' Jazz)
+<br>0xB4 - 1 Beat + "Spin it, boys!" (Full) (Jumpin' Jazz)
+<br>0xB5 - "1, 2, 3, 4!"
+<br>0xB6 - Frog Hop (Practice)
+<br>0xB7 - Frog Hop (Real Game)
+<br>0xB8 - Jumpin' Jazz
+<br>0xB9 - Frog Hop (Skipped Practice)</body>

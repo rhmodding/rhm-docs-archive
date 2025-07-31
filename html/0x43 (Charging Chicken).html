@@ -1,0 +1,87 @@
+<html><body style = "font-family: monospace;">Charging Chicken
+<br>---------------------
+<br>0x100 - Nothing (Unused)
+<br>
+<br>0x101 X, Y, Z - Goal Conditions
+<br>	X = Yards to the goal (Used Values: 4, 6, 7, 8, 0xC, 0xF, 0x10, 0x11)
+<br>	Y = Size of goal platform (Used Values: 2, 3, 4, 5, 6, 7, 8, 9, 0xA)
+<br>	Z = Tempo (0x78 is default) (Used Values: 0x50, 0x5A, 0x64, 0x6E, 0x73, 0x78,
+<br>				      0x82, 0x87, 0x8C, 0x91, 0x96, 0xA0, 0xAA, 0xB4)
+<br>
+<br>0x102 - Set Down Platforms
+<br>
+<br>0x103 - Break Away Excess Land on Goal Platform
+<br>
+<br>0x104 - Remove Text
+<br>0x104<1> - "N yards to the goal."
+<br>
+<br>0x105 X - Gameplay Actions
+<br>	0 - Remove Platforms (Offscreen)
+<br>	1 - Ready Platforms to be Set Down
+<br>	2 - Await Input (Hose)
+<br>	3 - Await Input (Countdown)
+<br>	4 - Mr. Chicken (Hidden in Car)
+<br>	5 - Mr. Chicken (Visible)
+<br>	6 - Mr. Chicken (Falls in Water)
+<br>	7 - Mr. Chicken (Cooked)
+<br>	8 - Reached the goal (Can look at the screen)
+<br>
+<br>0x106 - Performance Check (These commands set condvar to 1 if the specified event happens)
+<br>0x106<1> - Player reached the goal (Real Game)
+<br>0x106<2> - Player didn't reach the goal
+<br>0x106<3> - Player didn't reach the goal (Retry, Real Game)
+<br>0x106<4> - Player didn't reach the goal (Retry, Practice)
+<br>0x106<5> - 1 if player held for too long, 0 if not long enough (Practice)
+<br>
+<br>0x107 - Show Countdown
+<br>0x107<1> - Hide Countdown
+<br>0x107<2> X, Y - Shrink Countdown
+<br>	X = Time before shrinking (Used Values: 0, 6, 0xD)
+<br>	Y = Duration of shrinking (Used Values: 0, 1, 8)
+<br>
+<br>0x108 W, X, Y, Z - Music Fades During Countdown
+<br>	W = Time before music fades out (Used Values: 0, 0x30, 0xC0, 0x180)
+<br>	X = Duration of fade out (Used Values: 0, 0x90, 0x150, 0x1E0, 0x270, 0x2A0)
+<br>	Y = Time before music fades back in (Used Values: 0, 0xC0, 0x240)
+<br>	Z = Duration of fade in (Used Values: 0, 0x120, 0x2A0)
+<br>
+<br>0x109 - Mr. Chicken (Hide in Car)
+<br>0x109<1> - Mr. Chicken (Look at Screen)
+<br>0x109<2> - Mr. Chicken (Back to Idle)
+<br>
+<br>0x10A X - Hose
+<br>	X = Position (0~3)
+<br>0x10A<1> - Retract Hose
+<br>
+<br>0x10B X - Number of lives
+<br>	Used Values: -1 (Infinite, used in Practice), 1, 2, 3
+<br>0x10B<1> - Remove a life
+<br>0x10B<2> - Sets condvar to 1 if player has extra lives left
+<br>
+<br>0x10C - Move Screen back when retrying
+<br>0x10C<1> - Reset Car
+<br>
+<br>0x10D<X> - Score
+<br>	0 - Adds 1 point
+<br>	1 - Save Score
+<br>
+<br>0x10E - Remove Car after falling (Also stops Ambience Noise)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nothing (Unused)
+<br>0x57 - Regular pattern (Goal conditions are set before this sub)
+<br>0x58 - Practice Pattern
+<br>0x59 - Practice Pattern (Retry)
+<br>0x5A - Charging Chicken (Saffron Trial) (Unused)
+<br>0x5B - Charging Chicken (Saffron Trial)
+<br>0x5C - Charging Chicken (Saltwater Trial)
+<br>0x5D - Charging Chicken (Paprika Trial)
+<br>0x5E - Charging Chicken (Endless Game)
+<br>0x5F - Charging Chicken (Saffron Trial, Practice)
+<br>0x60 - Charging Chicken (Saltwater Trial, Practice)
+<br>0x61 - Charging Chicken (Paprika Trial, Practice)
+<br>0x62 - Charging Chicken (Gate, Practice)
+<br>0x63 - Charging Chicken (Saffron Trial, Skipped Practice)
+<br>0x64 - Charging Chicken (Saltwater Trial, Skipped Practice)
+<br>0x65 - Charging Chicken (Paprika Trial, Skipped Practice)
+<br>0x66 - Charging Chicken (Practice)</body>

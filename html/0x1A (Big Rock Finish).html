@@ -1,0 +1,94 @@
+<html><body style = "font-family: monospace;">Big Rock Finish
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Time in Ticks (Used value: 0x30)
+<br>	Y = Type
+<br>	0 - Shot 0
+<br>	1 - Shot 1 (Jump)
+<br>
+<br>0x101 X - Which Strum (Practice)
+<br>	Used values: 0, 1, 2, 3
+<br>
+<br>0x102 X, Y - Guitar Sound Length in Ticks
+<br>	X = Shot 0 (Used values: 0xC, 0x10, 0x18)
+<br>	Y = Shot 1 (Jump) (Used values: 0x60, 0x78, 0xC0)
+<br>0x102<1> X - Set Pitch
+<br>	X = Pitch (Used values: -1, 0, 1, 2, 3, 4, 6, 7)
+<br>
+<br>0x103 X - Light Effect
+<br>	0 - Base
+<br>	1 - Green (A, D, G)
+<br>	2 - Blue (B, E, H)
+<br>	3 - Red (C, F)
+<br>	4 - Shot Light (Strumming)
+<br>
+<br>0x104<X> - Ecto Animations (Player)
+<br>0x105<X> - Boo-Boo Animations (Other Guitarist)
+<br>	0 - Beat
+<br>	1 - Touch
+<br>	2 - Return
+<br>	3 - Shot 0
+<br>	4 - Shot 1 (Jump)
+<br>
+<br>0x106<X> - Spooky Animations (Drummer)
+<br>	0 - Bass Drum
+<br>	1 - Snare
+<br>	2 - Hi-Hat
+<br>	3 - Cymbal
+<br>	4 - Tom (Right)
+<br>	5 - Tom (Left)
+<br>
+<br>0x107<X> - Audience Animations
+<br>	0 - Beat
+<br>	1 - Ready
+<br>	2 - Used with cheers
+<br>	3 - Sets condvar to 0 if great, 1 if ok, 2 if miss
+<br>	5 - Disable (Practice)
+<br>	6 - Enable (Real Game)
+<br>0x107<4> X - Performance Reaction
+<br>	0 - Great (High Cheer)
+<br>	1 - Ready (Low Cheer)
+<br>	2 - Miss (Boo)
+<br>
+<br>0x108 - Freestyle Strums (Practice)
+<br>0x108<1> X - Sets condvar to 1 if player has strummed X+1 times (Used value: 4)
+<br>
+<br>0x109 X - Unknown (Used with Skill Star pattern)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x10A - Stop Audience Animation (Used when Booing)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Audience Cheer
+<br>0x57 - Guitarist Animations (Normal)
+<br>0x58 - Drummer Animations (Normal)
+<br>0x59 - Audience Animations (Normal)
+<br>0x5A - Inputs (Normal)
+<br>0x5B - Full Pattern (Normal)
+<br>0x5C - Guitarist Animations (Swing)
+<br>0x5D - Drummer Animations (Swing)
+<br>0x5E - Audience Animations (Swing)
+<br>0x5F - Inputs (Swing)
+<br>0x60 - Full Pattern (Swing)
+<br>0x61 - Guitarist Animations (Double Speed)
+<br>0x62 - Drummer Animations (Double Speed)
+<br>0x63 - Audience Animations (Double Speed)
+<br>0x64 - Inputs (Double Speed)
+<br>0x65 - Full Pattern (Double Speed)
+<br>0x66 - 1.0 Beat Animations (All)
+<br>0x67 - 4.0 Beat Animations (All)
+<br>0x68 - "Thank you!"
+<br>0x69 - Drum Pattern (Practice)
+<br>0x6A - Drum Pattern (Practice, Lead into next pattern)
+<br>0x6B - Drum Pattern (Big Rock Finish A)
+<br>0x6C - Drum Pattern (Big Rock Finish B)
+<br>0x6D - Drum Pattern (Big Rock Finish C)
+<br>0x6E - Drum Pattern (Big Rock Finish D)
+<br>0x6F - Drum Pattern (Big Rock Finish E)
+<br>0x70 - Drum Pattern (Big Rock Finish F)
+<br>0x71 - Drum Pattern (Big Rock Finish G)
+<br>0x72 - Drum Pattern (Big Rock Finish H)
+<br>0x73 - Big Rock Finish (Real Game)
+<br>0x74 - Big Rock Finish (Practice)
+<br>0x75 - Big Rock Finish (Skipped Practice)</body>

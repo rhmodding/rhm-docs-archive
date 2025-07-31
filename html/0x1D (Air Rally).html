@@ -1,0 +1,144 @@
+<html><body style = "font-family: monospace;">Air Rally
+<br>---------------------
+<br>0x100 - Input
+<br>
+<br>0x101<X> Y, Z - Plane Position
+<br>	X = Who
+<br>	0 - Baxter
+<br>	1 - Forthington
+<br>	Y = Position
+<br>	0 - Behind Camera
+<br>	1 - Baxter's Position
+<br>	2 - Too Near
+<br>	3 - Near
+<br>	4 - Far
+<br>	5 - Too Far
+<br>	6+- Glitchy
+<br>	Z = Interpolation
+<br>	0 - Smooth
+<br>	1 - Instant
+<br>
+<br>0x102 - Respawn Birdie
+<br>
+<br>0x103 - Hit Birdie
+<br>
+<br>0x104 - Catch Birdie
+<br>
+<br>0x105 - Used with Catch Birdie
+<br>
+<br>0x106 - Unknown
+<br>0x106<1> - Unknown
+<br>0x106<2> X, Y, Z - Unknown
+<br>0x106<3> X, Y, Z - Unknown
+<br>	X = ???
+<br>	Used Values: 0x14, 0x1E, 0x28, 0x32, 0x3C, 0x46, 0x50, 0x5A
+<br>	Y = ???
+<br>	Used Values: 0x28, 0x32, 0x46, 0x64, 0x50, 0x96
+<br>	Z = ???
+<br>	Used Values: 0x180, 0x300, 0x480, 0x600, 0x900
+<br>
+<br>0x107<X> - Cloud Speed (Used Values: 6, 0x14, 0x50, 0x64, 0xC8)
+<br>
+<br>0x108 X - Background Object Speed (Takes Effect on Next 0x107) (Used Value: 7)
+<br>
+<br>0x109<X> R, G, B - Set Color Overlay
+<br>	X = Type
+<br>	0 - Background Objects
+<br>	1 - Clouds
+<br>	2 - Players
+<br>	3 - Background
+<br>	R, G, B - Colors
+<br>	Used Values:
+<br>	0xFF, 0xFF, 0xFF - Day (Everything)
+<br>	0xFF, 0x80,    0 - Sunset (Background Objects, Background)
+<br>	0xFF, 0xC0, 0x80 - Sunset (Clouds)
+<br>	   0,    0,    0 - Sunset (Players)
+<br>	0xF0, 0xC8, 0xC8 - Morning (Players, Unused)
+<br>	   0, 0x1E, 0x50 - Night (Background Objects)
+<br>	   0, 0xC0, 0xFF - Night (Clouds)
+<br>	0xC8, 0xFA, 0xFA - Night (Players)
+<br>	0xD2, 0xFF, 0xB4 - Night (Background)
+<br>
+<br>0x10A<X> - Apply Color Overlay over X ticks (Used Value: 0x12C)
+<br>
+<br>0x10B X, Y - Arc Time in Ticks
+<br>	X = From Forthington to Baxter (Used Values: 0x30, 0x60)
+<br>	Y = From Baxter to Forthington (Used Values: 0x30, 0x60)
+<br>
+<br>0x10C<X> Y - Practice Animations
+<br>	X = Who
+<br>	0 - Baxter
+<br>	1 - Forthington
+<br>	Y = Animation
+<br>	0 - Look Forward
+<br>	1 - Look Away (Unused)
+<br>
+<br>0x10D - ??? (something about "s_you_talk" and "s_com_talk") (Unused)
+<br>
+<br>0x10E X - Forthingthon Animations
+<br>	0 - Baxter Transforms (Unused)
+<br>	1 - Mouth Movement (Loop)
+<br>	2 - Mouth Movement (Single)
+<br>
+<br>0x10F<X> - Background Buildings Lights at Night
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x110<X> - Ambient Noises
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x111 - ??? (Unused)
+<br>
+<br>0x112<X> - Forthington Voice Clip
+<br>	0 - "Ba bum bum bum"
+<br>	1 - "1!"
+<br>	2 - "2!"
+<br>	3 - "3!"
+<br>	4 - "4!"
+<br>
+<br>0x113 X - ??? (Unused)
+<br>	0 - ??? (uVar14 = 0)
+<br>	1 - ??? (pcVar5 = (char *)0x1)
+<br>
+<br>0x114 - Fly Up (Practice)
+<br>
+<br>0x115<X> - Cloud Type
+<br>	0 - Clouds
+<br>	1 - Clouds (Higher) (Unused)
+<br>	2 - Trees
+<br>	3 - Clouds + Snowflakes
+<br>
+<br>0x116<X> - Baxter Ready Animation
+<br>	0 - Normal
+<br>	1 - Slow
+<br>	2 - Wind Up
+<br>---------------------
+<br>Subs:
+<br>0x56 - "1... 2... 1, 2, 3, 4!"
+<br>0x57 - 1 Rally (Normal)
+<br>0x58 - 2 Rallies (Normal)
+<br>0x59 - 1 Rally (Slow)
+<br>0x5A - "Ba bum bum bum" (Mouth Movement)
+<br>0x5B - "Ba bum bum bum"
+<br>0x5C - "2, 3, 4!" (Mouth Movement)
+<br>0x5D - "2, 3, 4!"
+<br>0x5E - 2 Rallies (Normal)
+<br>0x5F - 2 Rallies (Normal), "Ba bum bum bum"
+<br>0x60 - 1 Rally (Slow), "Ba bum bum bum"
+<br>0x61 - 1 Rally (Slow), "2, 3, 4!"
+<br>0x62 - 1 Rally (Slow)
+<br>0x63 - 1 Rally (Slow), End
+<br>0x64 - 1 Rally (Slow), End (Quick)
+<br>0x65 - Day
+<br>0x66 - Sunset
+<br>0x67 - Night
+<br>0x68 - Morning (Unused)
+<br>0x69 - Night (Unused)
+<br>0x6A - Night (Unused)
+<br>0x6B - Night (Unused)
+<br>0x6C - Night (Unused)
+<br>0x6D - Air Rally (Practice)
+<br>0x6E - Air Rally (Real Game)
+<br>0x6F - Air Rally 2 (Real Game)
+<br>0x70 - Air Rally (Skipped Practice)</body>

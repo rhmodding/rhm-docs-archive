@@ -1,0 +1,63 @@
+<html><body style = "font-family: monospace;">Bunny Hop
+<br>---------------------
+<br>0x100 X, Y - Spawn
+<br>	X = Type
+<br>	0 - Turtle (Light, followed by low hop)
+<br>	1 - Turtle (Dark, followed by high hop)
+<br>	2 - Whale (2 Beats)
+<br>	3 - Whale (1 Beat)
+<br>	4 - Whale (8 Beats)
+<br>	5 - Whale (4 Beats)
+<br>	6 - Whale (Final)
+<br>	Y = Time in Ticks (Add 0x30 for every beat)
+<br>
+<br>0x101 - Run on Ground
+<br>0x101<1> X - Hop on Ground
+<br>	0 - Low Hop
+<br>	1 - High Hop (2-count Height) (Unused)
+<br>	2 - High Hop (4-count Height) (Unused)
+<br>	3 - High Hop (8-count Height) (Unused)
+<br>	4 - High Hop (Final Height) (Unused)
+<br>0x101<2> - Reset
+<br>
+<br>0x102<X> - Camera Movement
+<br>	0 - Start
+<br>	1 - Stop
+<br>	2 - Reset
+<br>
+<br>0x103 X - Drum SFX when hopping
+<br>	0 - Low Drum
+<br>	1 - High Drum (Unused)
+<br>0x103<1> - Drum SFX Alternate
+<br>
+<br>0x104 X - Ground Length	(Used Values: 0, 9, 0xF)
+<br>
+<br>0x105 - Bunny flies through the background to the moon
+<br>
+<br>---------------------
+<br>The moon is always spawned at a fixed location matching where it is at the end of the vanilla game, and it scrolls along with the screen
+<br>If you need to have the moon at the end at a different time, you'll need to edit the X position of its animations (not sprites) in the bccad file
+<br>Below is a formula created by deni_iguess, which assumes the first turtle (beat 0) is at the very start of the game
+<br>(keep in mind that the Ground is still counted when it comes to where the moon is, and it is possible the result you get with this is off,
+<br>so make sure you take a screenshot of the vanilla placement at the end of Bunny Hop to compare it to fine-tune the exact location)
+<br>
+<br>187 * [ammount in beats] = X
+<br>29160 - X + ([ammount in beats] / 2) - Y = moon location
+<br>Y = add 4 every 5 beats
+<br>
+<br>for example, 40 beats:
+<br>187 * 40
+<br>29160 - 7480 + (40 / 2) - 32 = 21668
+<br>
+<br>another example, 6 beats:
+<br>187 * 6
+<br>29160 - 1122 + (6 / 2) - 4 = 28037
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Next... rest for a two-count."
+<br>0x57 - "Next... rest for a four-count."
+<br>0x58 - "Next... rest for a four-count. 1 2 3 4"
+<br>0x59 - "Next... rest for an eight-count."
+<br>0x5A - Bunny Hop (Practice)
+<br>0x5B - Bunny Hop (Real Game)
+<br>0x5C - Bunny Hop (Skipped Practice)</body>

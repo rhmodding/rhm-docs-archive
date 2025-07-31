@@ -1,0 +1,157 @@
+<html><body style = "font-family: monospace;">Super Samurai Slice
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - Slice (Single)
+<br>	1 - Slice (1st)
+<br>	2 - Slice (2nd)
+<br>	3 - Slice (3rd)
+<br>	4 - Slice (4th)
+<br>	5 - Block (Hold B)
+<br>	6 - Counterattack (Release B)
+<br>	7 - Girl
+<br>	8 - Other Girls
+<br>	Y = Time in Ticks (Used Values: 0x30, 0x60, 0xC0)
+<br>
+<br>0x101 - Samurai Beat Animation
+<br>0x101<1> X - Flip Samurai
+<br>	0 - Right
+<br>	1 - Left
+<br>0x101<2> - Set Samurai offscreen
+<br>0x101<3> X - Samurai Runs in
+<br>	Used Value: 0x60
+<br>
+<br>0x102 - Plays fail noise if not blocking
+<br>
+<br>0x103 X, Y, Z - Spawn Enemy
+<br>	X = Type
+<br>	0 - Small
+<br>	1 - Big
+<br>	2 - Big (Last)
+<br>	3 - Girl
+<br>	Y = Direction
+<br>	0 - Top Right
+<br>	1 - Bottom Right
+<br>	2 - Top Left
+<br>	3 - Bottom Left
+<br>	Z = Type
+<br>	0 - Single
+<br>	1 - 1st
+<br>	2 - 2nd
+<br>	3 - 3rd
+<br>	4 - 4th
+<br>	5 - Block (Hold B)
+<br>	6 - Block (Hold B) (Unused)
+<br>	7 - Girl
+<br>	8 - Other Girls
+<br>0x103<1> - Enemy Spawns
+<br>0x103<2> - Enemy Attacks
+<br>0x103<3> - Enemy Explodes (if sliced)
+<br>0x103<4> - ??? (Unused)
+<br>
+<br>0x104 - Start Moving Background (Slowly)
+<br>0x104<1> - Stop Moving Background
+<br>
+<br>0x105 X - Start Moving Background (Fast)
+<br>	Used Values: 6, 0x90
+<br>0x105<1> X - Stop Moving Background (Zooms Forward if it wasn't already moving)
+<br>	Used Value: 0x90, 0xC0
+<br>
+<br>0x106 X - Skateboard Comes in
+<br>0x106<1> X - Skateboard Goes Away
+<br>	Used Value: 0x30
+<br>0x106<2> - Get on Skateboard
+<br>0x106<3> - Get off Skateboard
+<br>
+<br>0x107 X - Mr. Eagle Swoops in
+<br>	Used Values: 6, 0x30
+<br>0x107<1> X - Mr. Eagle Goes Away
+<br>	Used Value: 0x30
+<br>0x107<2> - Get on Mr. Eagle
+<br>0x107<3> - Get off Mr. Eagle
+<br>0x107<4> - Checks if Samurai is on Mr. Eagle, sets condvar to 1 if he is
+<br>
+<br>0x108 X - Final Big Enemy (Intro)
+<br>	0 - Disabled
+<br>	1 - Enabled
+<br>0x108<1> - Set Offscreen (Intro)
+<br>0x108<2> 0 - Set Offscreen (Ending)
+<br>0x108<3> X - Swoop in
+<br>	Used Value: 0xC0
+<br>
+<br>0x109 X - Girl
+<br>0x109<1> - Walking Forward (Intro)
+<br>0x109<2> X - Standing (Ending)
+<br>	0 - Disabled
+<br>	1 - Enabled
+<br>0x109<3> - Run Away (Failed to Defeat the Final Enemy)
+<br>
+<br>0x10A X - Spawn Castle (Super Samurai Slice 2 Ending)
+<br>0x10A<1> X - Remove Castle
+<br>0x10A<2> X - Girls Disappear
+<br>	0 - Disabled
+<br>	1 - Enabled
+<br>
+<br>0x10B X - Go to the Sky
+<br>	Used Values: 6, 0xC0
+<br>0x10B<1> X - Go back to the Ground
+<br>	Used Value: 0xC0
+<br>0x10B<2> X - Remove Overlay Effects (Clouds, Roofs, Mist)
+<br>	Used Value: 0xC0
+<br>---------------------
+<br>Subs:
+<br>Sequential Enemies are places on the same beat (ex. sub5A and sub5B)
+<br>1 Enemy
+<br>0x56 - One Enemy (TR)
+<br>0x57 - One Enemy (BR)
+<br>0x58 - One Enemy (TL)
+<br>0x59 - One Enemy (BL)
+<br>2 Enemies (1.0 Beats)
+<br>0x5A - 1st Enemy (TR)
+<br>0x5B - 2nd Enemy (TL)
+<br>2 Enemies (1.0 Beats) (Used with sub77)
+<br>0x5C - 1st Enemy (BR)
+<br>0x5D - 2nd Enemy (BL)
+<br>2 Enemies (0.5 Beats)
+<br>0x5E - 1st Enemy (TR)
+<br>0x5F - 2nd Enemy (TL)
+<br>0x60 - 1st Enemy (BR)
+<br>0x61 - 1st Enemy (BL)
+<br>0x62 - 2nd Enemy (BL)
+<br>0x63 - 2nd Enemy (BR)
+<br>3 Enemies (0.5 Beats)
+<br>0x64 - 1st Enemy (TR)
+<br>0x65 - 2nd Enemy (TL)
+<br>0x66 - 3rd Enemy (BR)
+<br>3 Enemies (0.5 Beats)
+<br>0x67 - 1st Enemy (TL)
+<br>0x68 - 2nd Enemy (TR)
+<br>0x69 - 3rd Enemy (BL)
+<br>4 Enemies (0.5 Beats)
+<br>0x6A - 1st Enemy (TR)
+<br>0x6B - 2nd Enemy (TL)
+<br>0x6C - 3rd Enemy (BR)
+<br>0x6D - 4th Enemy (BL)
+<br>4 Enemies (Swing, Quick)
+<br>0x6E - 1st Enemy (TR) (Unused)
+<br>0x6F - 2nd Enemy (TL) (Unused)
+<br>0x70 - 3rd Enemy (BR) (Unused)
+<br>0x71 - 4th Enemy (BL) (Unused)
+<br>4 Enemies (Swing, Slow)
+<br>0x72 - 1st Enemy (TR) (Unused)
+<br>0x73 - 2nd Enemy (TL) (Unused)
+<br>0x74 - 3rd Enemy (BR) (Unused)
+<br>0x75 - 4th Enemy (BL) (Unused)
+<br>1 Enemy (Spawns 1.5 Beats Later)
+<br>0x76 - One Enemy (TR) (Offbeat) (Unused)
+<br>Other
+<br>0x77 - Big Enemy (TR)
+<br>0x78 - Big Enemy (TL)
+<br>0x79 - Last Big Enemy (TR)
+<br>0x7A - Last Big Enemy (TL) (Unused)
+<br>0x7B - Girl Thanks You
+<br>0x7C - Other Girls Thank You
+<br>0x7D - Super Samurai Slice (Practice)
+<br>0x7E - Super Samurai Slice (Real Game)
+<br>0x7F - Super Samurai Slice 2 (Real Game)
+<br>0x80 - Super Samurai Slice (Skipped Practice)</body>

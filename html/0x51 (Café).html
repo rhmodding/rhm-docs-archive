@@ -1,0 +1,21 @@
+<html><body style = "font-family: monospace;">Café
+<br>---------------------
+<br>0x101 X, Y - Sets the position of the cursor
+<br>	X = Page
+<br>	0 - StreetPass Terrace
+<br>	1 - Goat Stable
+<br>	2 - Barista
+<br>	3 - Shop
+<br>	4 - Museum
+<br>	Y = Option (Used values: 0, 1)
+<br>For example, 0x101 4, 1 sets to page 4 (Museum) and selects Talk to Curator
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Go!" (when changing voice language)
+<br>0x57 - Redirects to page 2, option 0 (Talk to Barista/Talk to Customer)
+<br>0x58 - Redirects to page 0, option 0 (StreetPass Terrace)
+<br>0x59 - Redirects to page 1, option 0 (Feed Goat)
+<br>0x5A - Redirects to page 3, option 0 (Shop)
+<br>0x5B - Redirects to page 4, option 0 (To Museum)
+<br>0x5C - Redirects to page 4, option 1 (Talk to Curator)
+<br>All but 0x56 and 0x5A also play the Café music</body>

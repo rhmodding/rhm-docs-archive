@@ -1,0 +1,80 @@
+<html><body style = "font-family: monospace;">Shoot-'em-up
+<br>---------------------
+<br>0x100 X, Y - Spawn Enemy
+<br>	X = Position (See rough diagram below)
+<br> 0		        1
+<br>    2	            3
+<br>       4    8   5
+<br>        6      7
+<br>        9     0xA
+<br>      0xB 0x11 0xC
+<br>   0xD		0xE
+<br>0xF		    	 0x10
+<br>(Positions 4~7, 9~0xC, 0x11+ aren't used, 6/9 and 7/0xA respectively are identical,
+<br>6/7 and 9/0xA also slightly overlap)
+<br>	Y = Time in Ticks (Used values: 0xC0, 0xCC, 0x180)
+<br>
+<br>0x101 - Nothing
+<br>
+<br>0x102 X - Gate
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x102<X> - Open the Gates
+<br>	0 - First
+<br>	1 - Second
+<br>	2 - Third
+<br>
+<br>0x103<X> - CommPad
+<br>	0 - Comes in
+<br>	1 - Goes out
+<br>
+<br>0x104 - Shoot-'em-up Radio Lady
+<br>0x104<1> - Remove Radio Lady
+<br>0x104<2> - Beat Animation
+<br>0x104<3> X - Talking Animation (Open mouth X times, Used Values: 3, 5, 7)
+<br>---------------------
+<br>Subs:
+<br>The following are to be shot after 4.0 Beats
+<br>0x56 - Spawn Enemy (Position 0)
+<br>0x57 - Spawn Enemy (Position 1)
+<br>0x58 - Spawn Enemy (Position 2)
+<br>0x59 - Spawn Enemy (Position 3)
+<br>0x5A - Spawn Enemy (Position 4) (Unused)
+<br>0x5B - Spawn Enemy (Position 5) (Unused)
+<br>0x5C - Spawn Enemy (Position 6) (Unused)
+<br>0x5D - Spawn Enemy (Position 7) (Unused)
+<br>0x5E - Spawn Enemy (Position 8)
+<br>0x5F - Spawn Enemy (Position 9) (Unused)
+<br>0x60 - Spawn Enemy (Position 0xA) (Unused)
+<br>0x61 - Spawn Enemy (Position 0xB) (Unused)
+<br>0x62 - Spawn Enemy (Position 0xC) (Unused)
+<br>0x63 - Spawn Enemy (Position 0xD)
+<br>0x64 - Spawn Enemy (Position 0xE)
+<br>0x65 - Spawn Enemy (Position 0xF)
+<br>0x66 - Spawn Enemy (Position 0x10)
+<br>0x67 - Nothing (Used every 0.5/0.25 Beats during the spawn phase)
+<br>0x68 - Nothing (Unused)
+<br>The following are to be shot after 8.0 Beats
+<br>0x69 - Spawn Enemy (Position 0) (Unused)
+<br>0x6A - Spawn Enemy (Position 1) (Unused)
+<br>0x6B - Spawn Enemy (Position 2) (Unused)
+<br>0x6C - Spawn Enemy (Position 3) (Unused)
+<br>0x6D - Spawn Enemy (Position 4) (Unused)
+<br>0x6E - Spawn Enemy (Position 5) (Unused)
+<br>0x6F - Spawn Enemy (Position 6) (Unused)
+<br>0x70 - Spawn Enemy (Position 7) (Unused)
+<br>0x71 - Spawn Enemy (Position 8) (Unused)
+<br>0x72 - Spawn Enemy (Position 9) (Unused)
+<br>0x73 - Spawn Enemy (Position 0xA) (Unused)
+<br>0x74 - Spawn Enemy (Position 0xB) (Unused)
+<br>0x75 - Spawn Enemy (Position 0xC) (Unused)
+<br>0x76 - Spawn Enemy (Position 0xD) (Unused)
+<br>0x77 - Spawn Enemy (Position 0xE) (Unused)
+<br>0x78 - Spawn Enemy (Position 0xF) (Unused)
+<br>0x79 - Spawn Enemy (Position 0x10) (Unused)
+<br>0x7A - Nothing (Unused)
+<br>0x7B - Nothing (Unused)
+<br>0x7C - Shoot-'em-up (Practice)
+<br>0x7D - Shoot-'em-up (Real Game)
+<br>0x7E - Shoot-'em-up 2 (Real Game)
+<br>0x7F - Shoot-'em-up (Skipped Practice)</body>

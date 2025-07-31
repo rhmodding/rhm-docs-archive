@@ -1,0 +1,127 @@
+<html><body style = "font-family: monospace;">Tangotronic 3000
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X - Animation
+<br>	0 - Head-spin Two-step, Step 1
+<br>	1 - Head-spin Two-step, Step 2, Pose 1
+<br>	2 - Head-spin Two-step, Step 2, Pose 2
+<br>	3 - Head-spin Two-step, Step 2, Pose 3
+<br>	4 - Three-step Turns, Step 1
+<br>	5 - Three-step Turns, Step 2
+<br>	6 - Three-step Turns, Step 3
+<br>	7 - Finishing Pose, Step 1
+<br>	8 - Finishing Pose, Step 1 (Unused)
+<br>	9 - Finishing Pose, Step 2, Pose 0 (Unused)
+<br>	0xA - Finishing Pose, Step 2, Pose 1
+<br>	0XB - Finishing Pose, Step 2, Pose 2
+<br>	0xC - Finishing Pose, Step 2, Pose 3
+<br>	0xD - Finishing Pose, Step 2, Pose 3, Instant Roses (Songbird Remix)
+<br>	Y - Time in ticks (Used Values: 0xC, 0x18, 0x30, 0x60)
+<br>
+<br>0x101 - Beat Animation
+<br>
+<br>0x102<X> Y, Z - Walk Y Steps for Z ticks
+<br>	X = Direction
+<br>	0 - Right
+<br>	1 - Left
+<br>	Y = Steps
+<br>	Used Values: 5, 0xA, 0xB, 0xD, 0xF, 0x1E, 0x14, 0x19
+<br>	Z - Time in Ticks
+<br>	Used Values: 2, 4, 8, 0x10, 0x48, 0x50, 0x5A, 0x60, 0xA0, 0x150, 0x180
+<br>
+<br>0x103 X - Walk Right for X ticks
+<br>0x103<1> X - Walk Left for X ticks
+<br>0x103<2> - Come to a Stop
+<br>
+<br>0x104 - Lady Twirls Away
+<br>
+<br>0x105<X> - Tangotronic Retreives Lady
+<br>	0 - Strech the arm
+<br>	1 - Catch the lady
+<br>
+<br>0x106<X> Y - Set position of dancers (Used Near the End)
+<br>	X = Axis
+<br>	0 - X Position
+<br>	1 - Y Position (Unused)
+<br>	2 - Z Position
+<br>	Y = Position (Used values: 0, 5, 9, 0xD, 0xF)
+<br>
+<br>These correspond to the angles in the Face_M and Face_W animations in TangoChr.bccad
+<br>0x107<X> - Tangotronic's head (Mirrored if moving left)
+<br>	0 - Twoards the camera
+<br>	1 - Slightly to the side (Front, Right)
+<br>	2 - To the side (Front, Right)
+<br>	3 - Forward (Front, Right) (Only used one)
+<br>	4 - Forward (Back, Right)
+<br>	5 - Slightly to the side (of Forward, Back, Right)
+<br>	6 - To the side (Back, Right)
+<br>	7 - Slightly to the side (Back, Right)
+<br>	8 - Away from the camera
+<br>	9 - Slightly to the side (Back, Left)
+<br>	0xA - To the side (Back, Left)
+<br>	0xB - Slightly to the side (of Forward, Back, Left)
+<br>	0xC - Forward (Back, Left)
+<br>	0xD - Forward (Front, Left)
+<br>	0xE - To the side (Front, Left)
+<br>	0xF - Slightly to the side (Front, Left)
+<br>
+<br>0x108<X> - Lady's head (Mirrored if moving left)
+<br>	0 - Twoards the camera
+<br>	1 - Slightly to the side (Front)
+<br>	2 - To the side (Front)
+<br>	3 - Slightly to the side (of Forward, Front)
+<br>	4 - Forward (Front) (Only used one)
+<br>	5 - Forward (Back)
+<br>	6 - Slightly to the side (of Forward, Back)
+<br>	7 - To the side (Back)
+<br>	8 - Slightly to the side (Back)
+<br>	9 - Away from the camera
+<br>
+<br>0x109<X> - Tangotronic's head before looking at the camera in a Finishing Pose
+<br>0x10A<X> - Lady's head before looking at the camera in a Finishing Pose
+<br>
+<br>0x10B<X> - Direction to face after Head-Spin Two-Step (Mirrored if moving left)
+<br>	0 - Right
+<br>	1 - Left
+<br>
+<br>0x10C X, Y, Z - Move Camera
+<br>0x10C<1> X, Y, Z, T - Move Camera Smoothly in T ticks
+<br>
+<br>0x10D<X> - Animations for the Dancers (Beginning)
+<br>	0 - Disable (Hi-Res Texture)
+<br>	1 - Enable (Normal, Animated Textures)
+<br>
+<br>0x10E X - Spotlight
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x10F 0, 0 - Remove Roses (Finishing Pose) (Doesn't work in Songbird Remix)
+<br>0x10F 1, 1 - Show Roses (Finishing Pose)
+<br>
+<br>0x110 - Pause the Animations (Practice)
+<br>
+<br>0x111 - Dancer's bodies move along with them looking to the camera
+<br>---------------------
+<br>Subs (Directions mirrored if moving left):
+<br>0x56 - Crash (Unused)
+<br>0x57 - Finishing Pose, Pose 0 (Unused)
+<br>0x58 - Finishing Pose, Pose 1
+<br>0x59 - Finishing Pose, Pose 2
+<br>0x5A - Finishing Pose, Pose 3
+<br>0x5B - Finishing Pose, Pose 3 + Lady Twirling Away 
+<br>0x5C - Head-spin Two-step, Pose 1, Right (Ends after 3.0 Beats)
+<br>0x5D - Head-spin Two-step, Pose 1, Right (Ends after 1.0 Beats) (Unused)
+<br>0x5E - Head-spin Two-step, Pose 1, Left (Ends after 3.0 Beats) (Unused)
+<br>0x5F - Head-spin Two-step, Pose 1, Left (Ends after 1.0 Beats) (Unused)
+<br>0x60 - Head-spin Two-step, Pose 2, Right (Ends after 3.0 Beats) (Unused)
+<br>0x61 - Head-spin Two-step, Pose 2, Right (Ends after 1.0 Beats)
+<br>0x62 - Head-spin Two-step, Pose 2, Left (Ends after 3.0 Beats) (Unused)
+<br>0x63 - Head-spin Two-step, Pose 2, Left (Ends after 1.0 Beats) (Unused)
+<br>0x64 - Head-spin Two-step, Pose 3, Right (Ends after 3.0 Beats)
+<br>0x65 - Head-spin Two-step, Pose 3, Right (Ends after 1.0 Beats)
+<br>0x66 - Head-spin Two-step, Pose 3, Left (Ends after 3.0 Beats)
+<br>0x67 - Head-spin Two-step, Pose 3, Left (Ends after 1.0 Beats)
+<br>0x68 - Three-step Turns
+<br>0x69 - Tangotronic 3000 (Real Game)
+<br>0x6A - Tangotronic 3000 (Practice)
+<br>0x6B - Tangotronic 3000 (Skipped Practice)</body>

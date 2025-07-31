@@ -1,0 +1,69 @@
+<html><body style = "font-family: monospace;">Tap Trial
+<br>---------------------
+<br>0x100 - Input (Press A 1.0 Beats after this)
+<br>
+<br>0x101 - Beat Animation
+<br>
+<br>0x102 X - Animations (Monkeys)
+<br>0x103 X - Animations (Girl)
+<br>	0 - Single Tap (Ready)
+<br>	1 - Double Tap (Ready 1)
+<br>	2 - Triple Tap (Left, Unused)
+<br>	3 - Triple Tap (Right, Unused)
+<br>	4 - Single Tap
+<br>	5 - Double Tap
+<br>	6 - Triple Tap (Left)
+<br>	7 - Triple Tap (Right)
+<br>	8 - Triple Tap (Charge 1)
+<br>	9 - Crouch
+<br>	0xA - Jump (Continuous)
+<br>	0xB - Jump (Final)
+<br>	0xC - Land (Final)
+<br>	0xD - Land (Continuous, Unused)
+<br>	0xE - Land (Continuous)
+<br>	0xF - Double Tap (Ready 2)
+<br>	0x10 - Triple Tap (Charge 2)
+<br>	0x11 - Background (Unused)
+<br>	0x12 - Nothing
+<br>	0x13 - Background (Unused)
+<br>
+<br>0x104 - Record Performance for Giraffe's comments
+<br>
+<br>0x105 X - Giraffe
+<br>	0 - Hide
+<br>	1 - Show
+<br>
+<br>0x106 - Remove Giraffe speech bubble
+<br>0x106<1> X - Giraffe will say a random message (unless you missed since the last 0x104)
+<br>	X = Seems to mark which comment is used (Used Values: 0, 1, 2)
+<br>0x106<2> - Giraffe miss animation
+<br>
+<br>0x107<X> 0xYYYYYY - Speech Bubble
+<br>	X = Who Speaks
+<br>	0 - Monkeys
+<br>	1 - Giraffe
+<br>	2 - Remove (Giraffe)
+<br>	3 - Remove (Monkey)
+<br>	Y = String
+<br>	0x504403 - "agbTap_salu" (Follow me!)
+<br>	0x5044F5 - "agbTap_giraffe_end" (What a performance!)
+<br>	0x504508 - "agbTap_giraffe_start" (I love tap!)
+<br>
+<br>0x108<X> - Moving Background (Tap Trial 2)
+<br>	0 - Enable
+<br>	1 - Disable
+<br>	2+- Nothing (Unused)
+<br>
+<br>0x109 - Reset sad giraffe counter (Used at the end of Tap Trial. Notably didn't exist in Fever)
+<br>---------------------
+<br>Subs (sync):
+<br>0x56 - Single Tap
+<br>0x57 - Double Tap
+<br>0x58 - Crouch
+<br>0x59 - Jump (Continuous)
+<br>0x5A - Jump (Final)
+<br>0x5B - Triple Tap
+<br>0x5C - Tap Trial (Practice)
+<br>0x5D - Tap Trial (Real Game)
+<br>0x5E - Tap Trial 2 (Real Game)
+<br>0x5F - Tap Trial (Skipped Practice)</body>

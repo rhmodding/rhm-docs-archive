@@ -1,0 +1,34 @@
+<html><body style = "font-family: monospace;">Marching Orders
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Time in Ticks (Used Values: 0xC, 0x30)
+<br>	Y = Action
+<br>	0 - March
+<br>	1 - Halt
+<br>	2 - Right-Face Turn
+<br>	3 - Left-Face Turn
+<br>
+<br>0x101 - Raise Legs
+<br>
+<br>0x102 - Beat Animation
+<br>
+<br>0x103 - Reset Stance
+<br>
+<br>0x104<X> - March Animation
+<br>0x105<X> - Halt Animation
+<br>0x106<X> - Right-Face Animation
+<br>0x107<X> - Left-Face Animation
+<br>	X = Which One (1, 2, 3 are used, in order from right to left)
+<br>
+<br>0x108 - Sarge Talk
+<br>
+<br>0x109 - Conveyor
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Turn!" (Right-Face)
+<br>0x57 - "Turn!" (Left-Face)
+<br>0x58 - "March!"
+<br>0x59 - "Halt!"
+<br>0x5A - Marching Orders (Practice)
+<br>0x5B - Marching Orders (Real Game)
+<br>0x5C - Marching Orders (Skipped Practice)</body>

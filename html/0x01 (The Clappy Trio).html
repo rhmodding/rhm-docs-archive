@@ -1,0 +1,55 @@
+<html><body style = "font-family: monospace;">The Clappy Trio
+<br>---------------------
+<br>0x100 X - Input
+<br>	X = Interval between claps in ticks (Used Values: 6, 0xC, 0x18, 0x24, 0x30, 0x60)
+<br>	The input happens after twice as many ticks as X have passed since 0x100 X
+<br>
+<br>0x101 X - Beat Animation
+<br>	0 - Normal
+<br>	1 - Normal (Usually used 1.0 Beats Before Ready Stance)
+<br>0x101<1> X - X is usually set to the amount of beats until the ready stance (No Effect)
+<br>
+<br>0x102<X> - Ready Stance
+<br>	0 - Normal
+<br>	1 - Determined
+<br>
+<br>0x103<X> Y - Clap Animation
+<br>	X = Type
+<br>	0 - Normal
+<br>	1 - Normal (Unused)
+<br>	Y = Which One
+<br>	0 - Left Guy
+<br>	1 - Middle Guy
+<br>	2 - You (No Visible Effect)
+<br>
+<br>0x104 X - Beat Animation Type
+<br>	0 - Neutral Faces (Unused)
+<br>	1 - Happy Faces
+<br>
+<br>0x105<X> 0xYYYYYY - Sign
+<br>	X = Action
+<br>	0 - Sign drops down
+<br>	1 - Sign disappears
+<br>	2 - Sign is already down
+<br>	Y = String/Layout (Trio Timing!)
+<br>	0x503074 - "Clap_ver_arrange.bflyt"	Trio Timing (The Snappy Trio)
+<br>	0x503122 - "Clap_ver_long.bflyt"	Trio Timing! (The Clappy Trio 2)
+<br>	0x5031CD - "Clap_ver_short.bflyt"	Trio Timing! (The Clappy Trio)
+<br>	0x509CDB - "Clap_ver_remix.bflyt"	Trio Timing (Citrus Remix)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Clap (2.0 Beats Apart)
+<br>0x57 - Clap (1.0 Beats Apart)
+<br>0x58 - Clap (0.5 Beats Apart)
+<br>0x59 - Clap (0.25 Beats Apart) (Unused)
+<br>0x5A - Clap (0.125 Beats Apart)
+<br>0x5B - Clap (0.75 Beats Apart)
+<br>0x5C - Clap (2.0 Beats Apart) (Unused)
+<br>0x5D - Clap (1.0 Beats Apart) (Unused)
+<br>0x5E - Clap (0.5 Beats Apart) (Unused)
+<br>0x5F - Clap (0.25 Beats Apart) (Unused)
+<br>0x60 - The Clappy Trio (Practice)
+<br>0x61 - The Clappy Trio (Real Game)
+<br>0x62 - The Clappy Trio 2 (Real Game)
+<br>0x63 - The Snappy Trio (Real Game)
+<br>0x64 - The Clappy Trio (Skipped Practice)</body>

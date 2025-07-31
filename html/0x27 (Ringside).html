@@ -1,0 +1,98 @@
+<html><body style = "font-family: monospace;">Ringside
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X - Type
+<br>	0 - Nod
+<br>	1 - Flex, Step 1
+<br>	2 - Flex, Step 2
+<br>	3 - Pose
+<br>	4 - Pose, Newspaper
+<br>	Y - Time in ticks (Used Values: 0x60, 0x78, 0x90)
+<br>
+<br>0x101 X - View
+<br>	0 - Normal
+<br>	1 - Zoomed Out
+<br>
+<br>0x102 - Camera Men Bounce Up
+<br>0x102<1> X - Zoom 
+<br>	0 - Zoomed In
+<br>	1 - Zoomed Out
+<br>0x102<2> X - Zoom Out (Beginning)
+<br>	0 - Normal
+<br>	1 - Unknown
+<br>0x102<3> - Practice
+<br>0x102<4> - Real Thing
+<br>
+<br>0x103 X - Newspaper swirls over X ticks (Used Value: 0xC)
+<br>0x103<1> - Remove Newspaper
+<br>
+<br>0x104 X, Y - Reporter
+<br>	X - Mouth Movements
+<br>	0 - "Wubbadubbadubba zat true?"
+<br>	1 - "Whoa, you go big guy!"
+<br>	2 - Speed Modifier(?)
+<br>	Y - Time in Ticks (Used Values: 3, 4, 5, 6, 7)
+<br>0x104<1> - Raise Mic
+<br>0x104<2> - Lower Mic
+<br>0x104<3> - Initialize Blinking
+<br>
+<br>0x105 1 - Camera Flash (Unused)
+<br>
+<br>0x106 - Beat Animation
+<br>
+<br>0x107 - Prepare for a pose
+<br>
+<br>0x108<X> - Post-Pose Effect
+<br>	0 - Enable
+<br>	1 - Disable
+<br>
+<br>0x109 X - Wrestler Sweat
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x10A X - Rhythm Arena
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x10A<1> - Beat Animation
+<br>0x10A<2> X, Y, Z - Arena zoom from X to Y over Z ticks
+<br>Used values (Beginning): 0x100, 0x180, 0xF0
+<br>Used values (Ending):	 0x100, 0x100, 6
+<br>0x10A<3> X, Y, Z - Arena opacity from X to Y over Z ticks
+<br>Used values (Beginning): 0xFF, 0, 0xF0
+<br>Used values (Ending):	 0xFF, 0xFF, 6
+<br>0x10A<4> - Dim Lights
+<br>
+<br>0x10B X - "Live from the Rhythm Arena"
+<br>0x10B<1> X - "You're watching KRIQ"
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x10C<X> - Background
+<br>	0 - Practice
+<br>	1 - Real Game
+<br>
+<br>The pan and zoom values do not get decompiled properly, so here are the ones found in sub63:
+<br>pan 4, 0x46, 0x78
+<br>zoom 4, 0x14D, 0x14D
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Wubbadubbadubba zat true?"
+<br>0x57 - "Woah, you go big guy!"
+<br>0x58 - "Woah, you go big guy!" (Voiceless, 1 beat earlier) (Unused)
+<br>0x59 - "Pose for the fans!"
+<br>0x5A - "Pose for the Fans!" (No Zoom-In)
+<br>0x5B - "Pose for the Fans!" (No Zoom)
+<br>0x5C - "Pose for the Fans!" (Voiceless, 1 beat earlier)
+<br>0x5D - "Pose for the fans!" (Newspaper)
+<br>0x5E - "Pose for the Fans!" (Newspaper, No Zoom-In)
+<br>0x5F - "Pose for the Fans!" (Newspaper, Voiceless, 1 beat earlier) (Leftover)
+<br>0x60 - Camera Flash (Nod) (Unused)
+<br>0x61 - Camera Flash (Pose) (Unused)
+<br>0x62 - Camera Flash (Flex) (Unused)
+<br>0x63 - Zoom (Normal, used in Remixes)
+<br>0x64 - Zoom (Unused)
+<br>0x65 - Beat Animation (4.0 Beats)
+<br>0x66 - Beat Animation (172 Beats)
+<br>0x67 - Ringside (Practice)
+<br>0x68 - Ringside (Real Game)
+<br>0x69 - Ringside (Skipped Practice)</body>

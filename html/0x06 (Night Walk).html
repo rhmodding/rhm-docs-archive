@@ -1,0 +1,44 @@
+<html><body style = "font-family: monospace;">Night Walk
+<br>---------------------
+<br>0x100 X, Y - Spawn Platform
+<br>	X = Time in Ticks (Used Values: 0x30, 0x60, 0x90, 0xC0, 0xF0, 0x120, 0x150, 0x180)
+<br>	Y = Type of platform
+<br>	0 - Kick (Heart Flower)
+<br>	1 - Snare (Lollipop)
+<br>	2 - Cymbal (Umbrella)
+<br>	3 - Kick (Heart Flower, before Umbrella)
+<br>	4 - Star (End)
+<br>	5 - Edge (End)
+<br>
+<br>0x101 X - Steps
+<br>	0 - Floor (no gaps)
+<br>	1 - Steps (w/ gaps)
+<br>	2 - Random (either)
+<br>
+<br>0x102<X> - Camera
+<br>	0 - Start
+<br>	1 - Stop
+<br>	2 - Set condvar to 1 if camera is playing
+<br>
+<br>0x103 - Spawn Balloons
+<br>0x103<1> X - Pop Specified Balloon, 0~6
+<br>Note that the sfx are baked into the music, this command doesn't play them on its own.
+<br>
+<br>0x104 - If platform "Star (End)" exists, force the End platform to open and make Play-Yan fly away (?) (Unused)
+<br>
+<br>0x105 - Death Check (Sets condvar to 1 if you fell)
+<br>Accompanied with:
+<br>if 1
+<br>	goto 0x7B
+<br>endif
+<br>the stuff at label 0x7B basically removes any textboxes on the screen, disables inputs and fades out the music. It's placed near the end of the game, which in a remix setting you most likely won't need
+<br>
+<br>0x106 - Set condvar to 1 if all the stars are maximum size (Unused)
+<br>
+<br>0x107 - Set condvar to 1 if platform "Star (End)" exists (Unused)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Pop Balloons (Start)
+<br>0x57 - Night Walk (Real Game)
+<br>0x58 - Night Walk (Practice)
+<br>0x59 - Night Walk (Skipped Practice)</body>

@@ -1,0 +1,133 @@
+<html><body style = "font-family: monospace;">Built to Scale
+<br>---------------------
+<br>0x100 - ???
+<br>
+<br>0x101<0> X, Y - Bounce Paddle from X to Y
+<br>0x101<1> - Reset Paddles
+<br>0x101<2> X - Charge Paddle
+<br>0x101<3> X - Uncharge Paddle
+<br>	-1 - Off-screen (Left)
+<br>	 0 - Paddle 0
+<br>	 1 - Paddle 1
+<br>	 2 - Paddle 2
+<br>	 3 - Paddle 3
+<br>	 4 - Off-screen (Right)
+<br>
+<br>0x102 X, Y, Z, S, T - Rod Movement
+<br>	X, Y = Bounce from X to Y
+<br>	-1 - Off-screen (Left)
+<br>	 0 - Paddle 0
+<br>	 1 - Paddle 1
+<br>	 2 - Paddle 2
+<br>	 3 - Paddle 3
+<br>	 4 - Off-screen (Right)
+<br>	Z = Unrest (Used value: 0)
+<br>	S = Shoot
+<br>	0 - Not Charged
+<br>	1 - Charged (Will Shoot)
+<br>	T = Bounce Height
+<br>	0 - Nothing (Normal Bounce)
+<br>	1 - Charge Up (High Bounce)
+<br>0x102<1> X - Miss the Shot
+<br>
+<br>0x103<0> X, Y - Widget Pair Control
+<br>	X = Slot
+<br>	Y = Active
+<br>	0 - No
+<br>	1 - Yes
+<br>0x103<1> X, Y, Z - Move Widgets
+<br>	X = Slot
+<br>	Y = Direction
+<br>	0 - Close in
+<br>	1 - Move Away
+<br>	Z = Position (0 is the middle)
+<br>0x103<2> X - Combine Widgets in specified slot if successfully shot
+<br>0x103<3> X - Spawn Widgets in specified slot(?)
+<br>0x103<4> - Sets the conditional variable to the number of active slots
+<br>---------------------
+<br>Subs:
+<br>0x56 - Charge Sound
+<br>0x57 - 1>2>3>Off
+<br>0x58 - Off>3>2>1>
+<br>0x59 - 0>1>2>3> (Leftover)
+<br>0x5A - 2>1>0>1> (Leftover)
+<br>0x5B - 2>3>2>1> (Leftover)
+<br>0x5C - 3>2>1>0>
+<br>0x5D - 1>2>3>2>
+<br>0x5E - 1>0>1>2> (Unused)
+<br>0x5F - 0>1>2>3>2Shoot
+<br>0x60 - 2>1>0>1>2Shoot (Unused)
+<br>0x61 - 2>3>2>1>0Shoot (Unused)
+<br>0x62 - 3>2>1>0>1Shoot (Unused)
+<br>0x63 - 1>2>3>2>1Shoot (Unused)
+<br>0x64 - 1>0>1>2>3Shoot (Unused)
+<br>0x65 - 0>1>2>3>2>Charge Sound (Unused)
+<br>0x66 - 2>1>0>1>2>Charge Sound (Unused)
+<br>0x67 - 2>3>2>1>0>Charge Sound (Unused)
+<br>0x68 - 3>2>1>0>1>Charge Sound (Unused)
+<br>0x69 - 1>2>3>2>1>Charge Sound (Unused)
+<br>0x6A - 1>0>1>2>3>Charge Sound (Unused)
+<br>0x6B - Stop Charge (Paddle 0) (Unused)
+<br>0x6C - Stop Charge (Paddle 2)
+<br>0x6D - Stop Charge (Paddle 3) (Unused)
+<br>0x6E - Stop Charge (Paddle 1) (Unused)
+<br>0x6F - 0>1>1Shoot (Unused)
+<br>0x70 - 2>1>1Shoot (Unused)
+<br>0x71 - 2>3>3Shoot (Unused)
+<br>0x72 - 3>2>2Shoot (Unused)
+<br>0x73 - 1>2>2Shoot (Unused)
+<br>0x74 - 1>0>0Shoot (Unused)
+<br>0x75 - 0>1>2Shoot
+<br>0x76 - 2>1>0Shoot (Unused)
+<br>0x77 - 2>3>2Shoot (Unused)
+<br>0x78 - 3>2>1Shoot (Unused)
+<br>0x79 - 1>2>3Shoot (Unused)
+<br>0x7A - 1>0>1Shoot (Unused)
+<br>0x7B - 0>1>2>3Shoot (Unused)
+<br>0x7C - 2>1>0>1Shoot (Unused)
+<br>0x7D - 2>3>2>1Shoot (Unused)
+<br>0x7E - 3>2>1>0Shoot (Unused)
+<br>0x7F - 1>2>3>2Shoot
+<br>0x80 - 1>0>1>2Shoot (Unused)
+<br>0x81 - Widgets, slot 0, 6 beats
+<br>0x82 - Widgets, slot 1, 6 beats
+<br>0x83 - Widgets, slot 2, 6 beats
+<br>0x84 - Widgets, slot 3, 6 beats
+<br>0x85 - Widgets, slot 0, 5 beats (Unused)
+<br>0x86 - Widgets, slot 1, 5 beats (Unused)
+<br>0x87 - Widgets, slot 2, 5 beats (Leftover)
+<br>0x88 - Widgets, slot 3, 5 beats (Unused)
+<br>0x89 - Widgets, slot 0, 4 beats (Unused)
+<br>0x8A - Widgets, slot 1, 4 beats (Unused)
+<br>0x8B - Widgets, slot 2, 4 beats (Unused)
+<br>0x8C - Widgets, slot 3, 4 beats (Unused)
+<br>0x8D - Widgets, slot 0, 3 beats (Unused)
+<br>0x8E - Widgets, slot 1, 3 beats (Unused)
+<br>0x8F - Widgets, slot 2, 3 beats (Unused)
+<br>0x90 - Widgets, slot 3, 3 beats (Unused)
+<br>0x91 - Widgets, slot 0, 2 beats (Unused)
+<br>0x92 - Widgets, slot 1, 2 beats (Unused)
+<br>0x93 - Widgets, slot 2, 2 beats (Leftover)
+<br>0x94 - Widgets, slot 3, 2 beats (Unused)
+<br>0x95 - Widgets, slot 0, 1 beat (Unused)
+<br>0x96 - Widgets, slot 1, 1 beat (Unused)
+<br>0x97 - Widgets, slot 2, 1 beat (Unused)
+<br>0x98 - Widgets, slot 3, 1 beat (Unused)
+<br>0x99 - Widgets, slot 0, 6 beats per 0.5 beats (Unused)
+<br>0x9A - Widgets, slot 1, 6 beats per 0.5 beats (Unused)
+<br>0x9B - Widgets, slot 2, 6 beats per 0.5 beats (Unused)
+<br>0x9C - Widgets, slot 3, 6 beats per 0.5 beats (Unused)
+<br>0x9D - Widgets, slot 0, 6 beats per 0.25 beats (Unused)
+<br>0x9E - Widgets, slot 1, 6 beats per 0.25 beats (Unused)
+<br>0x9F - Widgets, slot 2, 6 beats per 0.25 beats (Unused)
+<br>0xA0 - Widgets, slot 3, 6 beats per 0.25 beats (Unused)
+<br>0xA1 - Widgets, slot 0, 6 beats per 0.125 beats (Unused)
+<br>0xA2 - Widgets, slot 1, 6 beats per 0.125 beats (Unused)
+<br>0xA3 - Widgets, slot 2, 6 beats per 0.125 beats (Unused)
+<br>0xA4 - Widgets, slot 3, 6 beats per 0.125 beats (Unused)
+<br>0xA5 - Off>3>2>1>0>1>Shoot
+<br>0xA6 - 3>2>1>0>1>2>3>Shoot>0>1>2>3>Shoot
+<br>0xA7 - 3>2>1>0>1>2>3>Shoot>0>1>2>3>Shoot (End)
+<br>0xA8 - Built to Scale (Practice)
+<br>0xA9 - Built to Scale (Real Game)
+<br>0xAA - Built to Scale (Skipped Pracice)</body>

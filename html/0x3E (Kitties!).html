@@ -1,0 +1,55 @@
+<html><body style = "font-family: monospace;">Kitties!
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - Clap (1st)
+<br>	1 - Clap (2nd)
+<br>	2 - Group Spin
+<br>	3 - Cool Pose
+<br>	4 - Fish
+<br>	Y = Time in Ticks (Used Values: 0x18, 0x30, 0x60, 0x88)
+<br>
+<br>0x101 X - Appear Locations
+<br>	0 - Right to Left
+<br>	1 - Left to Right
+<br>	2 - Far Right to Near Left
+<br>	3 - Near Left to Far Right
+<br>	4 - Far Left to Near Right
+<br>	5 - Near Right to Far Left
+<br>	6 - Center
+<br>
+<br>0x102 - Cats Disappear
+<br>0x102<1> X, Y - Cats Appear
+<br>0x102<2> Z - Which Clap
+<br>0x102<3> - Group Spin
+<br>0x102<4> - Cool Pose
+<br>0x102<5> - Beat Animation
+<br>0x102<6> X - Look Up (Fish)
+<br>	X = Which One
+<br>	0 - Player
+<br>	1 - Middle
+<br>	2 - Left
+<br>	Y = Type
+<br>	0 - Cats
+<br>	1 - Backup Mice
+<br>	Z = Which Clap
+<br>	0 - Clap (2nd)
+<br>	1 - Clap (1st)
+<br>
+<br>0x103 X - Fish Appears
+<br>0x103<1> - Remove Fish
+<br>
+<br>0x104 - The End
+<br>---------------------
+<br>Subs:
+<br>0x56 - Clap
+<br>0x57 - Clap (Unused, Cats Dissapear at the Start)
+<br>0x58 - Group Spin
+<br>0x59 - Fish
+<br>0x5A - Clap (Backup Mice)
+<br>0x5B - Kitties! (Practice)
+<br>0x5C - Clap (Cowbells)
+<br>0x5D - Group Spin (Cowbells)
+<br>0x5E - Fish (Cowbells)
+<br>0x5F - Kitties! (Real Game)
+<br>0x60 - Kitties! (Skipped Practice)</body>

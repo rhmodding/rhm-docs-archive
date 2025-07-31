@@ -1,0 +1,40 @@
+<html><body style = "font-family: monospace;">Catch of the Day
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - Quicknibble
+<br>	1 - Pausegill
+<br>	2 - Threefish
+<br>	Y = Time in ticks (Used values: 0x60, 0x90, 0xD8)
+<br>
+<br>0x101 X - Spawn Fish
+<br>	0 - Quicknibble
+<br>	1 - Pausegill
+<br>	2 - Threefish
+<br>	3 - Quicknibble > Threefish
+<br>	4 - Nothing (Unused)
+<br>	5 - No Hook
+<br>0x101<1> X - Fish Animation
+<br>	0 - Pick (Quicknibble, Pausegill)
+<br>	1 - Pick Up (Threefish)
+<br>	2 - Pick Down (Threefish)
+<br>0x101<2> - Bite
+<br>
+<br>0x102 X - Scene Transition
+<br>	-1 - Normal
+<br>	0 - Manta Ray (Foreground)
+<br>	1 - Manta Ray (Background)
+<br>	2 - School of Fish
+<br>---------------------
+<br>This games uses getrest 0 and getrest 1	for the timing:
+<br>setrest 2, 0xD
+<br>setrest 3, 0xB
+<br>Subs:
+<br>0x56 - Quicknibble
+<br>0x57 - Pausegill
+<br>0x58 - Threefish
+<br>0x59 - "And, go!" (Pausegill Cue)
+<br>0x5A - "One, two, three-go!" (Threefish Cue)
+<br>0x5B - Catch of the Day (Practice)
+<br>0x5C - Catch of the Day (Real Game)
+<br>0x5D - Catch of the Day (Skipped Practice)</body>

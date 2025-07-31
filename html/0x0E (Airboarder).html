@@ -1,0 +1,91 @@
+<html><body style = "font-family: monospace;">Airboarder
+<br>---------------------
+<br>0x100 X, Y - Spawn Blocks + Input
+<br>	X = Time in Ticks (Used Value: 0x150, 0x210, 0x2D0, 0x540)
+<br>	Y = Type
+<br>	0 - Jump
+<br>	1 - Squat
+<br>
+<br>0x101 X - Switch to Camera (0~2)
+<br>
+<br>0x102 V, Y, Z - Change Camera Angle (Instant)
+<br>0x103 V, W, X, Y, Z - Change Camera Angle (Smoothly)
+<br>	V = Camera to use (0~2)
+<br>	W = Interpolation (Used Values: 1, 3)
+<br>	X = Time in Ticks (Used Values: 0x120, 0x180, 0x2D0, 0x300)
+<br>	Y = Angle
+<br>	0 - Back of Airboarders, slightly rotated
+<br>	1 - Side of Airboarders, focus on front one
+<br>	2 - Front of Airboarders, from above
+<br>	3 - Top of Airboarders, focus on front one (Intro)
+<br>	4 - Sky, away from Airboarders
+<br>	Z = Focus on (No Effect) (Used Values: 0, 2)
+<br>0x102<1> V, Y, Z - Change Focus of Camera (Instant)
+<br>0x103<1> V, W, X, Y, Z - Change Focus of Camera (Smoothly)
+<br>	V = Camera to use (0~2)
+<br>	W = Interpolation (Used Values: 3, 4)
+<br>	X = Time in Ticks
+<br>	Used Values: 0, 0x60, 0x90, 0xC0, 0xD8, 0x120, 0x180, 0x2D0, 0x300
+<br>	Y = Predetermined Angles
+<br>	0 - Stage in the back (Unused)
+<br>	1 - Stage, side of Airboarders (Unused)
+<br>	2 - Top, infront on frontmost Airbaorder (Unused)
+<br>	3 - Sky, away from Airboarders (Unused)
+<br>	4 - Intro Angle
+<br>	Z = Focus on (Only works with Y=4)
+<br>	-1 - Area Behind Back Airboarder
+<br>	 0 - Front Airboarder
+<br>	 1 - Middle Airboarder
+<br>	 2 - Back Airboarder
+<br>0x102<2> U, X, Y, Z - Set Camera to Arbitrary Position (Instant)
+<br>0x103<2> U, V, W, X, Y, Z - Set Camera to Arbitrary Position (Smoothly)
+<br>	U = Camera to use (0~2)
+<br>	V = Interpolation (Used Values: 1, 2, 3, 4)
+<br>	W = Time in Ticks
+<br>	Used Values: 0, 0x30, 0x90, 0xC0, 0xD8, 0xF0, 0x150, 0x168, 0x180, 0x300
+<br>	X = X Position (Used Values: -0x1E, -0x18, -0x14, -0xA, -8, -6)
+<br>	Y = Y Position (Used Values: 1, 5, 7, 8, 0xA, 0x32)
+<br>	Z = Z Position
+<br>	Used Values: -0x28, -0x20, -0x14, -0x8, 0, 4, 8, 0xA, 0x14, 0x24, 0x28, 0x2C, 0x32
+<br>0x102<3> U, X, Y, Z - Set Focus to Arbitrary Position (Instant)
+<br>0x103<3> U, V, W, X, Y, Z - Set Focus to Arbitrary Position (Smoothly)
+<br>	U = Camera to use (0~2)
+<br>	V = Interpolation (Used Values: 1, 2, 3)
+<br>	W = Time in Ticks (Used Values: 0x60, 0xC0, 0x300)
+<br>	X = X Position (Used Values: -6, 0, 0x32)
+<br>	Y = Y Position (Used Values: 8, 0x1B, 0x32, 0x50, 0x64)
+<br>	Z = Z Position (Used Values: -8-8, -0x14, 0, 0x28)
+<br>0x102<4> V, Z - Rotate the Camera (Instant)
+<br>0x103<4> V, X, Y, Z - Rotate the Camera (Smoothly)
+<br>	V = Camera to use (0~2)
+<br>	X = Interpolation (Used Values: 1, 2, 3, 4)
+<br>	Y = Time in Ticks (Used Values: 0, 0x30, 0xC0, 0x180, 0x300, 0x3C0)
+<br>	Z = Rotation (Used Values: 0x43, 0x5A, 0x10E)
+<br>
+<br>0x104 X, Y, Z - Unknown (Crashes the Game) (Unused)
+<br>
+<br>0x105<X> Y - Airboarder Animations
+<br>	X = Animation
+<br>	0 - Beat
+<br>	1 - Prepare Crouch (Also used for "Aaand... Let's go!")
+<br>	2 - Crouch
+<br>	3 - Charge
+<br>	4 - Jump
+<br>	Y = Which one (O~2, from the front)
+<br>
+<br>0x106 X - Charging
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x107 - Stop Camera's Forward Movement
+<br>---------------------
+<br>Subs: 
+<br>0x56 - Beat Animation (Forever)
+<br>The input comes 28 beats after the following
+<br>0x57 - Crouch
+<br>0x58 - Crouch + Charge
+<br>0x59 - Jump
+<br>0x5A - Jump + Hai
+<br>0x5B - Airboarder (Practice)
+<br>0x5C - Airboarder (Real Game)
+<br>0x5D - Airboarder (Skipped Practice)</body>

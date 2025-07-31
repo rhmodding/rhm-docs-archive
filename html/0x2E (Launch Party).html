@@ -1,0 +1,104 @@
+<html><body style = "font-family: monospace;">Launch Party
+<br>---------------------
+<br>0x100 X - Input
+<br>	0 - 1 (Bowling Model)
+<br>	1 - 3 (Family Model)
+<br>	2 - 5 (Cracker Model)
+<br>	3 - 7 (Bell Model)
+<br>
+<br>0x101 X, Y - Counter (Unused)
+<br>	X = Number (0~7)
+<br>	Y = Color
+<br>	0 - White (Bowling Model)
+<br>	1 - Red (Family Model)
+<br>	2 - Blue (Cracker Model)
+<br>	3 - Green (Bell Model)
+<br>
+<br>0x102<X> Y - Spawn Rocket
+<br>	X = Which One
+<br>	0 - Current
+<br>	1 - Next
+<br>	Y = Rocket Model
+<br>	0 - Bowling Model
+<br>	1 - Family Model
+<br>	2 - Cracker Model
+<br>	3 - Bell Model
+<br>	4 - Don't Spawn (Unused)
+<br>	5 - Don't Spawn
+<br>
+<br>0x103 - Spawn Rocket
+<br>
+<br>0x104 - Remove Rocket
+<br>
+<br>0x105<X> - Background
+<br>	0 - White Fades Away
+<br>	1 - White Gone Instantly
+<br>	2 - Background Moves Up
+<br>	3 - ??? (Two Player Leftover)
+<br>
+<br>0x106 X - Launch Pad Hover Motion
+<br>0x106<1> X, Y - Launch Pad Clockwise Hover (Two Player Leftover)
+<br>	X = Action
+<br>	0 - Disable
+<br>	1 - Enable
+<br>	Y = Time in Ticks (Used Values: 0x300, 0x600)
+<br>
+<br>0x107 X - Star Amount
+<br>	Used Values: 0xA, 0xF, 0x28, 0x64
+<br>0x107<1> X - Star Speed
+<br>	Used Values: 0xA, 0x14, 0x1E, 0x28, 0x46, 0x64,
+<br>	0xC8, 0xFA, 0x10E, 0x12C, 0x172, 0x190, 0x258
+<br>0x107<2> - Unknown
+<br>0x107<3> X - Size
+<br>	Used Values: 0, 1, 0xA, 0x1E, 0x32, 0x3C, 0x50
+<br>0x107<4> Z - Z Axis Displacement
+<br>	Used Values: 0x1E, 0x32, 0x64, 0x96, 0xFA, 0x12C, 0x190, 0x258
+<br>0x107<5> - Despawn Stars
+<br>0x107<6> X - Stars Respawn to the Top
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x108 X - Placement of Stars (Used Values: 1, 3)
+<br>
+<br>0x109<T> X, Y, Z - Spawn Flying Rocket
+<br>	T = Type
+<br>	0 - 7 (Bell Model)
+<br>	1 - 1 (Bowling Model)
+<br>	2 - 3 (Family Model)
+<br>	3 - 5 (Cracker Model)
+<br>	X = X Position (Used Values: -0x69, -0x46, 0x50, 0x6E)
+<br>	Y = Y Position (Used Values: -0xC, 0x17, 0x3A, 0x58)
+<br>	Z = Time in Ticks (Used Value: 0x510)
+<br>
+<br>0x10A X - Set Pitch (Used Values: 0, 0x18)
+<br>0x10A<1> - Update Pitch
+<br>
+<br>0x10B<X> - Launch Pad
+<br>	0 - Normal
+<br>	1 - Boost
+<br>	2 - Big Boost
+<br>
+<br>0x10C X - Unknown
+<br>	0 - Disable (Unused)
+<br>	1 - Enable
+<br>
+<br>0x10D X, Y, Z - Launch Pad Z Movement (Two Player Leftover)
+<br>	X = Which One
+<br>	0 - Player 1
+<br>	1 - Player 2 (Crashes)
+<br>	Y = Z Axis (Used Values: 0xC0, 0x100, 0x180, 0x400)
+<br>	Z = Time in Ticks (Used Values: 0xC0, 0x180)
+<br>
+<br>0x10E X - Stars have Rings
+<br>	0 - Disable
+<br>	1 - Enable
+<br>---------------------
+<br>Subs:
+<br>0x56 - Bowling Model (Unused)
+<br>0x57 - Family Model (Unused)
+<br>0x58 - Cracker Model (Unused)
+<br>0x59 - Bell Model (Unused)
+<br>0x5A - Pitch Pattern
+<br>0x5B - Launch Party (Practice)
+<br>0x5C - Launch Party (Real Game)
+<br>0x5D - Launch Party (Skipped Practice)</body>

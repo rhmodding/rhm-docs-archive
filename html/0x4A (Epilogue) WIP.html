@@ -1,0 +1,76 @@
+<html><body style = "font-family: monospace;">Epilogue
+<br>---------------------
+<br>0x100 - Enable top screen
+<br>
+<br>0x101 - Heading and top screen layout
+<br>
+<br>0x102 - Sets condvar from 0-4 based on performance?
+<br>	0 - Superb
+<br>	1 - OK (There were some good parts!)
+<br>	2 - OK?
+<br>	3 - ???
+<br>	4 - Try Again
+<br>
+<br>0x103 - Checks how many comments can be made based on the rating?
+<br>0x103<1> X - Display comment
+<br>	0 - First comment
+<br>	1 - Also, second comment
+<br>	2+- Crash
+<br>
+<br>0x104 - Display score bar
+<br>0x104<1> - Start filling bar
+<br>0x104<2> - Force the bar to stop between 56-58 ("There were some good parts!")
+<br>0x104<3> - "There were some good parts!"
+<br>0x104<4> - Grant extra "good parts" points (Resume filling bar, higher pitched filling noise if placed after 0x104<2>)
+<br>	Note: Both 0x104<1> and 0x104<4> can fill/resume filling the bar
+<br>0x104<5> - Sets condvar to 1 if score has been reached by the bar
+<br>
+<br>0x105 - Ranking reveal
+<br>
+<br>0x106 - Automatically determine how many coins to give? (glitchy coin layout will appear if this isn't called)
+<br>
+<br>0x107 X, Y - Check which #index the player is in and the score, and sets condvar to 1 if player deserves the coins in slot Y
+<br>0x107<1> X, Y - Enable filled coin graphic in coin set X, on slot Y
+<br>	X = Which set of coins
+<br>	0 - Score
+<br>	1 - Skill Star Bonus
+<br>	2 - No Miss Bonus
+<br>	Y = Slot (Used values: 0-7)
+<br>0x107<2> - ???
+<br>0x107<3> - ???
+<br>0x107<4> - Display total coins collected
+<br>
+<br>0x108 - Display Perfect screen?
+<br>0x108<1> - Check if playing in Perfect campaign?
+<br>
+<br>0x109 X - Which set of coins to display
+<br>	0 - Score
+<br>	1 - Skill Star Bonus
+<br>	2 - No Miss Bonus
+<br>	3 - Nothing (remove display)
+<br>
+<br>0x10A - ??? (Unused)
+<br>0x10A<1> - ???
+<br>
+<br>0x10B - Start dropping coins into Tibby's hair
+<br>0x10B<1> - Set condvar to 1 if all coins have been dropped
+<br>
+<br>0x10C - Epilogue screen
+<br>
+<br>0x10D - ???
+<br>0x10D<1> - ???
+<br>0x10D<3> - Set condvar to 1 if ???
+<br>
+<br>0x10E - ??? Possibly an unloader?
+<br>---------------------
+<br>Subs:
+<br>0x56 - calls sub5B
+<br>0x57 - "There were some good parts!"
+<br>0x58 - calls sub5B
+<br>0x59 - calls sub5B
+<br>0x5A - calls sub5B
+<br>0x5B - Normal score reveal
+<br>0x5C - Full results/epilogue sequence
+<br>0x5D - Perfect screen
+<br>
+<br>Note: The Perfect screen seems to not want to work (displays black screen rather than the Perfect screen) if not triggered right after a Perfect Campaign initiated from Challenge Land.</body>

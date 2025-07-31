@@ -1,0 +1,73 @@
+<html><body style = "font-family: monospace;">Monkey Watch
+<br>---------------------
+<br>0x100 X - Input
+<br>	X = Time in Ticks (Used Values: 0x18, 0x30)
+<br>
+<br>0x101 - Move Clock Hand to Next Position
+<br>0x101<1> X - Snap Clock Hand to Angle (Leftover from Remix 2) (360°)
+<br>0x101<2> X, Y, Z - Camera Movement
+<br>	X = Move from Position (Used value: 0)
+<br>	Y = Move to Position (Used value: 0)
+<br>	Z = Time in Ticks (Used value: 0x30)
+<br>0x101<3> X, Y = Move Camera X degrees in Y ticks
+<br>	X = Angle (Used Values: 0x18, 0x1E, 0x24)
+<br>	Y = Time in Ticks (Used Value: 0x180)
+<br>
+<br>0x102 X, Y - View
+<br>	X = Type
+<br>	0 - Zoomed in
+<br>	1 - Zoomed out
+<br>	Y = Speed
+<br>	0 - Gradual
+<br>	1 - Instant
+<br>
+<br>0x103 X, Y - Doors
+<br>	X = Position (0 = Top)
+<br>	Y = Speed
+<br>	0 - Gradual
+<br>	1 - Instant
+<br>0x103<1> - ???
+<br>0x103<2> X - Opening Doors
+<br>	0 - Disable (Leftover)
+<br>	1 - Enable (Default) (Unused)
+<br>
+<br>0x104 X - Monkey at X position play "Wait" animation (Used Value: 0)
+<br>0x104<1> - Monkey at 1 position from you plays "Wait" animation
+<br>0x104<2> - Monkey at 1 position from you plays "Ready" animation
+<br>0x104<3> X - Monkey at X positions from you will be purple
+<br>
+<br>0x105 X - Remix 2 Intro Background (Leftover)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x106 - Beat Animation (Watch)
+<br>
+<br>0x107 - Spawn Balloon
+<br>0x107<1> - Remove Balloon
+<br>0x107<2> X - Snap to Position
+<br>	X = X Position (Used Value: 0x180)
+<br>0x107<3> X, Y - Snap from this position (relative to last position) to last position
+<br>	X = X Position (Used Value: -0x113)
+<br>	Y = Y Position (Used Value: 0x64)
+<br>0x107<4> X, Y - Move balloon around
+<br>	X = X Position (Used Values: -0x113, 0, 0x113)
+<br>	Y = Radius (Used Values: -0x96, -0x4B, -0x32, 0, 0x64, 0x96, 0x113)
+<br>
+<br>0x108 - Unknown (Unused)
+<br>
+<br>0x109 - Unknown (Unused)
+<br>
+<br>0x10A<1> 1, 1 - Related to having monkeys ready for high fives properly in remixes (Leftover)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Non-existent (Unused)
+<br>0x57 - Purple Monkeys at position 3 and 4 from you
+<br>0x58 - Purple Monkeys at position 4 and 5 from you
+<br>0x59 - Purple Monkey animations + SFX
+<br>0x5A - Counting (Unused)
+<br>0x5B - Counting
+<br>0x5C - Monkeys prepare for high-hives every two beats (Forever) (Uses argument 0x176)
+<br>0x5D - Monkey Watch (Practice)
+<br>0x5E - Monkey Watch (Real Game)
+<br>0x5F - Monkey Watch (Skipped Practice)
+<br>0x60 - Monkeys prepare for high-hives every two beats (4 Beats, with a slight delay first)</body>

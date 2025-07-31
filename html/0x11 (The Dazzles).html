@@ -1,0 +1,60 @@
+<html><body style = "font-family: monospace;">The Dazzles
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - Release A to Pose
+<br>	1 - Hold A to squat
+<br>	Y = Time in Ticks (Used Values: 0x60, 0x90, 0xA8)
+<br>
+<br>0x101 X - Beat Animations
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x102 - Beat Animation
+<br>0x102<1> X, Y - Hide
+<br>0x102<2> X, Y - Nothing (Used in the practice, and only for the playable Dazzle)
+<br>	X = Column
+<br>	Y = Row
+<br>0x102<3> - Crouch
+<br>0x102<4> - Pose
+<br>0x102<5> - Pose Idle
+<br>
+<br>0x103 X - Charging
+<br>	0 - Disable (Can't Pose)
+<br>	1 - Enable (Can Pose)
+<br>
+<br>0x104 X, Y - Undarken
+<br>	X = Column
+<br>	Y = Row
+<br>
+<br>0x105 X - Pose Effect
+<br>	0 - Normal
+<br>	1 - Stars
+<br>
+<br>0x106 X, Y, Z - Shrink Frame
+<br>	X = Column
+<br>	Y = Row
+<br>	Z = Time in Ticks (Used Values: 0x18, 0x30)
+<br>---------------------
+<br>Subs:
+<br>0x56 - 3.5 Beats, "3, 2"
+<br>0x57 - Start Crouching (Left to Right, No Voice)
+<br>0x58 - Start Crouching (All at Once, No Voice) (Unused)
+<br>0x59 - Start Crouching (Left to Right, Full)
+<br>0x5A - Start Crouching (All at Once, Full) (Unused)
+<br>The following are the Pose patterns:
+<br>0x5B - 	[1|2|3]
+<br>	[1|2|3]
+<br>0x5C -	[1|2|3] ("the backbeat")
+<br>	[1|2|3]
+<br>0x5D -	[1|4|5] ("the most important part") (Leftover)
+<br>	[2|3|6]
+<br>0x5E -	[1|2|3] ("the new moves") (Leftover)
+<br>	[4|5|6] (Add 1.0 Beat before 0x103 0 to fix the glitch where the player almost never poses)
+<br>0x5F -	[1|5|3] ("something a little tricky")
+<br>	[4|2|6]
+<br>0x60 -	[1|1|1] ("without a rehearsal")
+<br>	[2|2|2]
+<br>0x61 - The Dazzles (Practice)
+<br>0x62 - The Dazzles (Real Game)
+<br>0x63 - The Dazzles (Skipped Practice)</body>

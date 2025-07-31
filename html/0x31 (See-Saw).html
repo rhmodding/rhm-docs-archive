@@ -1,0 +1,70 @@
+<html><body style = "font-family: monospace;">See-Saw
+<br>---------------------
+<br>0x100 X - Byte array (See Jumps On)
+<br>0x100<1> X - Byte array (See Snaps to Position, Final Remix)
+<br>	0 - Stop
+<br>	1 - Start
+<br>0x100<2> X, Y - Animations
+<br>	X = Which One
+<br>	0 - Saw (Right)
+<br>	1 - See (Left)
+<br>	Y = Animation
+<br>	0 - Beat Animation
+<br>	1 - Air Guitar (Stroke)
+<br>	2 - Air Guitar (Choke)
+<br>0x100<3> X, Y - Snap to Position
+<br>0x100<4> X, Y - ??? (Used with 0x100<3>, Final Remix)
+<br>	X = Which One
+<br>	0 - Saw (Right)
+<br>	1 - See (Left)
+<br>	Y = Position
+<br>	0 - Outer Part
+<br>	1 - Inner Part
+<br>	2 - Ground (Off the See-Saw)
+<br>	3 - In the Air (High) (Off the See-Saw)
+<br>	4 - In the Air (Middle) (Off the See-Saw)
+<br>	5 - In the Air (Low) (Off the See-Saw)
+<br>
+<br>0x101 X - Position of the See-Saw
+<br>	0 - Lower on the left side
+<br>	1 - Lower on the right side
+<br>
+<br>0x102 X - Jumps
+<br>	0 - Low Jumps
+<br>	1 - High Jumps
+<br>
+<br>0x103 - Explode
+<br>
+<br>0x104 X, 0xYYYYYY - Pattern
+<br>	X = Which One
+<br>	0 - Saw (Right)
+<br>	1 - See (Left)
+<br>	0xYYYYYY = Byte Array Pattern
+<br>	0x466DE4 - Final Remix (Right)
+<br>	0x466DEB - Final Remix (Left)
+<br>	0x4BD23C - See-Saw (Right)
+<br>	0x4BD27A - See-Saw (Left)
+<br>	0x4BDAB8 - Practice A (Right)
+<br>	0x4BDABA - Practice A (Left)
+<br>	0x4BDABC - Practice B (Right)
+<br>	0x4BDABF - Practice B (Left)
+<br>	0x4BDAC2 - Practice C (Right)
+<br>	0x4BDAC5 - Practice C (Left)
+<br>	Bytes:
+<br>	0 - Outer Part
+<br>	1 - Inner Part
+<br>	2 - Ground (Off the See-Saw)
+<br>	3 - In the Air (High) (Off the See-Saw)
+<br>	4 - In the Air (Middle) (Off the See-Saw)
+<br>	5 - In the Air (Low) (Off the See-Saw)
+<br>
+<br>0x105 X, Y, Z - Invert See and Saw's Colors (Functionally inverted compared to Fever)
+<br>	X = Target Color (Used Value: 0)
+<br>	Y = Start Color (Used Value: 0xFF)
+<br>	Z = Time in Ticks (Used Value: 0x48)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nothing (Unused)
+<br>0x57 - See-Saw (Practice)
+<br>0x58 - See-Saw (Real Game)
+<br>0x59 - See-Saw (Skipped Practice)</body>

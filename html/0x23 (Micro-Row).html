@@ -1,0 +1,181 @@
+<html><body style = "font-family: monospace;">Micro-Row
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Time in Ticks (Used Value: 0x30)
+<br>	Y = Type
+<br>	0 - Single Row
+<br>	1 - Triple Row, Step 1
+<br>	2 - Triple Row, Step 2
+<br>	3 - Triple Row, Step 3
+<br>
+<br>0x101 0xXXXXXX, Y, Z - Trail Path
+<br>	0xXXXXXX = Path (Byte Array)
+<br>	0x52F9EC - Citrus Remix
+<br>	0x52FC2C - Final Remix
+<br>	0x530B50 - Micro-Row 2
+<br>	0x530C98 - Micro-Row
+<br>	0x530DE0 - Micro-Row (Practice)
+<br>	Y = Length
+<br>	Used Values: 6, 0x20 (Row this many times x2+1 before teleporting to the start)
+<br>	Z = Loop
+<br>	0 - No (Also causes extra microbes to spawn periodically)
+<br>	1 - Yes (Also causes all microbes to spawn at once)
+<br>	Values of bytes:
+<br>	X, Y (Radius, Angle)
+<br>---------------------
+<br>The paths are the specified offset minus 0x100000 in code.bin. You can call a custom one by placing the name instead of the offset.
+<br>Example:
+<br>locFleapath1:
+<br>0xA
+<br>0xFFFFFFF8
+<br>
+<br>8
+<br>0xFFFFFFF8
+<br>
+<br>6
+<br>0xFFFFFFF8
+<br>
+<br>4
+<br>0xFFFFFFF8
+<br>
+<br>1
+<br>0xFFFFFFF4
+<br>
+<br>1
+<br>8
+<br>
+<br>3
+<br>8
+<br>
+<br>5
+<br>8
+<br>return
+<br>---------------------
+<br>0x102 0xXXXXXX, Y - Microbe Animations
+<br>	0xXXXXXX = Where the Microbes will start on the path
+<br>	0x52FA1C - Citrus Remix (Section 1)
+<br>	0x52FA34 - Citrus Remix (Section 2)
+<br>	0x52FA4C - Citrus Remix (Section 3)
+<br>	0x52FA64 - Citrus Remix (Section 4)
+<br>	0x52FA94 - Citrus Remix (Section 6)
+<br>	0x52FA7C - Citrus Remix (Section 5)
+<br>	0x52FC5C - Final Remix
+<br>	0x530C50 - Micro-Row 2
+<br>	0x530D98 - Micro-Row
+<br>	0x530E10 - Micro-Row (Practice)
+<br>	Y = Number of Microbes (Used Values: 3, 9)
+<br>0x102<1> - Row
+<br>0x102<2> - Beat Animation
+<br>0x102<3> 0 - Offscreen
+<br>0x102<4> X - Go Onscreen
+<br>	0 - Blue (You)
+<br>	1 - Red (Back)
+<br>	2 - Green (Front)
+<br>	3 - Pink (Extra)
+<br>	4 - Yellow (Extra)
+<br>0x102<5> - Blink
+<br>0x102<6> - Double Row Cue
+<br>0x102<7> - Triple Row Cue
+<br>---------------------
+<br>The placements are the specified offset minus 0x100000 in code.bin and can be called by using the name instead of the offsets, like with 0x101.
+<br>This array specifies what each microbe in order looks like and where in the path they start. At least 13 of them are needed, though only the first Y amount get used, so the rest can be padded out. Example: 
+<br>locFleapath2:
+<br>0
+<br>0xBF
+<br>
+<br>1
+<br>0xBE
+<br>
+<br>2
+<br>0xC0
+<br>
+<br>1
+<br>0x78
+<br>
+<br>3
+<br>0x6E
+<br>
+<br>2
+<br>0x64
+<br>
+<br>1
+<br>0xFFFFFFF6
+<br>
+<br>0
+<br>0
+<br>
+<br>0
+<br>0
+<br>
+<br>0
+<br>0
+<br>
+<br>0
+<br>0
+<br>
+<br>0
+<br>0
+<br>
+<br>0
+<br>0
+<br>return
+<br>---------------------
+<br>0x103 X - Trail Type
+<br>	0 - None (Practice)
+<br>	1 - None (Real Game)
+<br>	2 - Circles
+<br>	3 - Various Shapes
+<br>
+<br>0x104 X - Toggle Spotlight
+<br>0x104<1> X - Toggle Black Screen
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x104<2> 0x100, 0x18 - Spotlight
+<br>	X = Size of Spotlight (Used Values: 1, 0x100, 0x300)
+<br>	Y = Time in Ticks (Used Values: 0x18, 0x90)
+<br>0x104<3> - Close Spotlight
+<br>
+<br>0x105<1> X, Y - Background
+<br>	X = Transparency (Used Values: 0, 0xFF)
+<br>	Y = Time in Ticks (Used Values: 0x300)
+<br>
+<br>0x106 - Nothing
+<br>
+<br>0x107 X - Set ???? for 48 ticks? 
+<br>0x107<1> X, Y, Z - Set ????
+<br>	X = ???? value
+<br>	Y = Time in ticks
+<br>	Z = Interpolation (same as for camera commands I think?)
+<br>
+<br>0x108 - Snap camera to the center of your microbe (Used in remixes)
+<br>
+<br>0x109 - Nothing
+<br>
+<br>0x10A X - Bubbles
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x10B X - Bubble Type
+<br>	0 - Flower-ish Thing (Unused)
+<br>	1 - Bubble (Micro-Row/Micro-Row 2)
+<br>	2 - Nothing (Unused)
+<br>	3 - Orange (Citrus Remix)
+<br>	4+- Nothing (Unused)
+<br>
+<br>0x10C - Citrus Remix (Intro)
+<br>0x10C<1> - Zoom into screen
+<br>---------------------
+<br>Subs: (Inputs happen 1.5 Beats after the sub)
+<br>0x56 - Nothing (Unused)
+<br>0x57 - Single Row (w/ "Go!" call)
+<br>0x58 - Single Row
+<br>0x59 - Double Row (Leftover)
+<br>0x5A - Triple Row
+<br>0x5B - Cowbell Count-in (Micro-Row 2)
+<br>0x5C - Cowbell Count-in (Micro-Row)
+<br>0x5D - Micro-Row (Practice)
+<br>0x5E - Micro-Row (Real Game)
+<br>0x5F - Micro-Row 2 (Real Game)
+<br>0x60 - Micro-Row (Skipped Practice)
+<br>0x61 - Zooms (Micro-Row)
+<br>0x62 - Zooms (Micro-Row 2)</body>

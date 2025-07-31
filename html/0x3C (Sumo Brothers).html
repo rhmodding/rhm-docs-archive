@@ -1,0 +1,97 @@
+<html><body style = "font-family: monospace;">Sumo Brothers
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - Hand Slap
+<br>	1 - Stomp
+<br>	2 - Finishing Pose
+<br>	Y - Time in Ticks x2 (Used Values: 0xC, 0x18, 0x30)
+<br>
+<br>0x101 X - Hand Slap Animation Type
+<br>	0 - Front
+<br>	1 - Back
+<br>	2 - Front (Face)
+<br>	3 - Back (Face)
+<br>	4 - Switch
+<br>0x101<1> X - Stomp Animation Type
+<br>	0 - Inner
+<br>	1 - Left
+<br>	2 - Right
+<br>0x101<2> X - Finishing Pose Animation Type
+<br>	0 - Pose 00
+<br>	1 - Pose 01
+<br>	2 - Pose 02
+<br>	3 - Pose 03
+<br>0x101<3> X - Counts which Finish Pose it is (0~3) Unknown Function
+<br>
+<br>0x102 X - Hand Slap Ready
+<br>	0 - Red
+<br>	1 - Blue
+<br>
+<br>0x103 X - Beat Animation
+<br>	0 - Red
+<br>	1 - Blue
+<br>
+<br>0x104 X - Stomp Ready
+<br>0x104<1> X - Stomp Animation
+<br>	0 - Red
+<br>	1 - Blue
+<br>
+<br>0x105 - Finishing Pose Related
+<br>0x105<1> - Beat Animation
+<br>0x105<2> - Switch
+<br>
+<br>0x106 - Inu-Sensei Beat Animation
+<br>0x106<1> - Hand Slap/Stomp Cue
+<br>0x106<2> - Float (During Stomp)
+<br>0x106<3> X - Finishing Pose Cue
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x106<4> - Idle (Practice)
+<br>
+<br>0x107 X - Set Finishing Pose Background
+<br>0x107<1> X - Change Background
+<br>	0 - Normal Background
+<br>	1 - The Great Wave off Kanagawa
+<br>	2 - Otani Oniji III as Yakko Edobei
+<br>0x107<2> - Unknown Function
+<br>
+<br>0x108 X - Hi-Resolution Textures (Non-animated)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nothing (Unused)
+<br>0x57 - Hand Slap Cue
+<br>0x58 - Stomp Cue
+<br>0x59 - Finishing Pose Cue
+<br>0x5A - 4 Hand Slaps
+<br>0x5B - 4 Hand Slaps > Stomp (Unused)
+<br>0x5C - 4 Hand Slaps (Face)
+<br>0x5D - 4 Hand Slaps (Face) > Stomp
+<br>0x5E - 2 Hand Slaps (Face) (Unused)
+<br>0x5F - 3 Hand Slaps (Face) (Unused)
+<br>0x60 - 2 Stomps (Inner > Right) (Start/Switch)
+<br>0x61 - 2 Stomps (Left > Right)
+<br>0x62 - Finishing Pose 00 (6 Beat Animations) (Unused)
+<br>0x63 - Finishing Pose 00 (1 Beat Animation, Slow)
+<br>0x64 - Finishing Pose 00 (1 Beat Animation, Fast) (Unused)
+<br>0x65 - Finishing Pose 00 (End) (Unused)
+<br>0x66 - Finishing Pose 01 (6 Beat Animations)  (Unused)
+<br>0x67 - Finishing Pose 01 (1 Beat Animation, Slow)
+<br>0x68 - Finishing Pose 01 (1 Beat Animation, Fast) (Unused)
+<br>0x69 - Finishing Pose 01 (End) (Unused)
+<br>0x6A - Finishing Pose 02 (6 Beat Animations) (Unused)
+<br>0x6B - Finishing Pose 02 (1 Beat Animation, Slow) (Unused)
+<br>0x6C - Finishing Pose 02 (1 Beat Animation, Fast) (Unused)
+<br>0x6D - Finishing Pose 02 (End)
+<br>0x6E - Finishing Pose 03 (6 Beat Animations) (Unused)
+<br>0x6F - Finishing Pose 03 (1 Beat Animation, Slow) (Unused)
+<br>0x70 - Finishing Pose 03 (1 Beat Animation, Fast) (Unused)
+<br>0x71 - Finishing Pose 03 (End)
+<br>0x72 - Finishing Pose (4 Beat Animations)
+<br>0x73 - Finishing Pose (4 Beat Animations > Transition)
+<br>0x74 - Finishing Pose (4 Beat Animations > Transition)
+<br>0x75 - Sumo Brothers (Skipped Practice)
+<br>0x76 - Sumo Brothers (Practice)
+<br>0x77 - Sumo Brothers (Real Game)</body>

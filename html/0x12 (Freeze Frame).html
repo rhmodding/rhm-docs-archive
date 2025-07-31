@@ -1,0 +1,77 @@
+<html><body style = "font-family: monospace;">Freeze Frame
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Slot Number of Car (0, 1, 2)
+<br>	Y = Time in Ticks (Used Value: 0x60)
+<br>
+<br>0x101 X - Reticle
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x102 X - Camera Overlay
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x103 V, W - Car
+<br>0x103<U> V, X, Y, Z - Move Car
+<br>	U = Placement
+<br>	1 - Background
+<br>	2 - Foreground
+<br>	V = Slot Number of Car
+<br>	W = Type
+<br>	0 - Yellow
+<br>	1 - Red
+<br>	X = X Position (Start) (Used Values: -0xBB8, 0xEC, 0xF0, 0x104, 0x11C, 0x134)
+<br>	Y = X Position (End) (Used Values: -0x11C, -0x104, -0xF0, -0xEC, -0xD4, 0, 0xBB8)
+<br>	Z = Time in Ticks (Used Values: 0x28, 0x30, 0x60, 0xA0, 0xC0)
+<br>0x103<3> 0 - Used in Practice
+<br>
+<br>0x104 - Record Performance
+<br>0x104<1> X - Thumbs Up
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x104<2> - Sets condvar to player performance
+<br>	0 - Ace!
+<br>	1 - Miss
+<br>	2 - Through
+<br>
+<br>0x105 X, Y - Photos
+<br>	X = Slot Number of Car
+<br>	Y = Show
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x106 X - Crowd
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x107 - Signal (Rhythm Kart)
+<br>0x107<1> - Remove Signal
+<br>0x107<2> X - Turn on Light
+<br>	0 - light_00 (Unused)
+<br>	1 - light_01
+<br>	2 - light_02
+<br>	3 - light_03
+<br>
+<br>0x108 X, Y - Walker
+<br>	X = Priority Slot (0, 1)
+<br>	Y = Type
+<br>	0 - Man (White) (Left)
+<br>	1 - Man (Blue) (Left) (Unused)
+<br>	2 - Girlfriend (Left)
+<br>	3 - Man (White) (Right) (Unused)
+<br>	4 - Man (Blue) (Right)
+<br>	5 - Girlfriend (Right) (Unused)
+<br>---------------------
+<br>Subs:
+<br>0x56 - One Car (Unused)
+<br>0x57 - One Car (Practice)
+<br>0x58 - Two Cars
+<br>0x59 - Two Cars (Practice)
+<br>0x5A - Three Cars
+<br>0x5B - Three Cars (Practice)
+<br>0x5C - Fast Car
+<br>0x5D - Fast Car (Practice)
+<br>0x5E - Freeze Frame (Practice)
+<br>0x5F - Freeze Frame (Real Game)
+<br>0x60 - Freeze Frame (Skipped Practice)</body>

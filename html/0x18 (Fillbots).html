@@ -1,0 +1,77 @@
+<html><body style = "font-family: monospace;">Fillbots
+<br>---------------------
+<br>0x100 X - Input to Fill
+<br>	0 - 1.0 beats (ROBO S)
+<br>	1 - 2.0 beats
+<br>	2 - 2.5 beats
+<br>	3 - 2.75 beats
+<br>	4 - 3.0 beats (ROBO M)
+<br>	5 - 3.25 beats
+<br>	6 - 3.5 beats
+<br>	7 - 7.0 beats (ROBO L)
+<br>	8+- Invalid (Can't Fill At All)
+<br>
+<br>0x101 - Nozzle (Beat Animation)
+<br>0x101<1> - Nozzle Blackout Color (Unused)
+<br>0x101<2> X - Ready
+<br>	0 - ROBO M/ROBO L level
+<br>	1 - ROBO S level (Leftover)
+<br>
+<br>0x102 X, Y - Spawn Robots
+<br>0x102<1> X, Y, Z - Spawn Robots (for remix transitions)
+<br>	X = Type (Assembles after 0.5 Beats)
+<br>	0 - ROBO M
+<br>	1 - ROBO L
+<br>	2 - ROBO S
+<br>	Y = If 1, Robot goes off-screen
+<br>	Z = Unrest (Used for remix transitions)
+<br>0x102<2> - Move Robot Over (ROBO M if none are spawned first) 1 Beat before Filling
+<br>0x102<3> - Beat Animation
+<br>0x102<4> - Blackout Color (Unused)
+<br>
+<br>0x103 X - Blackout (Leftover)
+<br>	0 - No
+<br>	1 - Yes
+<br>This basically just turns the background black. Notably a white square behind the nozzle and the gears don't turn black with this.
+<br>The other blackout commands are new but seem to be unfinished/deprecated. sub 0x74 calls all of them.
+<br>
+<br>0x104 - Nothing (Unused)
+<br>
+<br>0x105 - Robots won't move off screen
+<br>
+<br>0x106 0xYYYYYY - Factory Screen
+<br>	0x509435 - "ntrRobot_long.bflyt"	Factory No. 2 Get working! (Fillbots 2)
+<br>	0x509449 - "ntrRobot_wario.bflyt"	Factory No. 2 Get working! (Wario...Where?)
+<br>	0x5095DC - "ntrRobot_short.bflyt"	Factory No. 1 Get working! (Fillbots)
+<br>---------------------
+<br>Subs:
+<br>0x5D - Beat animation (4 Beats)
+<br>0x5E - Beat animation (8 Beats)
+<br>0x5F - Beat animation (16 Beats)
+<br>0x60 - Beat animation (32 Beats)
+<br>0x61 - Beat animation (64 Beats)
+<br>0x62 - Beat animation (128 beats) (Unused)
+<br>0x63 - Beat animation (Forever) (Unused)
+<br>The following robot subs start 3.5 Beats after the start of the sub
+<br>0x64 - ROBO S, Ending (Unused)
+<br>0x65 - ROBO M, 2.0 Beats, Ending (Unused)
+<br>0x66 - ROBO M, 2.5 Beats, Ending (Unused)
+<br>0x67 - ROBO M, 3.5 Beats, Ending (Unused)
+<br>0x68 - ROBO M, Ending
+<br>0x69 - ROBO M, 4.0 Beats, Ending (Unused)
+<br>0x6A - ROBO M, 4.5 Beats, Ending (Unused)
+<br>0x6B - ROBO L, Ending
+<br>0x6C - ROBO S (Leftover)
+<br>0x6D - ROBO M, 2.0 Beats (Unused)
+<br>0x6E - ROBO M, 2.5 Beats (Unused)
+<br>0x6F - ROBO M, 3.5 Beats (Unused)
+<br>0x70 - ROBO M
+<br>0x71 - ROBO M, 4.0 Beats (Unused)
+<br>0x72 - ROBO M, 4.5 Beats (Unused)
+<br>0x73 - ROBO L
+<br>0x74 - Blackout (Leftover)
+<br>0x75 - Restore Lights
+<br>0x76 - Fillbots (Practice)
+<br>0x77 - Fillbots (Real Game)
+<br>0x78 - Fillbots 2 (Real Game)
+<br>0x79 - Fillbots (Skipped Practice)</body>

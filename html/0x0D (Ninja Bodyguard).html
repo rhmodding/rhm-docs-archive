@@ -1,0 +1,44 @@
+<html><body style = "font-family: monospace;">Ninja Bodyguard
+<br>---------------------
+<br>0x100 X - Input
+<br>	X = Time in Ticks (Used value: 0x180)
+<br>
+<br>0x101<X> - Scene
+<br>	0 - Left (Enemies)
+<br>	1 - Middle (Intro)
+<br>	2 - Right (Ninja)
+<br>
+<br>0x102 X - Enemy
+<br>	X - Amount (up to 6 on screen)
+<br>0x102<1> X - Draw Bow (-1 effects all)
+<br>0x102<2> X - Shoot Arrow
+<br>	X - Which one
+<br>
+<br>0x103 X - Ninja
+<br>	0 - Disable
+<br>	1 - Enable (Unused)
+<br>
+<br>0x104 - Flying Arrow (Intro)
+<br>0x104<1> - Arrow lands on wall
+<br>0x104<2> - Ninja jumps in
+<br>0x104<3> - Ninja prepares sword
+<br>0x104<4> X - Lord walks to position in X ticks (Used value: 0x1F8)
+<br>0x104<5> - Lord faces forward
+<br>0x104<6> - Ninja jumps away (Practice)
+<br>
+<br>0x105 - Practice Ninjas, Wooden Dummy
+<br>0x105<1> - Enemy Ninjas, Lord (Unused)
+<br>0x105<2> X - Enabled in Practice (No Visible Effect)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x105<3> - Sets condvar to 1 if player skipped the practice/intro
+<br>
+<br>0x106<X> - Monkey (Final Remix)
+<br>	0 - Flies in
+<br>	1 - Beat Animation
+<br>---------------------
+<br>Subs:
+<br>0x56 - Intro
+<br>0x57 - Ninja Bodyguard (Real Game)
+<br>0x58 - Ninja Bodyguard (Practice)
+<br>0x59 - Ninja Bodyguard (Skipped Practice)</body>

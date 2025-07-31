@@ -1,0 +1,83 @@
+<html><body style = "font-family: monospace;">Bossa Nova
+<br>---------------------
+<br>0x100 X, Y - Spawn Object
+<br>	X = Time in Ticks (Used Value: 0x30)
+<br>	Y = Object
+<br>	0 - Ball
+<br>	1 - Cube
+<br>
+<br>0x101 - Cloud Dips Down
+<br>0x101<1> - Cloud Turns
+<br>0x101<2> Y, T - Cloud Movements
+<br>    Y = End Y Position (Used Value: -0xAF)
+<br>    T = Time (Used Value: 0x120)
+<br>
+<br>0x102<X> - Your Starting Position
+<br>	0 - Right
+<br>	1 - Left
+<br>
+<br>0x103 - Check voice variation, then sets condvar to it
+<br>0x103<X> Y = Voice Variants
+<br>	X = Which
+<br>	1 - Female
+<br>	2 - Male
+<br>	Y = Variant
+<br>	0 - Miss
+<br>	1 - Default
+<br>	2 - Playful
+<br>
+<br>0x104 - ???
+<br>
+<br>0x105 Y - Background Movement (Instant)
+<br>0x105<1> Y, Z - Background Movement (Smooth)
+<br>	Y = Target Y Position (Used Value: 0, but should be 0xBD8)
+<br>	Z = Time in Ticks (Used Value: 0x2D00)
+<br>
+<br>0x106 - Beetle Flies Away
+<br>
+<br>0x107 - Worm Drops Down
+<br>
+<br>0x108 - Lights on the House
+<br>
+<br>0x109 X - Bug Light (Blue)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x10A - Bug Light (Green) Scamper Away
+<br>
+<br>0x10B 0xXXXXXX - Text (takes values from rvl.msbt)
+<br>	0x50C4D4 - "rvlReceiveL_message_00" (Great bumping!)
+<br>	0x50C4EB - "rvlReceiveL_message_01" (You can do it.)
+<br>	0x50C502 - "rvlReceiveL_message_02" (Relax. Feel the rhythm.)
+<br>	0x50C519 - "rvlReceiveL_message_03" (You don't miss a trick!)
+<br>	0x50C530 - "rvlReceiveL_message_04" (Just a little longer...)
+<br>	0x50C547 - "rvlReceiveL_message_05" (I need a new partner...)
+<br>	0x50C55E - "rvlReceiveL_message_06" (You should go pro!)
+<br>	0x50C575 - "rvlReceiveL_message_07" (We're a good team.)
+<br>	0x50C58C - "rvlReceiveL_message_08" (We should just stop now.)
+<br>0x10B<1> - Remove Text
+<br>
+<br>0x10C - ???
+<br>---------------------
+<br>Subs:
+<br>0x56 - Pattern (Inputs)
+<br>0x57 - Turn (Inputs)
+<br>0x58 - Voiceless Pattern
+<br>0x59 - Voiceless Turn
+<br>0x5A - Male Voice Clip ("Bounce, B-Bounce, B-")
+<br>0x5B - Male Voice Clip ("Bounce, Turn")
+<br>0x5C - Female Voice Clip ("-ce, Bounce, Boun-")
+<br>0x5D - Female Voice Clip ("-ce, Bounce, Spin")
+<br>These change the ratings category:
+<br>0x5E - Male Pattern ("Bounce, B-Bounce, B-")
+<br>0x5F - Male Turn ("Bounce, Turn")
+<br>0x60 - Female Pattern ("-ce, Bounce, Boun-")
+<br>0x61 - Female Turn ("-ce, Bounce, Spin")
+<br>These combine the pattern and voice clips (intended for remixes):
+<br>0x62 - Male Pattern ("Bounce, B-Bounce, B-") (Leftover)
+<br>0x63 - Male Turn ("Bounce, Turn") (Leftover)
+<br>0x64 - Female Pattern ("-ce, Bounce, Boun-") (Leftover)
+<br>0x65 - Female Turn ("-ce, Bounce, Spin") (Leftover)
+<br>0x66 - Bossa Nova (Real Game)
+<br>0x67 - Bossa Nova (Practice)
+<br>0x68 - Bossa Nova (Skipped Practice)</body>

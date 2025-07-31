@@ -1,0 +1,71 @@
+<html><body style = "font-family: monospace;">Fruit Basket
+<br>---------------------
+<br>0x100 T, X, Y, Z - Input (Note that they don't come with sound effects)
+<br>	T = Time in Ticks before hit
+<br>	X = Type
+<br>	0 - Nothing
+<br>	1 - Apple (T=0x60)
+<br>	2 - Melon (T=0x18)
+<br>	3 - Lemon (T=0xC0)
+<br>	Y = Direction
+<br>	0 - Left
+<br>	1 - Right
+<br>	Z = Used if this object is hit at the same time as another
+<br>	0 - No
+<br>	1 - Yes
+<br>
+<br>0x101 X - Melon Warning (Blinking pipe)
+<br>	0 - Left
+<br>	1 - Right
+<br>0x101<1> X, Y - Melon Warning (Darken pipe)
+<br>	X = Direction
+<br>	0 - Left
+<br>	1 - Right
+<br>	Y = Lighting
+<br>	0 - Undarken
+<br>	1 - Darken
+<br>
+<br>0x102 - Beat Animation (Background Objects)
+<br>0x102<1> - Garage Door Closing (Machine Remix)
+<br>
+<br>0x103<X> - Smile
+<br>	0 - Normal
+<br>	1 - Endless
+<br>	2 - Restore Idle Face
+<br>
+<br>0x104<X> - Thought Bubbles
+<br>	0 - Nothing
+<br>	1 - Bubble Trail 1
+<br>	2 - Bubble Trail 2
+<br>	3 - Thought Bubble Appears
+<br>	4 - Thought Bubble Disappears
+<br>	5 - Courtney Makes a Face
+<br>---------------------
+<br>Subs:
+<br>All of them except for the melons happen 2.0 beats after the start of the sub
+<br>0x56 - Nothing (Unused)
+<br>0x57 - Apple (Left)
+<br>0x58 - Apple (Right)
+<br>0x59 - Apple (Both)
+<br>0x5A - Melon (Left)
+<br>0x5B - Melon (Right)
+<br>0x5C - Lemon (Left)
+<br>0x5D - Lemon (Right)
+<br>0x5E - Lemon (Both) (Unused)
+<br>0x5F - Lemon (Left, Smile)
+<br>0x60 - Lemon (Right, Smile)
+<br>0x61 - Lemon (Both, Smile) (Unused)
+<br>0x62 - Lemon (Left, Smile, End) (Unused)
+<br>0x63 - Lemon (Right, Smile, End) (Unused)
+<br>0x64 - Lemon (Both, Smile, End)
+<br>0x65 - Lemon (Left) + Apple (Right)
+<br>0x66 - Lemon (Right) + Apple (Left)
+<br>0x67 - Thought Bubbles
+<br>0x68 - Fruit Basket (Practice)
+<br>0x69 - Fruit Basket 2 (Practice)
+<br>0x6A - Fruit Basket (Real Thing)
+<br>0x6B - Fruit Basket 2 (Real Thing)
+<br>0x6C - Fruit Basket (Skipped Practice)
+<br>0x6D - Fruit Basket 2 (Skipped Practice)
+<br>0x6E - Fruit Basket (Beat Animations)
+<br>0x6F - Fruit Basket 2 (Beat Animations)</body>

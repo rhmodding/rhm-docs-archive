@@ -1,0 +1,1394 @@
+<html><body style = "font-family: monospace;">Common
+<br>---------------------
+<br>0x00 - async_sub X, Y, Z
+<br>	X = ID number of subroutine (Usually 0x56 and beyond)
+<br>	Y = Time in ticks before executing (Usually 0)
+<br>	Z = Category (Usually 0x7D0)
+<br>
+<br>0x01<0> - get_async X, Y
+<br>	X = Slot
+<br>	Y = Time in ticks
+<br>0x01<1> - set_func X, Y
+<br>	X = Slot
+<br>	Y = Location to store in slot
+<br>
+<br>0x02 - async_call X, Y
+<br>	X = Location
+<br>	Y = Time in Ticks
+<br>
+<br>0x03<0> - kill_all
+<br>0x03<1> - kill_cat X
+<br>0x03<2> - kill_loc X
+<br>0x03<3> - kill_sub X
+<br>
+<br>0x04 - sub X
+<br>	X = Sub ID (Tickflow will wait until sub is completed before continuing)
+<br>
+<br>0x05 - get_sync X
+<br>	X = Get a function set by set_func
+<br>
+<br>0x06 - call X
+<br>	X = Location (Tickflow will wait until sub is completed before continuing)
+<br>
+<br>0x07 - return
+<br>
+<br>0x08 - stop
+<br>
+<br>0x09 - set_cat X
+<br>	X = Set current thread to the specified category
+<br>
+<br>0x0A - set_condvar X
+<br>	X = Conditional Variable
+<br>
+<br>0x0B - add_condvar X
+<br>	X = Conditional Variable
+<br>
+<br>0x0C - push_condvar
+<br>
+<br>0x0D - pop_condvar
+<br>
+<br>0x0E<X> - rest X
+<br>	X = Time in Ticks (1/48)
+<br>
+<br>0x0F<0> - setrest X, Y
+<br>	X = Slot to store rest in
+<br>	Y = Time of rest in ticks
+<br>0x0F<1> - getrest X
+<br>	X = Slot to take rest from
+<br>
+<br>0x10<X> - rest for X/32 seconds (found in Pajama Party and one other location)
+<br>	0x20 - 1 second
+<br>	Used values: 0x96, 0xA0
+<br>
+<br>0x11 - rest_reset
+<br>
+<br>0x12<X> - unrest X
+<br>	X = Time in ticks to skip
+<br>
+<br>0x13 - ??? (Unused)
+<br>
+<br>0x14<X> - label X
+<br>	X = ID of label
+<br>
+<br>0x15<X> - goto X
+<br>	X = ID of label to go to
+<br>
+<br>0x16<0> - if X = If equal to X
+<br>0x16<1> - if_neq X = If not equal to X
+<br>0x16<2> - if_lt X = If less than X
+<br>0x16<3> - if_leq X = If less or equal to X
+<br>0x16<4> - if_gt X = If greater than X
+<br>0x16<5> - if_geq X = If greater or equal to X
+<br>0x17 - else
+<br>0x18 - endif
+<br>If X is equal to the conditional variable, do the first block of Tickflow
+<br>If not, do the second block of Tickflow
+<br>
+<br>0x19 - switch
+<br>0x1A<X> - case X
+<br>0x1B - break
+<br>0x1C - default
+<br>0x1D - endswitch
+<br>If the conditional variable is equal to X, run case X. If it's equal to Y, run case Y.
+<br>If it's not equal to any, run default. Use break to not run cases you don't want.
+<br>
+<br>0x1E<0> - set_countdown X
+<br>	X = Initial Value
+<br>0x1E<1> - set_countdown condvar
+<br>	Sets initial value to condvar
+<br>0x1E<2> - get_countdown_init
+<br>	Sets condvar to initial value
+<br>0x1E<3> - get_countdown_prog
+<br>	Sets condvar to the progress
+<br>0x1E<4> - get_countdown
+<br>	Sets condvar to the countdown value
+<br>0x1E<5> - dec_countdown
+<br>	Increments progress by 1, thus decrements countdown by 1.
+<br>
+<br>0x1F - Nothing (Unused)
+<br>
+<br>0x20 - ??? (Unused)
+<br>
+<br>0x21 X - Tempo
+<br>
+<br>0x22 X, Y, Z - Tempo, Relative
+<br>	X = Multiplies tempo by X/256
+<br>	Y = Lower bound
+<br>	Z = Upper bound
+<br>
+<br>0x23 0xXXXXXXX - Applies tempo file (only applies first tempo in the file, so no tempo changes occur)
+<br>
+<br>0x24 X - speed X
+<br>	X = Sets speed to X/256 of the original speed
+<br>
+<br>0x25 X, Y, Z - speed_relative X, Y, Z
+<br>	X = Multiplies speed by X/256
+<br>	Y = Lower bound
+<br>	Z = Upper bound
+<br>
+<br>0x26 - Nothing (Unused)
+<br>
+<br>0x27 X, Y - Speed control but based around 120 BPM? (Unused)*
+<br>	X = ???
+<br>	Y = Set speed to X/120 (0x78 = normal speed)
+<br>	* Every tickflow file has 0x21 0x78 (set default tempo to 120 BPM), this is probably why this operation exists
+<br>
+<br>0x28 X - engine X
+<br>	X = Scene ID
+<br>
+<br>	0 - Spaceball					/agbBatter/
+<br>	1 - The Clappy Trio				/agbClap/
+<br>	2 - Sneaky Spirits				/agbGhost/
+<br>	3 - Rhythm Tweezers				/agbHair/
+<br>	4 - Bouncy Road					/agbHopping/
+<br>	5 - Marching Orders				/agbMarcher/
+<br>	6 - Night Walk					/agbNightWalk/
+<br>	7 - Quiz Show					/agbQuiz/
+<br>	8 - Bunny Hop					/agbRabbit/
+<br>	9 - Rat Race					/agbRat/
+<br>	0xA - Power Calligraphy				/agbShuji/
+<br>	0xB - Space Dance				/agbSpaceDance/
+<br>	0xC - Tap Trial					/agbTap/
+<br>	0xD - Ninja Bodyguard				/agbTono/
+<br>
+<br>	0xE - Airboarder				/ntrAirBoard/
+<br>	0xF - Lockstep					/ntrBackbeat/
+<br>	0x10 - Blue Birds				/ntrBlueBirds/
+<br>	0x11 - The Dazzles				/ntrBoxShow/
+<br>	0x12 - Freeze Frame				/ntrCameraMan/
+<br>	0x13 - Glee Club				/ntrChorus/
+<br>	0x14 - Frog Hop					/ntrFrog/
+<br>	0x15 - Fan Club					/ntrIdol/
+<br>	0x16 - Dog Ninja				/ntrNinja/
+<br>	0x17 - Rhythm Rally				/ntrPingpong/
+<br>	0x18 - Fillbots					/ntrRobot/
+<br>	0x19 - Shoot-'em-up				/ntrShooting/
+<br>	0x1A - Big Rock Finish				/ntrShortLive/
+<br>	0x1B - Munchy Monk				/ntrShugyo/
+<br>
+<br>	0x1C - Built to Scale				/rvlAssemble/
+<br>	0x1D - Air Rally				/rvlBadminton/
+<br>	0x1E - Exhibition Match				/rvlBatting/
+<br>	0x1F - Flock Step				/rvlBirds/
+<br>	0x20 - Cheer Readers				/rvlBooks/
+<br>	0x21 - Double Date				/rvlDate/
+<br>	0x22 - Catch of the Day				/rvlFishing/
+<br>	0x23 - Micro-Row				/rvlFlea/
+<br>	0x24 - Fork Lifter				/rvlFork/
+<br>	0x25 - Hole in One				/rvlGolf/
+<br>	0x26 - Flipper-Flop				/rvlGoma/
+<br>	0x27 - Ringside					/rvlInterview/
+<br>	0x28 - Karate Man				/rvlKarate/
+<br>	0x29 - Working Dough				/rvlManju/
+<br>	0x2A - Figure Fighter				/rvlMuscle/
+<br>	0x2B - Love Rap					/rvlRap/
+<br>	0x2C - Bossa Nova				/rvlReceive/
+<br>	0x2D - Screwbot Factory				/rvlRobot/
+<br>	0x2E - Launch Party				/rvlRocket/
+<br>	0x2F - Board Meeting				/rvlRotation/
+<br>	0x30 - Samurai Slice				/rvlSamurai/
+<br>	0x31 - See-Saw					/rvlSeesaw/
+<br>	0x32 - Packing Pests				/rvlSort/
+<br>	0x33 - Monkey Watch				/rvlWatch/
+<br>
+<br>	0x34 - Blue Bear				/ctrBear/
+<br>	0x35 - Animal Acrobat				/ctrBlanco/
+<br>	0x36 - Tongue Lashing				/ctrChameleon/
+<br>	0x37 - Super Samurai Slice			/ctrDotSamurai/
+<br>	0x38 - Fruit Basket				/ctrFruitBasket/
+<br>	0x39 - First Contact				/ctrInterpreter/
+<br>	0x3A - Pajama Party				/ctrPillow/
+<br>	0x3B - Catchy Tune				/ctrStep/
+<br>	0x3C - Sumo Brothers				/ctrSumou/
+<br>	0x3D - Tangotronic 3000				/ctrTango/
+<br>	0x3E - Kitties!					/ctrTeppan/
+<br>	0x3F - LumBEARjack				/ctrWoodCat/
+<br>
+<br>	0x40 - Sick Beats				/agbVirus/
+<br>	0x41 - Coin Toss				/ntrCoinToss/
+<br>	0x42 - Clap Trap				/rvlSword/
+<br>	0x43 - Charging Chicken				/ctrChicken/
+<br>
+<br>	0x44 - ???					/???/
+<br>	0x45 - Corrupt Save Handler			/error/
+<br>	0x46 - Title Screen				/title/
+<br>	0x47 - Game Select (Land)			/gameSelect/
+<br>	0x48 - Game Select (Tower)			/gameSelect/
+<br>	0x49 - Prologue					/prologue/
+<br>	0x4A - Epilogue					/epilogue/
+<br>	0x4B - Opening					/demoOpening/
+<br>	0x4C - Farewell/To Heaven World			/demoLED/demoMED/
+<br>	0x4D - Gameplay Counts				/demoTED/
+<br>	0x4E - Letter After To Heaven World		/narration_MED/
+<br>	0x4F - Introduction				/lesson/
+<br>	0x50 - Goat Stable				/pinBall/
+<br>	0x51 - Café					/coffee/
+<br>	0x52 - Shop					/shop/
+<br>	0x53 - Museum					/museum/
+<br>	0x54 - Badges					/badge/
+<br>	0x55 - Memories					/movie/
+<br>	0x56 - Mascots					/mascot/
+<br>	0x57 - Epilogue Slideshow			/slideShow/
+<br>	0x58 - Streetpass Terrace/Figure Fighter VS	/muscleDuel/
+<br>	0x59 - Challenge Land				/treasure/
+<br>	0x5A - Challenge Train				/treasureMap/
+<br>	0x5B - Challenge Train Results (Score Goal)	/???/
+<br>	0x5C - Challenge Train Results (Life Goal)	/???/
+<br>	0x5D - Challenge Train Results (Monster Goal)	/???/
+<br>	0x5E - Challenge Land (Course Select)		/???/
+<br>	0x5F - ???					/???/
+<br>	0x60 - Download Play Menu			/dlpMenu/
+<br>	0x61 - ??? (Demo Only)				/???/
+<br>	0x62 - "Thank you for playing!" (Demo Only)	/salesPromtion/
+<br>0x28<1> - Used in sub 0x04, likely used to determine whether a scene is completely loaded, sets condvar to 1 if so?
+<br>0x28<2> - Load scene stored with engine<3> (Automatically applies a black screen to the bottom screen that must be unfaded with the 'fade' operation, stops all tickflow execution/music)
+<br>0x28<3> X - engine<3>, Store scene to be loaded later with 0x28<2>
+<br>	X = Scene ID
+<br>	0x28<2> and engine<3> are used for most menu transitions
+<br>0x28<4> X - engine<4>, Set touchscreen background (Timing Display effects will still be visible)
+<br>	0 - Disable (Unused)
+<br>	1 - Enable
+<br>
+<br>0x29<0> - Set scene initialization counter to 0
+<br>0x29<1> X - Increase that counter by X
+<br>0x29<2> - Decrease rest timer by the counter's value
+<br>	Used in sub 0x04 to compensate for the time it takes for a remix to load the next game
+<br>
+<br>0x2A<0> - game_model X, Y
+<br>0x2A<1> - ???
+<br>0x2A<2> - game_cellanim X, Y
+<br>0x2A<3> - game_effect X, Y
+<br>0x2A<4> - game_layout X, Y
+<br>0x2A<5> - ???
+<br>	X = Assign a scene to Y
+<br>	Y = Slot
+<br>
+<br>0x2B X, Y - Mode/Version
+<br>	X = Game Scene ID
+<br>	Y = Version
+<br>	0 - Practice (Short)/Karate Man Games/Endless Games
+<br>	1 - Real Game (Short)
+<br>	2 - Practice (Long)
+<br>	3 - Real Game (Long)
+<br>	4 - Practice (Arrange)
+<br>	5 - Real Game (Arrange)
+<br>	6 - Lush Remix
+<br>	7 - Honeybee Remix
+<br>	8 - Machine Remix
+<br>	9 - Citrus Remix
+<br>	0xA - Donut Remix
+<br>	0xB - Barbershop Remix
+<br>	0xC - Songbird Remix
+<br>	0xD - Left-Hand Remix
+<br>	0xE - Right-Hand Remix
+<br>	0xF - Unused
+<br>	0x10 - Final Remix
+<br>0x2B<1> X - Check Scene ID X's Mode/Version
+<br>	Used in Super Samurai Slice to determine which sfx to play for enemies coming out from the bottom (water, bush or none)
+<br>0x2B<2> X = Set condvar to 1 if the current Scene's Version is equal to X
+<br>	X = Game Scene ID
+<br>	0 - Short (0, 1)
+<br>	1 - Long (2, 3)
+<br>	2 - Arrange (4, 5)
+<br>	3 - Practice (0, 2, 4)
+<br>	4 - Remix (6~0x10)
+<br>
+<br>0x2C - Used for stopping certain visual elements, animations, camera movement, etc. at the end of the rhythm game, as well as unloading the pause menu. Causes glitchy visual effects, not seen in vanilla since it's always used after the screen is fully darkened. (Used in subs 0x0B (results/end game) and 0x0D (retry))
+<br>0x2C<1> - Checks if 0x2C has been ran since the start of the current rhythm game. Used in Airboarder to check if the game is over.
+<br>
+<br>0x2D X - Pausing
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x2E X - "Waiting for other players." (Used value: 0x18)
+<br>
+<br>0x2F - ??? (Used in remix transitions)
+<br>
+<br>0x30 - ??? (Used in remix transitions)
+<br>
+<br>0x31<0> X, Y, Z - set_model X, Y, Z
+<br>0x31<1> X - remove_model X
+<br>0x31<2> X - has_model X (Sets conditional variable to 1 if X contains assets)
+<br>	X = Slot to load Model to
+<br>	Y = filename of Model
+<br>	Z = Unknown, always 1
+<br>
+<br>0x32 - ??? (Unused)
+<br>
+<br>0x33 - ??? (Unused)
+<br>
+<br>0x34 - ??? (Unused)
+<br>
+<br>0x35<0> X, Y, Z - set_cellanim X, Y, Z
+<br>0x35<1> X - cellanim_busy X (Sets conditional variable to 1 if X is changing)
+<br>0x35<2> X - Has Cellanim (Sets conditional variable to 1 if X contains assets)
+<br>0x35<3> X - remove_cellanim X
+<br>0x36 X, "Y", Z - Applies Cellanim file to the next loaded scene (Unused)
+<br>	X = Slot to load Cellanim to
+<br>	Y = filename of Cellanim
+<br>	Z = Unknown, always -1
+<br>
+<br>0x37 - Causes loading mascot to appear, unknown function (Unused)
+<br>
+<br>0x38 - Nothing (Unused)
+<br>
+<br>0x39<0> X, Y, Z - set_effect X, Y, Z
+<br>0x39<1> X - effect_busy X (Sets conditional variable to 1 if X is changing)
+<br>0x39<2> X - Has Effect (Sets conditional variable to 1 if X contains assets)
+<br>0x39<3> - ???
+<br>0x39<4> - ???
+<br>0x39<5> - ???
+<br>0x39<6> - ???
+<br>0x39<7> X - remove_effect X
+<br>0x3A X, "Y", Z - Applies Effect file to the next loaded scene (Unused)
+<br>	X = Slot to load Effect to
+<br>	Y = filename of Effect
+<br>	Z = Unknown, always -1
+<br>
+<br>0x3B U, V, "W", X, Y, Z, S - Play Effects (Used for Quiz Show's Skill Star)
+<br>	U = Which Screen
+<br>	0+- Top (Unused)
+<br>	2 - Bottom
+<br>	V = Slot (Used value: 1)
+<br>	W = Animation (Used value: "cmn_star00")
+<br>	X = X Position (Used value: 0)
+<br>	Y = Y Position (Used value: 0)
+<br>	Z = Size (Used value: 0x100)
+<br>	S = ??? (Used value: 0x18)
+<br>
+<br>0x3C - Nothing (Unused)
+<br>
+<br>0x3D - Stop any effect that's currently on screen
+<br>
+<br>0x3E<0> X, Y, Z - set_layout X, Y, Z
+<br>0x3E<1> X - layout_busy X (Sets conditional variable to 1 if X is changing)
+<br>0x3E<2> X - Has Layout (Sets conditional variable to 1 if X contains assets)
+<br>0x3E<3> - ???
+<br>0x3E<4> - ???
+<br>0x3E<5> - ???
+<br>0x3E<6> - ???
+<br>0x3E<7> X - remove_layout X
+<br>	X = Slot to load Layout to
+<br>	Y = filename of Layout
+<br>	Z = Unknown, always -1
+<br>
+<br>0x3F - ??? (Unused)
+<br>
+<br>0x40<0> 0xXXXXXXX - play_sfx 0xXXXXXXX
+<br>0x40<1> 0xXXXXXXX, V - Play SFX w/ volume control
+<br>0x40<2> 0xXXXXXXX, V, Z - Play SFX w/ pitch control
+<br>0x40<3> 0xXXXXXXX, V, Y, Z
+<br>0x40<4> 0xXXXXXXX, V, W, Y, Z	
+<br>	0xXXXXXXX = ID of the Sound Effect
+<br>	V = Volume of Sound Effect (0x100 is normal)
+<br>	W = Pitchbend of the Sound Effect (0x100 is normal)
+<br>	Y = Pan Position of the Sound Effect (0 is normal)
+<br>	Z = Pitch of Sound Effect (0x100 is normal)
+<br>	Please see the play_sfx.txt in the docs for the full list
+<br>
+<br>0x41 - Nothing (Unused)
+<br>
+<br>0x42<X> Y - Manipulation of SFX defined by 0x48
+<br>	X = Volume (0x100 = Default) (Used values: 0, 0xC8)
+<br>	Y = Time n ticks (Used values: 0xB4, 0x12C)
+<br>
+<br>0x43 X - Change Pitch of all SFX (0x100 is normal)
+<br>	X = Pitch
+<br>	Used values: 0XC0, 0x100, 0x140, 0x200
+<br>
+<br>0x44 X - SFX Panning (Unused)
+<br>	Example:
+<br>	play_sfx 0xXXXXXXX
+<br>	0x44 -0x100
+<br>	Modifies panning for the play_sfx above to be full pan to the left
+<br>
+<br>0x45 X - Delay SFX by X ticks (Used value: 0x80) (Only appears in unused Double Date subs)
+<br>
+<br>0x46 0x78 - Delay SFX? (Found in Monkey Watch and Micro-Row in Citrus Remix on the same beats as the counts)
+<br>
+<br>0x47<X> - SFX Volume (Used value: 0x60) (0x100 is normal)
+<br>
+<br>0x48<X> - Define sound effect to be manipulated by 0x42
+<br>	X = Slot?
+<br>	1 - Used in Catch of the Day
+<br>	0xF - Used in Coin Toss
+<br>
+<br>0x49 - ??? (Unused)
+<br>
+<br>0x4A - ??? (Unused)
+<br>
+<br>0x4B - ??? (Unused)
+<br>
+<br>0x4C - ??? (Unused)
+<br>
+<br>0x4D - ??? (Unused)
+<br>
+<br>0x4E - ??? (Unused)
+<br>
+<br>0x4F 0xXXXXXXX - Which tempo file will be used
+<br>
+<br>0x50 0xXXXXXXX, Y - Play BCSTM file (used for the Café's music)
+<br>	X = SFX ID
+<br>	Used value: 0x1000002
+<br>	Y = ??? (Always 1)
+<br>
+<br>0x51 X - Music
+<br>	0 - Best not to use this (unless you want a laugh)
+<br>	1 - Play .aac music (Set up by 0x61<2>)
+<br>
+<br>0x52 - Set condvar to 1 if something involving .aacs is true (does it check to see if the .aac is fully loaded and playable?) (used in sub 0x01)
+<br>
+<br>0x53 0xXXXXXXX - Set practice theme (or looping music in general, e.g. Sick Beats) to be used in 0x55. Almost always paired with 0x23. Seems to apply the tempo of the tempo file of 0xXXXXXXX regardless of the presence of 0x23
+<br>	X = Sound Effect ID (Used values: 0x100019D, 0x100019E, 0x100019F)
+<br>(The SFX value for songs match values with their respective tempo file. Ex: 0x1000132 is both the SFX value for Working Dough's practice theme and its tempo file value.)
+<br>
+<br>0x54 0xXXXXXXX, Y - Play sfx as music (used in Quiz Show) (can be faded out with 0x57)
+<br>	X = ID of the Sound Effect (Used values: 0x100019D, 0x100019E, 0x100019F)
+<br>	Y = Use corresponding tempo file(?) (Used value: 1)
+<br>	0 - No (Tempo will be default 120 bpm?) (Unused)
+<br>	1 - Yes
+<br>
+<br>0x55 X - Play sfx loaded in 0x53 (Used value: 1)
+<br>
+<br>0x56 - Set condvar to 1 if something involving .bcgrp files is true (same thing with 0x52 but with .bcgrp files perhaps?) (used in sub 0x02)
+<br>
+<br>0x57 X - Music Fade Out
+<br>	X = Time in ticks (Used values: 0, 0x1E, 0x30, 0x32, 0x78, 0xC0)
+<br>
+<br>0x58 X, Y - Music Volume Control (Used in Sneaky Spirits practice and Quiz Show)
+<br>	X = Volume (Used values: 0, 0xFF, 0x100)
+<br>	Y = Time in Ticks (Used values: 1, 0x3C, 0x60)
+<br>
+<br>0x59 X, Y - Something related to SFX (Used in sub 0x0C)
+<br>	X = ??? (Used value: 0x100)
+<br>	Y = ??? (Used value: 0)
+<br>
+<br>0x5A<W> X, Y, Z - All SFX volume control (Used in Flock Step) (volume doesn't get reset when entering the result screen)
+<br>	W = Type(?)
+<br>	0 - SFX
+<br>	1 - Music
+<br>	X = Volume (Used values: 0, 0x100)
+<br>	Y = Time in ticks (Used values: 0, 0x240)
+<br>	Z = ??? (Used values: 0)
+<br>
+<br>0x5B - ??? (Unused)
+<br>
+<br>0x5C - ??? (Unused)
+<br>
+<br>0x5D X, 0xYYYYYY - set_sfx X, u"Y" (Assign BCGRP (SFX file) to slot)
+<br>0x5D<1> X, Z - set_sfx<1> X, Z (???) (Used values: 2, 3, 4, 5)
+<br>0x5D<2> 0xYYYYYY - Set SFX to be assigned to a slot (Used everywhere except medley remix asset loading, Quiz Show, Big Rock Finish, and Endless games)
+<br>0x5D<3> X - Assign SFX specified in 0x5D<2> to slot
+<br>	X = Slot number (Vanilla game has a range between 0 and 9, 0x17 is also used)
+<br>	Y = BCGRP file name
+<br>
+<br>0x5E - ??? (Unused)
+<br>
+<br>0x5F X - remove_sfx X
+<br>0x5F<1> - Clear any loaded BCGRPs
+<br>	X = Slot to remove SFX Group from
+<br>
+<br>0x60 - ??? (Unused)
+<br>
+<br>0x61 X, u"music" - Assign an .aac file to slot (Unused)
+<br>0x61<1> X, Y - ??? (Used value: 0)
+<br>0x61<2> u"music" - Set the .aac file to be assigned to a slot
+<br>0x61<3> X - Assign the .aac file specified in 0x61<2> to slot
+<br>    X = Slot number (Used value: 0)
+<br>    music = filename of .aac music to play
+<br>
+<br>0x62 - Unload .aac file
+<br>0x62<1> 0, 0 - Clear any loaded .aac files
+<br>
+<br>0x63 0xXXXXXXX - Unloads tempo file
+<br>
+<br>0x64 - Set condvar to 1 if all SFX is loaded completely (used in sub 0x30)
+<br>
+<br>0x65 - Display textbox with attributes specified by 0x65<1> - 0x65<0x10>
+<br>0x65<1> M, "string" - Display textbox with string from which MSBT to use
+<br>0x65<2> - Remove textbox
+<br>0x65<3> X, Y - X, Y placement
+<br>	Positive X values shift the box to the right, negative X values shift it to the left
+<br>	Positive Y values shift the box lower, negative Y values shift it higher
+<br>0x65<4> X, Y - Width and height of the textbox
+<br>0x65<5> X - Text alignment within textbox
+<br>	0 - Top left
+<br>	1 - Top center
+<br>	2 - Center
+<br>	3 - Left center
+<br>	4+- Nothing (uses whatever was set last)
+<br>0x65<6> 0 - ??? (Used in Dog Ninja's practice)
+<br>0x65<7> X - Tail (used to show who onscreen is speaking)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x65<8> X - Which side
+<br>	0 - Bottom
+<br>	1 - Top
+<br>	2+- Default (Center of screen)
+<br>0x65<9> X - Horizontal location of tail
+<br>	0 - Very left of textbox
+<br>	0x100 - Very right of textbox, possibly detached
+<br>	0x100+- Detached
+<br>	If left undefined - Center of textbox
+<br>0x65<0xA> X - Tail (meant to be used to show who onscreen is speaking) (Unused)
+<br>0x65<0xB> X - Which side (Used in Blue Birds)
+<br>	0 - Left
+<br>	1 - Right (Unused)
+<br>0x65<0xC> X - Vertical location of tail (Unused) (Moves the whole textbox instead)
+<br>	Higher X values cause the textbox to be placed lower than specified while keeping the tail at the same spot
+<br>	Negative X values cause the textbox to be placed higher than specified while keeping the tail at the same spot
+<br>0x65<0xD> X - Size of text, not bound by the size of the textbox (Used in Air Rally 2)
+<br>	Used value: 0x3C
+<br>	0x100 - Normal Size
+<br>0x65<0xE> - Reset 0x65<0xD> to normal size (Unused)
+<br>0x65<0xF> X - Size of text, but bound to the size of textbox (Used in Spaceball and Donut Remix)
+<br>	Used values: 0xFF, 0x133
+<br>0x65<0x10> - Reset 0x65<0xF> to normal size (Used in Spaceball)
+<br>
+<br>0x66 M, "string" - Sets strings from specified MSBT to display with 0x66<1>
+<br>0x66<1> - Display strings using attributes defined in 0x65
+<br>0x66<2> - Remove textbox
+<br>0x66<3> - Check if all strings of specified name have been displayed, sets condvar to 0 if not, which will loop back code execution to display the next string until it sets condvar to 1
+<br>Ex:	0x66 9, "rvlKarate00_tutorial_a"
+<br>	0x66<1>
+<br>	Will display both "rvlKarate00_tutorial_a_00" and "rvlKarate00_tutorial_a_01", which is "Welcome to Karate Training!" and "Watch out for flying objects, and press A to punch them!"
+<br>
+<br>0x67 - Display text over translucent black box
+<br>0x67<1> M, "string" - Display string from specified MSBT
+<br>0x67<2> - Remove textbox
+<br>0x67<3> X - Vertical location of textbox
+<br>       -0x64 - Aligned to top
+<br>	0x64 - Aligned to bottom
+<br>	Seems to default to -0x3C if 0x67<3> is not called
+<br>0x67<4> X - Height of textbox
+<br>0x67<5> X - ???
+<br>0x67<6> Y - Text-alignment for banner-style text
+<br>	0 - Left
+<br>	1 - Right (?)
+<br>	2 - Center (Default)
+<br>
+<br>0x68 - Display text w/out textbox
+<br>0x68<1> M, "string" - Display string from specified MSBT
+<br>0x68<2> - Remove string
+<br>0x68<3> X, Y - X, Y placement
+<br>	Positive X values shift the string to the right, negative X values shift it to the left
+<br>	Positive Y values shift the string lower, negative Y values shift it higher
+<br>0x68<4> X - Text alignment
+<br>	0 - Left
+<br>	1+- Center
+<br>	M = Which msbt file
+<br>	0 - common
+<br>	1 - game_info
+<br>	2 - layout
+<br>	3 - map
+<br>	4 - coffee
+<br>	5 - bonus
+<br>	6 - treasure
+<br>	7 - agb
+<br>	8 - ntr
+<br>	9 - rvl
+<br>	0xA - ctr
+<br>	0xB - remix
+<br>	0xC - agb_result
+<br>	0xD - ntr_result
+<br>	0xE - rvl_result
+<br>	0xF - ctr_result
+<br>	0x10 - remix_result
+<br>	0x11 - demo_dl
+<br>
+<br>0x69 - ??? (Used in practice for Bunny Hop, Catchy Tune, Flipper-Flop and Karate Man)
+<br>
+<br>0x6A X - input X
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x6B<0> X - Automatic Inputs (Used in the Demo and in Flock Step to make the player lift their leg)
+<br>	0 - Disable
+<br>	1 - Enable (Needed if input 0 is active)
+<br>0x6B<1> X - Force Input
+<br>	0 - A Button
+<br>	1 - B Button
+<br>	2 - D-Pad Left
+<br>	3 - D-Pad Right
+<br>	4 - D-Pad Up
+<br>	5 - D-Pad Down
+<br>	6 - A Button (Release)
+<br>	7 - B Button (Release)
+<br>	8 - D-Pad Left (Release)
+<br>	9 - D-Pad Right (Release)
+<br>	0xA - D-Pad Up (Release)
+<br>	0xB - D-Pad Down (Release)
+<br>
+<br>0x6C X - Leniency Overwrite (Meant to make faster tempos more forgiving)
+<br>	0 - Off
+<br>	1 - On
+<br>0x6C<1> X - Amount of Leniency
+<br>	Used values: 0x100, 0x140, 0x115, 0x12E, 0x155, 0x1AA, 0x12A, 0x26A
+<br>Used only in Big Rock Finish and Built to Scale in the original game
+<br>
+<br>0x6D X, 0xYYYYYYY, 0xZZZZZZZ - A Button Prompt (for textboxes)
+<br>	X = Which button to use (Will always display A button prompt)
+<br>	0 - None (Unused)
+<br>	1 - A
+<br>	2 - B (Unused)
+<br>	3 - Either A or B (Unused)
+<br>	Y = Sound Effect (Press)
+<br>	Used value: 0x10002BA - SE_SEND_MES_ON
+<br>	Z = Sound Effect (Release)
+<br>	Used value: 0x10002BB - SE_SEND_MES_OFF
+<br>0x6D<1> - Checks if you've Pressed and Released the A button
+<br>
+<br>0x6E - Nothing (Unused)
+<br>
+<br>0x6F<X> - "Skip" in Pause menu
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x70 0xXXXXXXX - Set Skip Tickflow Location (used in sub 0x0C with a value of 0)
+<br>0x70<1> 0xXX - Send player to sub 0xXX after skip
+<br>While the vanilla game uses 0x70<1> for this, which is limited to pre-existing subs, you can use 0x70 with any arbitrary location (example: "0x70 sub69")
+<br>
+<br>0x71 - Disables or resets something related to "Skip" in the Pause menu? (also only used once in sub 0x0C)
+<br>
+<br>0x72<X> - "Start over" in the Pause menu (used in sub 0x0D)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x73 0xXXXXXXX - Set Start Over Tickflow Location (Unused)
+<br>0x73<1> 0xXX - Send player to sub 0xXX after starting over (Unused)
+<br>
+<br>0x74 - Disables or resets something related to "Start over" in the Pause menu? (used in sub 0x0D)
+<br>
+<br>0x75 X - Sets your "Start over" state
+<br>	0 - You are not starting over
+<br>	1 - You are starting over
+<br>0x75<1> - Checks if you are starting over, set condvar to 1 if yes
+<br>This is why prologues only play the first time you enter a game
+<br>
+<br>0x76 X, Y - Toggle color overlay
+<br>	X = Which screen
+<br>	0+- Bottom (Unused)
+<br>	1 - Top
+<br>	7 - Both
+<br>	Y = Flag
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x77 X, Y - Opacity of color overlay
+<br>	X = Which screen
+<br>	0+- Bottom (Unused)
+<br>	1 - Top
+<br>	7 - Both (Unused)
+<br>	Y = Transparency (Used values: 0x78, 0xC0, 0xFF) (0 is invisible, 0xFF is opaque)
+<br>
+<br>0x78 X, R, G, B - Color of overlay (RGB values)
+<br>	X = Which screen
+<br>	0+- Bottom (Unused)
+<br>	1 - Top
+<br>	7 - Both (Unused)
+<br>	R = Red Color (Used values: 0, 0x80, 0xFF)
+<br>	G = Green Color (Used values: 0, 0xFF)
+<br>	B = Blue Color (Used values: 0, 0xFF)
+<br>
+<br>0x79 X, Y - Depth of color overlay
+<br>	X = Which screen
+<br>	0+- Bottom (Unused)
+<br>	1 - Top
+<br>	7 - Both (Unused)
+<br>	Y = Depth level (Used values: 0, 1, 8)
+<br>	Ex: Setting Y to 0x10 in Micro-Row will place the overlay behind the Microbes, but in front of the background
+<br>
+<br>0x7A X, Y - Color overlay goes over everything (except the "You" icon) (overrides all instances of 0x79 for the given screen until disabled)
+<br>	X = Which screen
+<br>	0+- Bottom (Unused)
+<br>	1 - Top
+<br>	7 - Both (Unused)
+<br>	Y = Flag
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x7B<W> X, Y, Z - Opacity of color overlay (Gradual)
+<br>	W = Pause opacity change when the game is paused
+<br>	0 - Disable
+<br>	1 - Enable
+<br>	X = Which screen
+<br>	0+- Bottom (Unused)
+<br>	1 - Top
+<br>	7 - Both (Unused)
+<br>	Y = Transparency (Used values: 0, 0xA8, 0xE0, 0xFF)
+<br>	Z = Time in ticks (Used values: 0, 0xA, 0x12, 0x18, 0x30, 0x60, 0xC8, 0x180, 0x300)
+<br>
+<br>0x7C<0> X, Y, Z - Creates a black overlay that appears on the screen over Z ticks (disables pausing when active)
+<br>0x7C<1> X, Y, Z - Removes a black overlay over Z ticks (enables pausing when finished)
+<br>0x7C<2> X - Stops the fading of screen X in its current state (also re-enables pausing)
+<br>0x7C<3> X - Sets condvar to 1 if there's a 0x7C black overlay on X screen (must be completely opaque)
+<br>0x7D<0> X, Y, Z - fade X, Y, Z - Creates a black overlay that appears on the screen over Z ticks (Doesn't disable pausing) (can be used independently from 0x7C, so they can be stacked)
+<br>0x7D<1> X, Y, Z - fade<1> X, Y, Z - Removes a black overlay over Z ticks
+<br>0x7D<2> X - Stops the fading of screen X where it is (Unused)
+<br>0x7D<3> X - Sets condvar to 1 if there's a 0x7D black overlay on X screen (must be completely opaque) (Unused)
+<br>	X = Which screen
+<br>	0+- Bottom (Unused)
+<br>	1 - Top
+<br>	2 - Bottom
+<br>	7 - Both	
+<br>	Y = Seems to multiply the duration Z by at least 1.5?
+<br>	0 - Disable
+<br>	1 - Enable
+<br>	Z = Time in ticks (Used values across all of these: 0, 1, 0xF, 0x1E, 0x18, 0x28, 0x30, 0x50, 0x60, 0x69, 0x87, 0x90, 0xF0, 0x180, 0x240)
+<br>
+<br>0x7E<0> - zoom N, X, Y
+<br>0x7E<1> - zoom_gradual N, I, S, D, X, Y
+<br>0x7E<2> - ???
+<br>
+<br>0x7F<0> - pan N, X, Y
+<br>0x7F<1> - pan_gradual N, I, S, D, X, Y
+<br>0x7F<2> - ???
+<br>
+<br>0x80<0> - rotate N, A
+<br>0x80<1> - rotate_gradual N, I, S, D, A
+<br>0x80<2> - ???
+<br>	N = View (Usually 3 or 4)
+<br>	2 - Translations persist after scene transitions
+<br>	I = Interpolation
+<br>	0 - Instant
+<br>	1 - Linear
+<br>	2 - Fast End
+<br>	3 - Fast Middle (Smooth)
+<br>	4 - Slow Middle
+<br>	S = Intensity of I
+<br>	D = Duration
+<br>	X, Y = X and Y zoom factor (0x100 = default)
+<br>	A = Angle
+<br>
+<br>zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
+<br>
+<br>0x81<X> - Used in while loading assets(?), seems to set condvar to 1 (Unknown function)
+<br>	X = 0 or 1
+<br>
+<br>0x82 X - ??? (Used values: 0x1F4, 0x3E8)
+<br>0x82<1> - Used in while loading assets(?), seems to set condvar to 1 (Unknown function)
+<br>
+<br>0x83 X - ??? (Used value: 0) (used after sub 0x03)
+<br>0x83<1> - ???
+<br>
+<br>0x84 - ??? (Unused)
+<br>0x84<1> - ??? If 0x81 is 1, goes to this
+<br>0x84<2> X - ???
+<br>	0 - ???
+<br>	1 - ??? (Unused)
+<br>	2 - Remove Timing Display (what?)
+<br>0x84<3> X - ???
+<br>	Used values: 3
+<br>
+<br>0x85 - ???
+<br>0x85<2> 4 - Used in Big Rock Finish after the leniency overwrite and before the randomizer for the patterns
+<br>
+<br>0x86 - ??? Sets condvar to 1 for something, does 0x61<3> 0 if 0, seems related to setting the music file
+<br>
+<br>0x87 X, Y - ??? Seems to be used in practice
+<br>	X = ??? (Used values: 2, 3, 4, 5)
+<br>	Y = ??? (Used values: 2, 3, 4, 5)
+<br>0x87<1> X, Y - ???
+<br>	X = ??? (Used values: 0)
+<br>	Y = ??? (Used values: 0)
+<br>0x87<2> X - ??? (Used values: 0, 2, 3, 4, 5)
+<br>0x87<3> X - ??? (Used values: 0, 2, 3, 4, 5)
+<br>
+<br>0x88<X> - Check if playing in Challenge Land
+<br>	0 - Something related to scores, sets condvar to 1 if ???
+<br>	1 - Set condvar depending on the Challenge Goal
+<br>		0 - Score Goal
+<br>		1 - Life Goal
+<br>		2 - Monster Goal
+<br>	2 - Set condvar to the amount of lives for Life Goal
+<br>	3 - ??? (used in sub 0x08)
+<br>	4 - ??? (used in subs 0x08 and 0x0F)
+<br>	5 - Apply "Tempo Up!" speed (Glitchy if triggered outside of Challenge Land)
+<br>	6 - ??? (Unused)
+<br>	7 - Sets condvar to 1 if playing the "Wario... Where?" Challenge Train courses
+<br>
+<br>0x89 - Loads challenge assets (Mii heads, hearts, monster, etc.) (Used in subs 0x08 and 0x09)
+<br>0x89<1> - ??? Possibly unload these assets? (Unused)
+<br>0x89<2> - Enables challenge assets to be used? (used in subs 0x08 and 0x09)
+<br>0x89<3> - Possibly unloads or disables challenge assets? (used in sub 0x0B)
+<br>0x89<4> - Sets condvar to 1 if challenge assets are still loading (Used in subs 0x08 and 0x09)
+<br>0x89<5> - ??? (Unused)
+<br>0x89<6> - ??? Used just before a scene transition in remixes, sets condvar to 1, if 1 goes to 0x8A<7> (remix failsafe?)
+<br>
+<br>0x8A - Start Mii head/Lives bobbing (Challenge Land)
+<br>0x8A<1> - ??? Used if 0x88 is 1 (Stop bobbing?)
+<br>0x8A<2> - ??? Called every beat in a sub that's in a really weird spot within code.tickflow
+<br>0x8A<3> X - ??? this is used near the beginning of each game if 0x88 is 1
+<br>	0 - ??? used in games with a practice
+<br>	1 - ??? used in games without a practice
+<br>0x8A<4> X, Y - Set Lives
+<br>	X = ??? (Used values: 1)
+<br>	Y = How many lives (Used values: 1, 2, 3)
+<br>0x8A<5> - Life hearts start pulsing (Used in sub 0x55)
+<br>0x8A<6> X - Monster Goal zoomout
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x8A<7> - ??? Used just before a scene transition in remixes, sets condvar to 1, if 1 goes to a stop
+<br>
+<br>0x8B X, Y - "You" icon
+<br>	X = ???
+<br>	0 - ??? 
+<br>	1 - ??? (Unused)
+<br>	2 - ??? (used in subs 0x0B and 0x0D)
+<br>	Y = Toggle "You" icon
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x8B<1> N, X, Y, Z - Position of the "You" icon (Unused)
+<br>	N = Game-Specific Position
+<br>	0 - Enable
+<br>	1+- Disable (Appears to be buggy and may crash)
+<br>	X = X position of the "You" icon relative to the screen's origin
+<br>	Y = Y position of the "You" icon relative to the screen's origin
+<br>	Z = Depth of the "You" icon
+<br>
+<br>0x8C X - Mascot (Loading Icon)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x8C<1> X - ??? Found near the debug TICKFLOW stuff at the bottom (Used value: 1)
+<br>0x8C<2> X - ??? Used just before setting the .aac (Used values: 2, 3, 4, 5)
+<br>0x8C<3> - ??? Used if 0x81 is 1
+<br>
+<br>0x8D - ??? (used in sub 0x08 and sub 0x09)
+<br>
+<br>0x8E X - Score Counts Towards Specified Comment Set by 0x93 (Lower Priority)
+<br>0x8F X - Score Counts Towards Specified Comment Set by 0x93 (Higher Priority)
+<br>	-1 - Practice (Doesn't count at all)
+<br>	0 - First Comment (0X8F 0 disables 0x8F's higher priority)
+<br>	1 - Second Comment
+<br>	2 - Third Comment
+<br>	3 - Fourth Comment/You show strong fundamentals.
+<br>	4 - You kept the beat well.
+<br>	5 - You had great aim.
+<br>	6 - You followed the example well.
+<br>	7 - Skill Star (hardcoded, allows the star to be collected)
+<br>	Most of these can be set to any string, so you could potentially have 6 different categories to rate the players on, though that would seem excessive in practice
+<br>
+<br>0x90 - ??? (Unused)
+<br>
+<br>0x91 X, Y, Z - Related to scoring? Used only in Night Walk
+<br>	X = ??? (Used value: 0)
+<br>	Y = ??? (Used value: 0x64)
+<br>	Z = ??? (Used value: 0x28)
+<br>
+<br>0x92 X, Y - Score weight
+<br>	X = Which comment/category (Used values: 0, 1, 2, 3, 4, 5, 6, 7)
+<br>	Y = Score weight (basically how much % of the game this comment represents)
+<br>	Note that ideally, the weights of every comment should add up to 0x64 (100%), otherwise you either would be unable to obtain a 100 score, or would be able to go beyond 100(?) Existing unused categories use 1% for this, which would add more than necessary score if they were to be used
+<br>
+<br>0x93 X, M, "Superb string", "Try Again string" - Set which comment strings are used
+<br>
+<br>0x94 X, "Superb string", "OK string", "Try Again string" - Set Failsafe Common Results Text (While the Japanese version has game-specific strings for this, the others don't -- the game still uses common strings not set by this)
+<br>
+<br>0x95 M, "Caption string" - Set Results Caption String
+<br>	M = Which msbt file (see 0x65)
+<br>
+<br>0x96 - ??? (Unused)
+<br>
+<br>0x97 X, Y - Score threshold (Unused)
+<br>	X - OK threshold
+<br>	Y - Superb threshold
+<br>Multiply the score needed for the rating by 0x64 (decimal 100) to get the value you want. For example, to set the OK threshold to 90, multiply 90 (or its hex form 0x5A) by 100 (or 0x64) to get 9000 (or 0x2328). Use either for your X value
+<br>
+<br>0x98 X, Y - Skill Star input count
+<br>	X = ??? Always 1
+<br>	Y = Number of inputs needed for the Skill Star
+<br>
+<br>0x99<X> - Sets condvar to 1 if the player's performance at the time of checking will result in the specified rating? (SUPPOSEDLY, WE ALL KNOW THE RATING SYSTEM ISN'T ENTIRELY PROPERLY UNDERSTOOD)
+<br>	0 - ??? (Used in the Perfect screen sub for the Rating scene, does this check if you didn't miss between the beginning of tickflow execution and the time of checking?)
+<br>	1 - Try Again
+<br>	2 - OK
+<br>	3 - Superb
+<br>
+<br>0x9A<X> Y - ??? Used just before defining the tempo file (also at the end of The Clappy Trio short for some reason?)
+<br>	X = ??? (Used values: 0, 1)
+<br>	Y = ??? (Used values: 0, 7, 8, 0x14, 0xC8, 0x258, 0x3E8)
+<br>
+<br>0x9B - Used in practice if 0xA7<3> is 0
+<br>
+<br>0x9C - Load "X more times!"/"X more sets!", "Clear!" and Rhythm Help Display assets into memory (Used in sub 0x08)
+<br>0x9C<1> - ??? Possibly unload these assets? (Unused)
+<br>0x9C<2> - Enable "X more times!"/"X more sets!" to be used(?) (the 0x9E and 0x9F family of operations will not work if this is not called before it)
+<br>0x9C<3> - Disable "X more times!"/"X more sets!" from being used, or unload the assets(?) (Used in subs 0x0C and 0x0D)
+<br>0x9C<4> - Sets condvar to 1 if "X more times!"/"X more sets!" and "Clear!" assets are still loading into memory (Used in sub 0x08)
+<br>
+<br>0x9D X - Rhythm Help Display (Layout)
+<br>	0 - 1 rows, large buttons, index 0-3
+<br>	1 - 2 rows, large buttons, index 0-3
+<br>	2 - 3 rows, large buttons, index 0-3 (Unused)
+<br>	3 - 1 rows, small buttons, index 0-7 ([Un]used in Cheer Readers)
+<br>	4 - 2 rows, small buttons, index 0-7
+<br>	5 - 3 rows, small buttons, index 0-7 ([Un]used in Big Rock Finish)
+<br>	6 - 2 rows, small buttons, index 0-7 ([Un]used in Karate Man Kicks!)
+<br>	6 - 2 rows, small buttons, index 0-7
+<br>	7 - 3 rows, small buttons, index 0-7 (Unused)
+<br>	8+- Nothing (Unused)
+<br>0x9D<1> - Show Rhythm Help Display
+<br>
+<br>0x9E X, Y, Z - Rhythm Help Display
+<br>0x9E<1> X, Y - Blink specified button
+<br>0x9E<2> X, Y, Z - Expect input at specified button in Z ticks, if something's there
+<br>	X = Slot (0 ~ 7)
+<br>	Y = Row
+<br>	0 - Row 1
+<br>	1 - Row 2
+<br>	2 - Row 3 (Unused)
+<br>	Z = Time in ticks (Used value: 0x18)
+<br>0x9E<3> - ??? (Used in games where you have to hold a button)
+<br>0x9E<4> X, Y, Z - Enlarge buttons (for offbeats) (X = even numbers, Z = 1 always)
+<br>	X = Slot (0 ~ 7)
+<br>	Y = Row
+<br>	0 - Row 1
+<br>	1 - Row 2
+<br>	2 - Row 3 (Unused)
+<br>	Z = Button
+<br>	0 - A Button
+<br>	1 - A Button (Hold)
+<br>	2 - A Button (Release)
+<br>	3 - B Button
+<br>	4 - B Button (Hold)
+<br>	5 - B Button (Release)
+<br>	6 - D-pad (Right) (Unused)
+<br>	7 - D-pad (Left) (Unused)
+<br>	8 - D-pad (Any direction)
+<br>	9 - Holding (Between Hold and Release)
+<br>	0xA - Nothing
+<br>	0xB+- Glitchy
+<br>
+<br>0x9F X - "X more times!" (Used values: 1, 2, 3, 4, 0x10)
+<br>0x9F<1> - Decrease "X more times" counter
+<br>0x9F<2> - Sets condvar to however many times the counter has been decreased minus 1 (Used in See-Saw's practice to stop byte execution)
+<br>0x9F<3> - Sets condvar to whatever 0x9F was most recently set to (Unused)
+<br>0x9F<4> - Sets condvar to 1 if "X more times!" counter has reached 0
+<br>0x9F<5> X - Performance check
+<br>	0 - Inputs count towards decreasing "X more times!" counter
+<br>	1 - Decrease "X more times!" counter if inputs are hit AND inputs affected by 0x9F<5> 0 OR 2 were also hit since the last 0xA2. Seems it needs to be placed over the last input in a set to work properly
+<br>	2 - Track performance
+<br>	3 - Used in Karate Man Combos! and Karate Man Senior
+<br>	0x58 - Used in Bunny Hop, seems to freeze the scene
+<br>	0x63 - Inputs will not count towards decreasing the "X more times!" counter
+<br>0x9F<6> - Sets condvar to whatever 0x9F<5> was most recently set to (Unused)
+<br>0x9F<7> - Show the "X more times!" text
+<br>0x9F<8> X, Y - Position of the "X more times!" text
+<br>	X = X position (Used values: -0xBE, 0, 0xBE)
+<br>	Y = Y position (Used values: -0x64, -0x3C, -0x32, -0x28, 0x32, 0x64)
+<br>0x9F<9> X - Size of "X more times!" text (Used value: 0x100)
+<br>0x9F<0xA> X - Text alignment (Used values: 0, 1, 2)
+<br>	0 - Center
+<br>	1 - Right
+<br>	2 - Left
+<br>
+<br>0xA0 8, 0x50983C, 3 - ??? (Used in Shoot-'em-up practice)
+<br>0xA0<1> X - ??? (Used in Figure Fighter practice) (Used values: 4, 6)
+<br>
+<br>0xA1<X> - Face effect (Rhythm Help Display)
+<br>	0 - Enable
+<br>	1 - Disable
+<br>	2 - Sets condvar to 1 if it's in practice and the face effect is enabled (Used in Rhythm Tweezers and its sections in remixes)
+<br>
+<br>0xA2<X> - Performance
+<br>	0 - Set performance to 0 (haven't missed, initializes performance tracking)
+<br>	1 - Set performance to 1 (have missed)
+<br>	2 - Set condvar to the performance tracking value
+<br>	3 - Add 1 to the amount of times the player has failed
+<br>	4 - Set condvar to the amount of times the player has failed
+<br>
+<br>0xA3 X, Y - Make specific input detectable in Rhythm Help Display
+<br>	X = see 0x6B<1> for unused values
+<br>	0 - A Button
+<br>	1 - B Button
+<br>	2 - D-Pad Left
+<br>	3 - D-Pad Right
+<br>	4 - D-Pad Up
+<br>	5 - D-Pad Down
+<br>	6 - A Button (Release)
+<br>	7 - B Button (Release)
+<br>	Y = Flag
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0xA3<1> X - Makes all inputs detectable in Rhythm Help Display
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0xA4 X - Prologue Scene (Handles the animation and jingle, but not the name)
+<br>	0 - The Clappy Trio
+<br>	1 - Sneaky Spirits
+<br>	2 - Rhythm Tweezers
+<br>	3 - Glee Club
+<br>	4 - Rhythm Rally
+<br>	5 - Fillbots
+<br>	6 - Shoot-'em-up
+<br>	7 - Air Rally
+<br>	8 - Micro-Row
+<br>	9 - Flipper-Flop
+<br>	0xA - Figure Fighter
+<br>	0xB - Fruit Basket
+<br>	0xC - First Contact
+<br>	0xD - Catchy Tune
+<br>	0xE - LumBEARjack
+<br>	0xF - Spaceball
+<br>	0x10 - The Clappy Trio 2
+<br>	0x11 - Sneaky Spirits 2
+<br>	0x12 - Rhythm Tweezers 2
+<br>	0x13 - Bouncy Road
+<br>	0x14 - Marching Orders
+<br>	0x15 - Night Walk
+<br>	0x16 - Quiz Show
+<br>	0x17 - Bunny Hop
+<br>	0x18 - Rat Race
+<br>	0x19 - Power Calligraphy
+<br>	0x1A - Space Dance
+<br>	0x1B - Tap Trial
+<br>	0x1C - Ninja Bodyguard
+<br>	0x1D - Airboarder
+<br>	0x1E - Lockstep
+<br>	0x1F - Blue Birds
+<br>	0x20 - The Dazzles
+<br>	0x21 - Freeze Frame
+<br>	0x22 - Glee Club 2
+<br>	0x23 - Frog Hop
+<br>	0x24 - Fan Club
+<br>	0x25 - Dog Ninja
+<br>	0x26 - Rhythm Rally 2
+<br>	0x27 - Fillbots 2
+<br>	0x28 - Shoot-'em-up 2
+<br>	0x29 - Big Rock Finish
+<br>	0x2A - Munchy Monk
+<br>	0x2B - Built to Scale
+<br>	0x2C - Air Rally 2
+<br>	0x2D - Exhibition Match
+<br>	0x2E - Flock Step
+<br>	0x2F - Cheer Readers
+<br>	0x30 - Double Date
+<br>	0x31 - Catch of the Day
+<br>	0x32 - Micro-Row 2
+<br>	0x33 - Fork Lifter
+<br>	0x34 - Hole in One
+<br>	0x35 - Flipper-Flop 2
+<br>	0x36 - Ringside
+<br>	0x37 - Working Dough
+<br>	0x38 - Figure Fighter 2
+<br>	0x39 - Love Rap
+<br>	0x3A - Bossa Nova
+<br>	0x3B - Screwbot Factory
+<br>	0x3C - Launch Party
+<br>	0x3D - Board Meeting
+<br>	0x3E - Samurai Slice
+<br>	0x3F - See-Saw
+<br>	0x40 - Packing Pests
+<br>	0x41 - Monkey Watch
+<br>	0x42 - Blue Bear
+<br>	0x43 - Animal Acrobat
+<br>	0x44 - Tongue Lashing
+<br>	0x45 - Super Samurai Slice
+<br>	0x46 - Fruit Basket 2
+<br>	0x47 - Second Contact
+<br>	0x48 - Pajama Party
+<br>	0x49 - Catchy Tune 2
+<br>	0x4A - Sumo Brothers
+<br>	0x4B - Tangotronic 3000
+<br>	0x4C - Kitties!
+<br>	0x4D - LumBEARjack 2
+<br>	0x4E - The Snappy Trio
+<br>	0x4F - Cosmic Dance
+<br>	0x50 - Tap Trial 2
+<br>	0x51 - Jumpin' Jazz
+<br>	0x52 - Fan Club 2
+<br>	0x53 - Cosmic Rhythm Rally
+<br>	0x54 - Hole in One 2
+<br>	0x55 - Working Dough 2
+<br>	0x56 - Figure Fighter 3
+<br>	0x57 - Jungle Gymnast
+<br>	0x58 - Super Samurai Slice 2
+<br>	0x59 - Karate Man
+<br>	0x5A - Karate Man Returns!
+<br>	0x5B - Karate Man Kicks!
+<br>	0x5C - Karate Man Combos!
+<br>	0x5D - Karate Man Senior
+<br>	0x5E - Lush Remix
+<br>	0x5F - Final Remix
+<br>	0x60 - Honeybee Remix
+<br>	0x61 - Machine Remix
+<br>	0x62 - Citrus Remix
+<br>	0x63 - Donut Remix
+<br>	0x64 - Barbershop Remix
+<br>	0x65 - Songbird Remix
+<br>	0x66 - Left-Hand Remix
+<br>	0x67 - Right-Hand Remix
+<br>0xA4<1> X - Prologue Scene (Endless Games)
+<br>	0 - Sick Beats (Saffron Trial)
+<br>	1 - Sick Beats (Slatwater Trial)
+<br>	2 - Sick Beats (Paprika Trial)
+<br>	3 - Sick Beats (Endless Game)
+<br>	4 - Coin Toss (Saffron Trial)
+<br>	5 - Coin Toss (Slatwater Trial)
+<br>	6 - Coin Toss (Paprika Trial)
+<br>	7 - Coin Toss (Endless Game)
+<br>	8 - Clap Trap (Saffron Trial)
+<br>	9 - Clap Trap (Slatwater Trial)
+<br>	0xA - Clap Trap (Paprika Trial)
+<br>	0xB - Clap Trap (Endless Game)
+<br>	0xC - Charging Chicken (Saffron Trial)
+<br>	0xD - Charging Chicken (Slatwater Trial)
+<br>	0xE - Charging Chicken (Paprika Trial)
+<br>	0xF - Charging Chicken (Endless Game)
+<br>0xA4<2> X - ???
+<br>	0 - Disable(?)
+<br>	1 - Enable(?)
+<br>0xA4<3> - ??? (used in sub 0x05)
+<br>
+<br>0xA5 X - Prologue-related
+<br>	0 - Sends the "prologue finished" signal
+<br>	1 - Resets the "still playing" state?
+<br>0xA5<1> - Sets condvar to 1 if the prologue is still playing
+<br>
+<br>0xA6 X - Practice Indicator
+<br>	0 - No Practice
+<br>	1 - Practice
+<br>0xA6<1> X - Skip Prologue
+<br>	0 - A Button
+<br>	1 - X Button
+<br>
+<br>0xA7<X> - Sets condvar to 1 if:
+<br>	0 - You skipped the prologue
+<br>	1 - ??? (Unused)
+<br>	2 - You pressed X on the prologue
+<br>	3 - Playing Challenge Land in multiplayer
+<br>
+<br>0xA8 - Epilogue (Same IDs as Prologue Scene) (Doesn't change the Epilogue in the Museum)
+<br>0xA8<1> X - Image ID
+<br>0xA8<2> X - Image ID (Endless Game) (Always the same as The Clappy Trio)
+<br>0xA8<3> - ??? (Unused)
+<br>0xA8<4> X - Text ID
+<br>0xA8<5> X - Text ID (Endless Game) (Always the same as The Clappy Trio)
+<br>0xA8<6> - ??? (Unused)
+<br>
+<br>0xA9 - "Saving..." (Saves the game, used after you're done reading Tibby's letter after clearing Earth World)
+<br>
+<br>0xAA - Load Perfect related assets (Used in subs 0x08 and 0x09)
+<br>0xAA<1> - Possibly unload these assets? (Unused)
+<br>0xAA<2> - Sets condvar to 1 if Perfect assets are still loading (Used in subs 0x08 and 0x09)
+<br>
+<br>0xAB<0> X - Set the "is it a Perfect Campaign" value to X
+<br>	0 - No
+<br>	1 - Yes
+<br>0xAB<1> - ???
+<br>0xAB<2> - ??? Used 3 times in two different subs for the results scene
+<br>0xAB<3> X - Check if playing a "Go for Perfect!" challenge
+<br>	0 - Set condvar to 1 if NOT playing a Perfect Campaign (Unused)
+<br>	1 - Set condvar to 1 if playing a Perfect Campaign
+<br>0xAB<4> - ??? Check if entered through Perfect Campaign(?)
+<br>
+<br>0xAC X - "Go for Perfect!" P placement
+<br>	0 - Top Left
+<br>	1 - Top Right (Unused)
+<br>	2 - Bottom Left (Unused)
+<br>	3 - Bottom Right (Unused)
+<br>0xAC<1> - Remove "Go for Perfect!"
+<br>0xAC<2> - Blink "Go for Perfect!"
+<br>0xAC<3> - ???
+<br>0xAC<4> - Sets condvar to 1 if failed the campaign(?)
+<br>
+<br>0xAD X - Skill Star
+<br>	0 - Enable
+<br>	1 - Disable (Unused)
+<br>0xAD<1> - ??? (used in subs 0x0B and 0x0D)
+<br>0xAD<2> X - Sets Skill Star
+<br>	0 - Not Obtained (Unused)
+<br>	1 - Obtained (Used in Quiz Show)
+<br>
+<br>0xAE X - star X (Displays the Skill Star assembling animation)
+<br>	X = Time in ticks for the Skill Star parts to assemble (should be timed to happen on the beat the star is to be obtained) (Used values: 0x90, 0xA0, 0xA8, 0xB0, 0xC0, 0xD8, 0xF0, 0x108, 0x118, 0x120, 0x138, 0x150, 0x168, 0x180, 0x1B0, 0x1E0, 0x210, 0x270, 0x288, 0x2D0)
+<br>
+<br>0xAF 0 - Gatekeeper Trial clear
+<br>0xAF<1> - Gatekeeper Trial failed
+<br>0xAF<2> X, Y, "Z" - Gate explanation
+<br>	X = Graphic to use
+<br>	0 - Normal
+<br>	1 - Game Over
+<br>	2 - Game Clear!
+<br>	Y = MSBT File (see 0x65)
+<br>	Z = string
+<br>	"" - None
+<br>	"agbVirus_explain" - "Protect us from those viruses!"
+<br>	"gate_explain_score"- "Catch it N times!"
+<br>	"gate_explain_score_sword" - "Stop N times!"
+<br>	"gate_explain_score_chicken" - "Get to the goal!"
+<br>0xAF<3> 0 - Sets condvar to 1 if something (causes a loop if 0) (Only used in Coin Toss's Trials)
+<br>0xAF<4> X - "Aim for X!" (Used values: 0xA, 0xF, 0x14)
+<br>0xAF<5> X - ??? Used in Endless Games
+<br>0xAF<6> X - Score Counter
+<br>0xAF<7> X - "Best Score"
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0xB0<0> - Load Song Title & Artist
+<br>0xB0<1> - Load Subtitles
+<br>0xB0<2> - Unload Song Title & Artist? (Unused)
+<br>0xB0<3> - Unload Subtitles? (used in subs 0x0C and 0x0D)
+<br>0xB0<4> M, "string" - Set Song Title String
+<br>0xB0<5> M, "string" - Set Artist String
+<br>0xB0<6> M, "string", X - Set Subtitle String
+<br>0xB0<7> - Display Song Title & Artist
+<br>0xB0<8> X - Display Subtitle
+<br>0xB0<9> - Remove Song Title & Artist
+<br>0xB0<0xA> X - Remove Subtitle
+<br>	M = Which msbt file (see 0x68)
+<br>	X = Placement
+<br>	0 - Default
+<br>	1 - Top
+<br>	2 - Bottom
+<br>
+<br>0xB1 - Reset the value of every slot of 0xB2 or 0xB2<1> to 0 (Used near the start of remixes)
+<br>
+<br>0xB2 X - Sets condvar to the stored value in slot X (limit of 16 slots) (4 bytes) (Functions like get_countdown)
+<br>0XB2<1> X - Second set of 16 slots (1 byte)
+<br>
+<br>0xB3 X, Y - Sets the stored value to Y in slot X (limit of 16 slots) (4 bytes) (Functions like set_countdown) (Unused)
+<br>0xB3<1> X, Y - Sets the stored value to Y (0 or 1) in slot X (limit of 16 slots) (1 byte)
+<br>
+<br>0xB4 X, Y - Adds Y to the stored value in slot X (Functions similarly dec_countdown)
+<br>
+<br>Ex:	0xB4 0, 3
+<br>	0xB4 0, 4
+<br>	0xB4 1, 5
+<br>	0xB2 0
+<br>Sets condvar to 7.
+<br>
+<br>	0xB4 0, 2
+<br>	0xB4 0, 3
+<br>	0xB4 1, 4
+<br>	0xB2 1
+<br>Sets condvar to 4.
+<br>
+<br>	0xB4 2, 1
+<br>	0xB4 2, 5
+<br>	0xB3 2, 8
+<br>	0xB2 2
+<br>Sets condvar to 8.
+<br>
+<br>These are used to count how many ghosts the player has hit in Sneaky Spirits in Barbershop Remix, so that the one in Flipper-Flop's second section will appear only if the player has hit all of them up to that point.
+<br>
+<br>0xB5 0xXXXXXX - Play sub for loading common resources (debug)
+<br>	0x51159F = "sub_Glb_scene_init_wait_loop" (used in sub4)
+<br>	0x5116E4 = "sub_Glb_game_load_cmn_res" (used in sub8)
+<br>	0x511745 = "sub_Glb_game_load_cmn_res_without_tutorial" (used in sub9)
+<br>
+<br>0xB6<X> - ??? Something at the start of each game (also at the end of Rat Race)
+<br>	0 - ???
+<br>	1 - ???
+<br>
+<br>0xB7 - Sets condvar to 1 if (something), Something related to tempo files
+<br>
+<br>0xB8<X> - random X
+<br>	Stores a random number between 0 and X in condvar (excluding X)
+<br>
+<br>0xB9 - Sets condvar to 1 if playing on a New 3DS (Used in Launch Party)
+<br>
+<br>0xBA - Nothing
+<br>
+<br>0xBB - ??? Sets condvar to 1 if (something)
+<br>
+<br>0xBC - ??? Used when 0xBB is 0
+<br>
+<br>0xBD - ???
+<br>
+<br>0xBE - Seems to be play_sfx with an extra cowbell sound after a delay? (Unused)
+<br>---------------------
+<br>0xBF~0xFF don't exist. 0x100 and up are Scene-Specific
+<br>---------------------
+<br>Subs:
+<br>0x00 - Pause tickflow while text box is on screen
+<br>0x01 - Pause tickflow until .aac music is loaded
+<br>0x02 - Pause tickflow until .bcgrp music is loaded
+<br>0x03 - Pause tickflow until all SFX are loaded
+<br>0x04 - Subtract time it takes to load a new scene in a remix to keep it on the beat
+<br>0x05 - Repeatedly calls 0xA4<3> until it returns 1
+<br>0x06 - Wait for prologue before continuing
+<br>0x07 - Waits until 0x81 returns 1 or 0x83<2> returns 0
+<br>0x08 - Global game loading common resources
+<br>0x09 - Global game loading common resources without tutorial
+<br>0x0A - Initialize Game
+<br>0x0B - Results
+<br>0x0C - Skip (Disables practice related functions)
+<br>0x0D - Start Over (Disables various functions on screen)
+<br>0x0E - Start Over (Medley Remix) (Disables various functions on screen) (Uses scene 0x44?)
+<br>0x0F - Challenge Train results (Unused)
+<br>0x10 - Disable pausing for 0.25 beats (Unused)
+<br>0x11 - Disable pausing for 0.5 beats (Unused)
+<br>0x12 - Disable pausing for 1.0 beats (Used in remix transitions)
+<br>0x13 - Disable pausing for 2.0 beats (Unused)
+<br>0x14 - Disable pausing for 4.0 beats (Unused)
+<br>0x15 - Disable 0x2F for 0.25 beats (Unused)
+<br>0x16 - Disable 0x2F for 0.5 beats (Unused)
+<br>0x17 - Disable 0x2F for 1.0 beats (Used in remix transitions)
+<br>0x18 - Disable 0x2F for 2.0 beats (Unused)
+<br>0x19 - Disable 0x2F for 4.0 beats (Unused)
+<br>0x1A - Disable 0x30 for 0.25 beats (Unused)
+<br>0x1B - Disable 0x30 for 0.5 beats (Unused)
+<br>0x1C - Disable 0x30 for 1.0 beats (Used in remix transitions)
+<br>0x1D - Disable 0x30 for 2.0 beats (Unused)
+<br>0x1E - Disable 0x30 for 4.0 beats (Unused)
+<br>0x1F - play a 4/4 drum beat (1 time) (Unused)
+<br>0x20 - play a 4/4 drum beat (Forever) (Unused)
+<br>0x21 - play a 3/4 drum beat (1 time) (Unused)
+<br>0x22 - play a 3/4 drum beat (Forever) (Unused)
+<br>0x23 - "1, 2, 3, 4!" count (Practice)
+<br>0x24 - "1... 2... 1, 2, 3, 4!" count (Practice)
+<br>0x25 - "1, 2, 3" count (Progressively lower pitch) (Unused)
+<br>0x26 - "1, 2, 3, 1, 2, 3" count (Progressively lower pitch) (Unused)
+<br>0x27 - "3, 4!" count (Unused)
+<br>0x28 - "3, go!" count (Unused)
+<br>0x29, X, Y - Remove text box after X beats (Y is unused)
+<br>0x2A - Remove string (Unused)
+<br>0x2B - Rhythm Help Display (1 rows)
+<br>0x2C - Rhythm Help Display (2 rows, fast (0-7) then slow (0-3))
+<br>0x2D - Rhythm Help Display (2 lines simultaneously) (Unused)
+<br>0x2E - Rhythm Help Display (Rows 1 and 3 simultaneously, then row 2, slow, index 0-3 only) (Unused)
+<br>0x2F - Rhythm Help Display (2 rows, goes through row 1 then stops until the next set) (Unused)
+<br>0x30 - Rhythm Help Display (2 rows)
+<br>0x31 - Rhythm Help Display (3 rows) (Unused)
+<br>0x32 - Rhythm Help Display (1 rows, swing) (Unused)
+<br>0x33 - Rhythm Help Display (2 rows, swing) (Used in Glee Club 2)
+<br>0x34 - Rhythm Help Display (3 rows, swing) (Unused)
+<br>0x35 - Rhythm Help Display (2 rows, fast (4 beats to complete)) (Unused)
+<br>0x36 - Rhythm Help Display (3 rows, fast (7 beats to complete)) (Unused)
+<br>0x37 - Rhythm Help Display (1 rows, slow, 4 beats long) (Used in Super Samurai Slice)
+<br>0x38 - Rhythm Help Display (2 rows, slow, index 0-3 only) (Used in Blue Birds, Glee Club and Exhibition Match)
+<br>0x39 - Rhythm Help Display (2 lines simultaneously) (Unused)
+<br>0x3A - Rhythm Help Display (2 rows, goes through row 1 then stops until the next set) (Unused)
+<br>0x3B - Rhythm Help Display (Broken) (Unused)
+<br>0x3C - Rhythm Help Display (2 rows, goes through row 1 then stops until the next set) (Used in Airboarder)
+<br>0x3D - Rhythm Help Display (Broken) (Unused)
+<br>0x3E - Rhythm Help Display (Broken) (Unused)
+<br>0x3F - Rhythm Help Display (Broken) (Unused)
+<br>0x40 - Rhythm Help Display (Broken) (Unused)
+<br>0x41 - Rhythm Help Display (Broken) (Unused)
+<br>0x42 - Rhythm Help Display (Broken) (Unused)
+<br>0x43, X, Y - Sets 0x8E to 0 (Karate Man Games)
+<br>0x44, X, Y - Sets 0x8E to 1 (Karate Man Games)
+<br>0x45, X, Y - Sets 0x8E to 2 (Unused)
+<br>0x46, X, Y - Sets 0x8E to 3 (Unused)
+<br>0x47, X, Y - Sets 0x8E to 4 (Unused)
+<br>0x48, X, Y - Sets 0x8E to 5 (Unused)
+<br>0x49, X, Y - Sets 0x8E to 6 (Unused)
+<br>0x4A, X, Y - Sets 0x8E to 7 (Unused)
+<br>0x4B, X, Y - Sets 0x8F to 0
+<br>0x4C, X, Y - Sets 0x8F to 1 (Used in Shoot-'em-up 2)
+<br>0x4D, X, Y - Sets 0x8F to 2 (Unused)
+<br>0x4E, X, Y - Sets 0x8F to 3 (Machine Remix, Donut Remix, Songbird Remix, Left-Hand Remix, Right-Hand Remix, Final Remix)
+<br>0x4F, X, Y - Sets 0x8F to 4 (Lush Remix, Honeybee Remix, Barbershop Remix)
+<br>0x50, X, Y - Sets 0x8F to 5 (Unused)
+<br>0x51, X, Y - Sets 0x8F to 6 (Citrus Remix)
+<br>0x52, X, Y - Sets 0x8F to 7
+<br>	X = Time in Ticks
+<br>	Y = Usually 0
+<br>0x53, X - Initialize Challenge Land UI (Challenge Train Mii head, Monster Goal Zoom, Life Goal Hearts, "Go for Perfect!")
+<br>0x54 - Perfect Campaign (flashes the "Go for Perfect!" text and enables the no-miss check)
+<br>0x55 - Start Life Goal heartbeat
+<br>---------------------
+<br>0x56 and up are Scene-Specific</body>

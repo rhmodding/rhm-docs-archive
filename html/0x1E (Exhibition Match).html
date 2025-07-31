@@ -1,0 +1,92 @@
+<html><body style = "font-family: monospace;">Exhibition Match
+<br>---------------------
+<br>0x100 X - Input
+<br>	X = Time in Ticks (Used Value: 0x20)
+<br>
+<br>0x101 - Slugger Beat Animation
+<br>0x101<1> - Ready
+<br>0x101<2> X - Face after Pitch
+<br>	0 - Blink 1 (Face Camera)
+<br>	1 - Blink 2 ("Huh?")
+<br>	2 - Blink 3 (Face Forward)
+<br>
+<br>0x102<X> - Pitcher Animations
+<br>	0 - Beat
+<br>	1 - Ready
+<br>	2 - Pitch
+<br>	3 - Cap Off
+<br>	4 - No Face Changes
+<br>
+<br>0x103<X> - Monkey Animations
+<br>	0 - Beat
+<br>	1 - Throw
+<br>
+<br>0x104<X> - Curtain
+<br>	0 - Down
+<br>	1 - Up
+<br>	2 - Raise
+<br>
+<br>0x105 X - Slugger Swing
+<br>	0 - Normal
+<br>	1 - Spin
+<br>
+<br>0x106 X - Pitcher Face
+<br>	0 - Normal
+<br>	1 - Angry
+<br>0x106<1> X - Happy
+<br>	0 - Enabled
+<br>	1 - Disabled
+<br>0x106<2> - Set condvar to 1 if Slugger has hit enough baseballs
+<br>
+<br>0x107<X> - VS
+<br>	0 - Enable
+<br>	1 - Disable
+<br>
+<br>0x108<X> Y, Z - Zoom
+<br>	X = Type
+<br>	0 - Specific Coordinates
+<br>	1 - Add to previous
+<br>	Y = Zoom
+<br>	Used Values: -0x64, 0xD8, 0xE4, 0xF0, 0xF4, 0x10C, 0x110, 0x11C, 0x128, 0x1400
+<br>	Z = Time in Ticks
+<br>	Used Values: 6, 0x18, 0x60, 0xC0
+<br>
+<br>0x109 - Audience Applauds
+<br>
+<br>0x10A X - Activate Spotlights
+<br>	X = Time in Ticks (Used Value: 0x18)
+<br>
+<br>0x10B - Flash Lights (visible when zoomed out)
+<br>
+<br>0x10C<X> - Sky
+<br>	0 - Day (Practice)
+<br>	1 - Night (Real Game)
+<br>
+<br>0x10D<X> - Audience
+<br>	0 - Disabled (Practice)
+<br>	1 - Enabled (Real Game)
+<br>---------------------
+<br>Subs:
+<br>0x56 - 4 Beat Animations
+<br>0x57 - 2 Beats, Ready Pitch
+<br>0x58 - Pitching
+<br>0x59 - Pitching (Blink 1)
+<br>0x5A - Pitching (Blink 2) (Unused)
+<br>0x5B - Pitching (Blink 3)
+<br>0x5C - 4 Rests (Effectively Nothing)
+<br>0x5D - VS
+<br>The following wait for 8 Beats before doing anything
+<br>0x5E - Zoom in 4 times
+<br>0x5F - Zoom in 3 times
+<br>0x60 - Zoom in Slowly
+<br>0x61 - Zoom in 2 times (Leftover)
+<br>0x62 - Zoom in Quickly, then slowly
+<br>0x63 - Zoom out very far
+<br>0x64 - Zoom out 4 times
+<br>0x65 - Zoom out 3 times (Unused)
+<br>0x66 - Zoom out Slowly
+<br>0x67 - Zoom out 2 times
+<br>0x68 - Zoom out Quickly, then slowly (Unused)
+<br>0x69 - Exhibition Match (Practice)
+<br>0x6A - Exhibition Match (Real Game)
+<br>0x6B - Exhibition Match (Skipped Practice)</body>

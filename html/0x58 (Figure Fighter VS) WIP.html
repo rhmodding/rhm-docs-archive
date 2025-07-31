@@ -1,0 +1,70 @@
+<html><body style = "font-family: monospace;">Figure Fighter VS
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - "Jab!"
+<br>	1 - "One, Two!" Punch 1
+<br>	2 - "One, Two!" Punch 2
+<br>	3 - "One-Two!" Punch 1
+<br>	4 - "One-Two!" Punch 2
+<br>	5 - "Go, go, go!" Punch 1, 2
+<br>	6 - "Go, go, go!" Punch 3
+<br>	Y = Time in Ticks (Used Value: 0x30)
+<br>
+<br>0x101 - Seems to load the list of characters. If not used before 0x102, the list is empty.
+<br>0x101<1> - Seems to display the menu, but won't stop execution. Inputs are locked as well
+<br>0x101<2> - Should load the Figure Fighter part...?
+<br>
+<br>0x102 - Seems to display the menu. Stops the tickflow and redirects to the original tickflow
+<br>
+<br>0x103 - Used with 0x101<1>, unlocks inputs.
+<br>
+<br>0x104 X - Beat Animation
+<br>0x104<1> - Ready
+<br>	0 - for "Jab!"
+<br>	1 - for "One, Two!" & "Go, go, go!" (Unused)
+<br>	2 - for "One-Two!" (Unused)
+<br>0x104<2> X - ???	
+<br>0x104<3> X - ???
+<br>0x104<4> X - Raise Muscle Doll Up
+<br>	0 - Left (Player)
+<br>	1 - Right
+<br>0x104<5> X - ???
+<br>
+<br>0x105 X - ???
+<br>
+<br>0x106 - ???
+<br>0x106<1> - ??? (Used during setup)
+<br>
+<br>0x107 - ??? 
+<br>0x107<1> - ??? 
+<br>0x107<2> - ??? 
+<br>0x107<5> - ???  
+<br>
+<br>0x108 - Randomizer, chooses a wider range of patterns if it returns 1
+<br>	0x108 
+<br>    switch 
+<br>        case 0
+<br>        	random 0x4
+<br>        break 
+<br>        case 1
+<br>        	random 0x8
+<br>        break 
+<br>
+<br>0x109 X - ??? (Used after "Ready...Fight!" Used values: 0)
+<br>0x109<1> - ??? (Used right before the third pattern is chosen)
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Jab"
+<br>0x57 - "One, Two!"
+<br>0x58 - "One-Two!"
+<br>0x59 - "Go, go, go!"
+<br>0x5A - "And (Jab)"
+<br>0x5B - "And (One-Two!)"
+<br>0x5C - Beat Animation for "Jab!"
+<br>0x5D - Beat Animation for "One-Two!" (Unused)
+<br>0x5E - Beat Animation for "One, Two!" & "Go, go, go!" (Unused)
+<br>0x5F - Ready
+<br>0x60 - Streetpass Terrace
+<br>0x61 - StreetPass Terrace (empty)
+<br>0x62 - Fight</body>

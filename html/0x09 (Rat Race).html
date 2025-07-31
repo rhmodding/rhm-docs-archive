@@ -1,0 +1,65 @@
+<html><body style = "font-family: monospace;">Rat Race
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - Hold A
+<br>	1 - Release A
+<br>	Y = Time in Ticks (Used values: 0x30, 0x90)
+<br>
+<br>0x101 X - Background Movement
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x102 X - Rat Animations
+<br>	0 - Hiding
+<br>	1 - Running
+<br>	2 - Preparing to Run
+<br>	3 - Running Start
+<br>
+<br>0x103 - Rats Celebrate (And Stop Background Movement)
+<br>
+<br>0x104 X - Cat Animations
+<br>	0 - Left Paw
+<br>	1 - Right Paw
+<br>	2 - Head Pops Up
+<br>	3 - Head Pops Down
+<br>	4 - Look Straight
+<br>	5 - Look Left
+<br>	6 - Look Right
+<br>	7 - Close Eyes
+<br>	8 - Paws Back Down
+<br>
+<br>0x105 X - Speed
+<br>	0 - None
+<br>	1 - Normal
+<br>	2 - Fast
+<br>
+<br>0x106 X, Y - Spawn Foreground Object
+<br>	X = Time in Ticks (Used Value: 0xC0)
+<br>	Y = Type
+<br>	0 - Plates/Donuts
+<br>	1 - Cheese
+<br>
+<br>0x107 - Stoplight (Pull Out)
+<br>0x107<1> - Stoplight (Put Away)
+<br>0x107<2> X - Stoplight (Yellow)
+<br>	0 - Left
+<br>	1 - Middle
+<br>	2 - Right (Unused)
+<br>	3+- None (Makes a Sound Anyway)
+<br>0x107<3> - Stoplight (Red)
+<br>0x107<4> - Stoplight (Green)
+<br>0x107<5> - Stoplight (Off)
+<br>0x107<6> - "No more signals!"
+<br>
+<br>0x108 - Stop Spawning Background Objects
+<br>---------------------
+<br>Subs:
+<br>0x56 - Stop
+<br>0x57 - Go
+<br>0x58 - Stoplight (for Stop)
+<br>0x59 - Stoplight (for Go)
+<br>0x5A - Stoplight (for Go, throw away stoplight) (Unused)
+<br>0x5B - Rat Race (Practice)
+<br>0x5C - Rat Race (Real Game)
+<br>0x5D - Rat Race (Skipped Practice)</body>

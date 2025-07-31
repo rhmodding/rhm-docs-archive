@@ -1,0 +1,83 @@
+<html><body style = "font-family: monospace;">Animal Acrobat
+<br>---------------------
+<br>0x100 - Nothing
+<br>
+<br>0x101 - Intro Beat Animation
+<br>0x101<1> X - Jump Off, grab after X ticks (Used value: 0x30)
+<br>0x101<2> - ???
+<br>0x101<3> - ??? (Found in the practice)
+<br>
+<br>0x102 X - Start executing byte array
+<br>	X = Time in ticks before grab (Used values: 0x60, 0xC0)
+<br>0x102<1> 0xXXXXXX, Y - Loads a byte array, describing the game's patterns.
+<br>Every byte is an animal. Byte arrays can be created in Tickflow using the bytes command.
+<br>	0xXXXXXX = Location
+<br>	0x52F9A4 - Jungle Gymnast
+<br>	0x52F9C5 - Jungle Gymnast (Practice)
+<br>	0x52F9C6 - Animal Acrobat
+<br>	0x52F9DF - Animal Acrobat (Practice)
+<br>	0x52FAAC - Donut Remix (Section 1)
+<br>	0x52FAB1 - Donut Remix (Section 2)
+<br>	0x52FAB5 - Donut Remix (Section 3)
+<br>	0x52FC1C - Final Remix (Animal Acrobat)
+<br>	0x52FC22 - Final Remix (Jungle Gymnast)
+<br>	Y = Amount of Bytes (Usually a little over the number of animals)
+<br>	0 - Practices
+<br>	4 - Donut Remix (Section 2, 3)
+<br>	5 - Donut Remix (Section 1)
+<br>	6 - Final Remix
+<br>	0x19 - Animal Acrobat
+<br>	0x21 - Jungle Gymnast
+<br>Values for bytes are:
+<br>	0 - White Monkey (Single)
+<br>	1 - Elephant
+<br>	2 - White Monkey (Three)
+<br>	3 - Giraffe
+<br>	4 - Gorilla/Donuts/Balloon
+<br>	5 - Starting Platform
+<br>	6 - Nothing
+<br>0x102<2> - Animals start swinging
+<br>
+<br>Example of custom array:
+<br>Pattern:
+<br>bytes 1, 1, 3, 1, 2, 0
+<br>return
+<br>
+<br>0x102<1> Pattern, 6
+<br>
+<br>0x103 X - Spotlight
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x104 - Monkey Lands on Gorilla/Donuts/Balloon
+<br>0x104<1> - Balloon takes off (Jungle Gymnast)
+<br>
+<br>0x105 X - Return to start (Practice)?
+<br>0x105<1> X - ???
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x106 X - Waterfall (Jungle Gymnast)
+<br>	Used value: 0x21C
+<br>
+<br>0x107 X - Vines (Jungle Gymnast)
+<br>	Used value: 0x320
+<br>
+<br>0x108<X> - Ending
+<br>	0 - Confetti (Animal Acrobat)
+<br>	1 - Leaves (Jungle Gymnast)
+<br>
+<br>0x109<X> - ??? (Found in Remixes)
+<br>	0 - ???
+<br>	1 - ???
+<br>
+<br>0x10A - ??? (Found in Final Remix)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nonexistent (Crashes the game when used)
+<br>0x57 - Animal Acrobat (Practice)
+<br>0x58 - Jungle Gymnast (Practice)
+<br>0x59 - Animal Acrobat (Real Game)
+<br>0x5A - Jungle Gymnast (Real Game)
+<br>0x5B - Animal Acrobat (Skipped Practice)
+<br>0x5C - Jungle Gymnast (Skipped Practice)</body>

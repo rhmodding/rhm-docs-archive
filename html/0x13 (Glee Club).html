@@ -1,0 +1,90 @@
+<html><body style = "font-family: monospace;">Glee Club
+<br>---------------------
+<br>0x100 X - Input (Expected 1.0 Beats after)
+<br>	0 - Release A (Sing)
+<br>	1 - Release A (Wail)
+<br>	2 - Hold A (Stop)
+<br>
+<br>0x101<X> - Player Hold Check (Used for the "close your yap!" part)
+<br>	0 - Check if player is holding A
+<br>	1 - Sets condvar to 1 if holding A
+<br>	2 - Other members will glare if you don't hold A
+<br>
+<br>0x102 X - Set base pitch (Used value: 0)
+<br>
+<br>0x103 X - Set input delay in X ticks (Unused)
+<br>
+<br>0x104 X, Y, 0xZZZZZZZ, O, P - Voice Control (Set SFX)
+<br>0x104<1> X, Y, O - Perform Action
+<br>0x104<2> X = Crouch (Before Wailing)
+<br>	X = Which one (0~2)
+<br>	Y = Type
+<br>	0 - Singing
+<br>	1 - Wailing
+<br>	2 - Stop
+<br>	0xZZZZZZZ = SFX
+<br>	0x1000DAF - Singing
+<br>	0x1000DB0 - Wailing
+<br>	0x1000DB1 - Stop
+<br>	O = Unknown (Used Values: 0, 0x28, 0x2D, 0x3C, 0x46, 0x64, 0x5A, 0x78)
+<br>	P = Pitch
+<br>	-8 - C (Unused)
+<br>	-7 - C#/Db (Unused)
+<br>	-6 - D
+<br>	-5 - Eb/D#
+<br>	-4 - E (Unused)
+<br>	-3 - F (Unused)
+<br>	-2 - F#/Gb
+<br>	-1 - G
+<br>	0 - Ab/G#
+<br>	1 - A
+<br>	2 - Bb/A#
+<br>	3 - B
+<br>	4 - C+
+<br>	5 - C#+/Db+
+<br>	6 - D+
+<br>	7 - Eb+/D#+ (Unused)
+<br>	8 - E+ (Unused)
+<br>	9 - F+ (Unused)
+<br>	0xA - F#+/Gb+
+<br>
+<br>0x105<X> - Conductor
+<br>	0 - Idle Animation
+<br>	1 - Raise Baton
+<br>	2 - Snap Baton
+<br>
+<br>0x106 - Heart
+<br>
+<br>0x107 X, Y - Remove Chorus Kids (Machine Remix)
+<br>	X = Which one (0~2)
+<br>	Y = Visible
+<br>	0 - No
+<br>	1 - Yes
+<br>	
+<br>0x108<X> - Sets condvar to 1 if X is 1 (Used values: 2)
+<br>
+<br>0x109<X> - React to the player with an open yap (Animation only)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x10A X - Wailing
+<br>	0 - Disabled
+<br>	1 - Enabled
+<br>
+<br>0x10B - Sets condvar to 1 if holding A
+<br>
+<br>0x10C X, Y - Setup something with the rhythm help display? (Unused)
+<br>	X = Column amount
+<br>	Y = Row amount
+<br>
+<br>0x10D - Force the game to think that the player had a successful Release A input? (Animation only, used in remixes)
+<br>(will still make the other kids give the player the Look if they press A not on input?)
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Press (A) to close your yap!"
+<br>0x57 - Glee Club (Practice)
+<br>0x58 - Glee Club 2 (Practice)
+<br>0x59 - Glee Club (Real Game)
+<br>0x5A - Glee Club 2 (Real Game)
+<br>0x5B - Glee Club (Skipped Practice)
+<br>0x5C - Glee Club 2 (Skipped Practice)</body>

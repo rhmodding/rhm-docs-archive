@@ -1,0 +1,68 @@
+<html><body style = "font-family: monospace;">Rhythm Rally
+<br>---------------------
+<br>0x100 X, Y, Z - Input
+<br>	X = Timing
+<br>	0 - Normal Rally
+<br>	1 - Fast Rally
+<br>	Y = Height
+<br>	Z = Time in Ticks
+<br>
+<br>0x101 X, Y, Z - Bounce Ball
+<br>	X = Where to?
+<br>	0 - Center of the table (Unused)
+<br>	1 - Opponent's paddle
+<br>	2 - Player's side of the table
+<br>	3 - Player's paddle
+<br>	4 - Opponent's side of the table (Unused)
+<br>	5 - Opponent's hand (when serving)
+<br>	Y = Height (Used Values: 0, 0x29E, 0x3E8, 0x5DC, 0x7D0, 0xBB8, 0x1388)
+<br>	Z = Time in Ticks (Used Values: 0, 0x18, 0x30, 0x60)
+<br>
+<br>0x102 - Check Performance
+<br>0x102<1> - Set condvar to 1 if the player failed since this
+<br>
+<br>0x103 - Nothing (Unused)
+<br>
+<br>0x104 X - Beat
+<br>0x105 X - Ready
+<br>0x106 X - Swing
+<br>0x107 X - Victory Pose
+<br>	0 - Opponent
+<br>	1 - Player
+<br>
+<br>0x108 X - Camera Movement
+<br>	0 - Intro Movement (Rhythm Rally 1 or 2, depends on which model is loaded)
+<br>	1 - Camera Stuck on the First Frame of the Intro Movement
+<br>0x108<1> X - Snap Camera to X angle
+<br>0x108<2> X, Y - Move Camera to X angle for Y ticks
+<br>	Used Values: 0x60, 0xC0, 0x180, 0x30C, 0x48C, 0x60C, 0x78C
+<br>0x108<3> X, Y - Move Camera to X angle for Y ticks
+<br>	Used Values: 0x150, 0x180, 0x24C
+<br>	0 - Normal (Player's Side)
+<br>	1 - Intro Angle (Cosmic Rhythm Rally)
+<br>	2 - From the Side
+<br>	3 - Mirrored (Player's Side)
+<br>	4 - Mirrored (Opponent's Side)
+<br>	5 - Intro Angle (Barbershop Remix)
+<br>
+<br>0x109 X - Background
+<br>	0 - Black Void
+<br>	1 - Model-specific Background
+<br>0x109<1> - Animate Background
+<br>---------------------
+<br>Subs:
+<br>0x56 - Normal Rally
+<br>0x57 - Slow Rally
+<br>0x58 - High-Speed Rally
+<br>0x59 - Fast Rally
+<br>0x5A - Fast Rally Sound ("Tonk Tink Tonk"), plays 2.0 Beats after the start of the sub
+<br>0x5B - High-Speed Rally Sound ("Tonk Tink Tonk Tink Tonk Tink Tonk Tink")
+<br>0x5C - Rhythm Rally (Practice)
+<br>0x5D - Rhythm Rally 2 (Practice)
+<br>0x5E - Cosmic Rhythm Rally (Practice)
+<br>0x5F - Rhythm Rally (Real Game)
+<br>0x60 - Rhythm Rally 2 (Real Game)
+<br>0x61 - Cosmic Rhythm Rally (Real Game)
+<br>0x62 - Rhythm Rally (Skipped Practice)
+<br>0x63 - Rhythm Rally 2 (Skipped Practice)
+<br>0x64 - Cosmic Rhythm Rally (Skipped Practice)</body>

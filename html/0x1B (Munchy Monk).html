@@ -1,0 +1,55 @@
+<html><body style = "font-family: monospace;">Munchy Monk
+<br>---------------------
+<br>0x100 X - Input
+<br>	0 - First (1.0 Beats)
+<br>	1 - Second (1.5 Beats)
+<br>	2 - Third (0.5 Beats)
+<br>	3 - Unused (0.0 Beats)
+<br>
+<br>0x101 - Beat Animation
+<br>
+<br>0x102 X - Dumpling (More than two at a time crashes the game)
+<br>	0 - White (One)
+<br>	1 - Pink (Two)
+<br>	2 - Green (Three)
+<br>Everything beyond these is unused but potentially useful:
+<br>https://bit.ly/2IHYVL8
+<br>
+<br>0x103 X - Hand
+<br>	0 - One
+<br>	1 - Two
+<br>	2 - Three
+<br>0x103<1> - Remove Hand
+<br>
+<br>0x104 - Monk Slides Forward
+<br>0x104<1> - Monk Snaps to Position
+<br>
+<br>0x105 - Face Turn (Leftover) (by default uses "face_beat" animation if a "face_turn" animation isn't present in snack.bccad)
+<br>
+<br>0x106 - Monk's Hands Slide Forward
+<br>0x106<1> - Monk's Hands Snap to Position
+<br>
+<br>0x107 X, Y - Background Movement
+<br>	X = Movement
+<br>	0 - Disabled
+<br>	1 - Enabled
+<br>	Y = Time in Ticks until moving at full speed (Used values: 0xC0)
+<br>
+<br>0x108 - Cloud (Final Remix)
+<br>0x108<1> A, B, C, D, F - Cloud (Wario...Where?)
+<br>	A = Starting X Position (Used values: -0x50, -0xF0)
+<br>	B = Ending X Position (Used values: -0x50, 0xF0)
+<br>	C = Y Position (Used values: -0x46)
+<br>	D = Time in Ticks (Used values: 0x30, 0xC0)
+<br>	F = Destination
+<br>	0 - Continues offscreen
+<br>	1 - Stops at B's position
+<br>0x108<2> - Cloud (Beat Animation)
+<br>---------------------
+<br>Subs:
+<br>0x56 - "One, go!"
+<br>0x57 - "Two-two, go-go!"
+<br>0x58 - "Three, go go go!"
+<br>0x59 - Munchy Monk (Real Game)
+<br>0x5A - Munchy Monk (Practice)
+<br>0x5B - Munchy Monk (Skipped Practice)</body>

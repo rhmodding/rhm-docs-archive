@@ -1,0 +1,45 @@
+<html><body style = "font-family: monospace;">Rhythm Tweezers
+<br>---------------------
+<br>0x100 X - Spawn Hair
+<br>	0 - Normal (8th note)
+<br>	1 - Normal (16th note) (Successive)
+<br>	2 - Normal (32nd note) (Leftover)
+<br>	3 - Curly (8th note)
+<br>	4 - Curly (16th note) (Leftover)
+<br>	5 - Curly (32nd note) (Unused)
+<br>
+<br>0x101 - Reset Hairs (At the beginning of a pattern)
+<br>
+<br>0x102 - Spawn Tweezers (2 Beats before the start of the pattern)
+<br>
+<br>0x103 - Seen at the end of a pattern (Supposedly if 0x106 0 is 0?)
+<br>
+<br>0x104 - Despawn Vegetable (every next one will have debug numbers for eyes, unused)
+<br>
+<br>0x105 X - Next Vegetable
+<br>	0 - Onion
+<br>	1 - Potato
+<br>	2 - Glitchy Background
+<br>
+<br>0x106 0 - sets the condvar to 1 if the player didn't miss
+<br>
+<br>0x107 X - "Don't Peek" Sign (Leftover)
+<br>0x107<1> - Remove Sign
+<br>	0 - Both Sides
+<br>	1 - Right Side
+<br>	2 - Left Side
+<br>
+<br>0x108<X> - Vegetable Change
+<br>	0 - Disable
+<br>	1 - Enable
+<br>---------------------
+<br>Subs:
+<br>0x56 - "Don't Peek" Sign (Both Sides) (Leftover)
+<br>0x57 - "Don't Peek" Sign (Left) (Unused)
+<br>0x58 - "Don't Peek" Sign (Right) (Unused)
+<br>0x59 - Rhythm Tweezers (Practice)
+<br>0x5A - Rhythm Tweezers 2 (Practice)
+<br>0x5B - Rhythm Tweezers (Real Game)
+<br>0x5C - Rhythm Tweezers 2 (Real Game)
+<br>0x5D - Rhythm Tweezers (Skipped Practice)
+<br>0x5E - Rhythm Tweezers 2 (Skipped Practice)</body>

@@ -1,0 +1,62 @@
+<html><body style = "font-family: monospace;">Sneaky Spirits
+<br>---------------------
+<br>0x100 X - Input (After 1.0 Beat from the command)
+<br>	X = Type
+<br>	0 - Normal
+<br>	1 - ???
+<br>	2 - ???
+<br>	3 - Practice (Doesn't laugh when you miss)
+<br>
+<br>0x101 - Draw Bow
+<br>0x101<1> X, Y - Slide Bow into View
+<br>	X = Starting Position (Used Values: 0, 0xFA)
+<br>	Y = Time in Ticks (Used Values: 0, 0x60)
+<br>
+<br>0x102 X - Spirit Pops Up
+<br>	X = Position (0 ~ 6)
+<br>0x102<1> - Pause ghost mid-jump with arrow (Practice)
+<br>0x102<2> - Unpause ghost
+<br>
+<br>0x103 - Close Door
+<br>
+<br>0x104 X - Spirit Height
+<br>	X = Height (0 ~ 0x100)
+<br>0x104<1> X - Music Goes Quiet when Spirits go Lower
+<br>	0 - Disable (Remix)
+<br>	1 - Enable (Default)
+<br>
+<br>0x105 X - Spirit Position
+<br>	0 - Hit Zone (Temporarily stops ambience noise if hit)
+<br>	1 - Behind the Fence
+<br>0x105<1> X - ???
+<br>	0 - ??? (Unused?)
+<br>	1 - ???
+<br>	
+<br>0x106 X - Butterflies
+<br>	X = Amount (Used Value: 6)
+<br>
+<br>0x107 - Reset Speed
+<br>0x107<1> X - Game Slows Down when hitting a Spirit
+<br>	0 - Disable (Remix)
+<br>	1 - Enable (Default)
+<br>---------------------
+<br>Subs (sync):
+<br>0x56 - Spirit (0x100, 0x100, 0x100, 0x100, 0x100, 0x100, 0x100)
+<br>0x57 - Spirit (0x100, 0x100, 0x100, 0x100,  0xA0,  0x50,     0)
+<br>0x58 - Spirit (0x100,  0xC0,  0x80,  0x50,  0x20,     0,     0)
+<br>0x59 - Spirit (0x100,  0xA0,  0x50,     0,     0,     0,     0)
+<br>0x5A - Spirit (    0,  0x20,  0x40,  0x70,  0xA0,  0xD0, 0x100) (Leftover)
+<br>0x5B - Spirit (    0,  0x40,  0x80,  0xA0,  0x60,  0x30,     0) (Leftover)
+<br>0x5C - Spirit ( 0x20,  0x20,  0x10,  0x10,  0x50,  0xA0, 0x100) (Leftover)
+<br>0x5D - Spirit ( 0x20, 0x100,  0x10, 0x100,     0, 0x100,     0)
+<br>0x5E - Spirit (    0,     0,     0,     0,     0,     0,     0) (Unused)
+<br>0x5F - Spirit (0x100, 0x100, 0x100, 0x100, 0x100, 0x100)
+<br>0x60 - Spirit (0x100, 0x100, 0x100,  0xA0,  0x50,     0)
+<br>0x61 - Spirit (0x100,  0xA0,     0,     0,     0,     0)
+<br>0x62 - Spirit (    0,  0x20,  0x40,  0x70,  0xB0, 0x100)
+<br>Subs (async):
+<br>0x63 - Skill Star (Timed to match Spirits)
+<br>0x64 - Sneaky Spirits (Practice)
+<br>0x65 - Sneaky Spirits (Real Game)
+<br>0x66 - Sneaky Spirits 2 (Real Game)
+<br>0x67 - Sneaky Spirits (Skipped Practice)</body>

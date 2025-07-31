@@ -1,0 +1,57 @@
+<html><body style = "font-family: monospace;">Screwbot Factory
+<br>---------------------
+<br>0x100 X, Y, Z - Input
+<br>	X = Time in Ticks (Used value: 0x30)
+<br>	Y = Type
+<br>	0 - White Robot
+<br>	1 - Gray Robot
+<br>	Z = Input Type(?)
+<br>	0 - Release A(?)
+<br>	1 - Trigger A(?)
+<br>
+<br>0x101 - Raise Arm
+<br>
+<br>0x102<X> Y - Crane
+<br>	X = Action
+<br>	0 - Grab Robot
+<br>	1 - Bring Up Robot
+<br>	2 - Drop Robot
+<br>	Y = Type
+<br>	0 - White Robot
+<br>	1 - Gray Robot
+<br>
+<br>0x103 - Conveyer Belt
+<br>
+<br>0x104 X - ??? (Unused)
+<br>	0 - sets field_0xD9 to 0 (unknown what this does)
+<br>	1 - something with field_0xD9 again
+<br>
+<br>0x105 - Play beat animation if it is already playing
+<br>0x105<1> X - Robot Animations
+<br>	0 - Normal Stance
+<br>	1 - Beat Animation
+<br>
+<br>0x106 X - Spotlight (Leftover) (Matches the order in spot.bccad)
+<br>0x106<1> - Turn off Spotlight
+<br>	0 - Widest Spots (Arm, Crane)
+<br>	1 - Wide Spots (Arm, Crane)
+<br>	2 - Narrow Spots (Arm, Crane)
+<br>	3 - Small Spots (Arm, Crane)
+<br>	4 - Big Spot (Crane)
+<br>	5 - Big Spot (Arm)
+<br>	6 - Zig-Zag (Top-Bottom)
+<br>	7 - Zig-Zag (Bottom-Top)
+<br>	8 - Widest Spot (Robot)
+<br>	9 - Wide Spot (Robot)
+<br>	0xA - Narrow Spot (Robot)
+<br>	0xB - Small Spot (Robot) (Unused)
+<br>---------------------
+<br>Subs:
+<br>0x56 - White Robot
+<br>0x57 - White Robot (Fast)
+<br>0x58 - Gray Robot
+<br>0x59 - Gray Robot (Fast)
+<br>0x5A - Beat Animation (8.0 Beats)
+<br>0x5B - Screwbot Factory (Practice)
+<br>0x5C - Screwbot Factory (Real Game)
+<br>0x5D - Screwbot Factory (Skipped Practice)</body>

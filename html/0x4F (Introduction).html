@@ -1,0 +1,47 @@
+<html><body style = "font-family: monospace;">Introduction
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Time in Ticks (Used Value: 0x30)
+<br>	Y = Type
+<br>	0 - Normal
+<br>	1 - Skill Star
+<br>
+<br>0x101<X> - Free Mode
+<br>	0 - Enable
+<br>	1 - Disable
+<br>
+<br>0x102<X> - Performance check
+<br>	0 - Start performance check for 4 inputs. Freezes the game after the 4 inputs have been performed
+<br>	1 - Resumes the game after freezing
+<br>	2 - Checks if the player did 4 inputs, and sets the condvar to 1 if they did
+<br>
+<br>0x103<0> X - Drummers Slide in
+<br>0x103<1> X - Drummer Beat Animation
+<br>0x103<2> X, Y - Ready to Hit
+<br>0x103<3> X, Y - Ready to Hit (Alt?)
+<br>0x103<4> X - Hit drum
+<br>0x103<5> X - Reset Face?
+<br>	X = Which one
+<br>	0 - Left
+<br>	1 - Middle
+<br>	2 - Right
+<br>	Y = Which arm
+<br>	0 - Right
+<br>	1 - Left
+<br>
+<br>0x104 - ???
+<br>
+<br>0x105<X> - "Early!/Late!" indicator on the bottom screen
+<br>	0 - Enable
+<br>	1 - Disable
+<br>
+<br>0x106<X> - Skill Star tutorial
+<br>	0 - Make star appear
+<br>	1 - Collect star
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nothing (Unused)
+<br>0x57 - Intro (First Time)
+<br>0x58 - Intro (Repeats)
+<br>0x59 - Intro (Download Play)
+<br>0x5A - Intro (Routine)</body>

@@ -1,0 +1,59 @@
+<html><body style = "font-family: monospace;">Clap Trap
+<br>---------------------
+<br>0x100 X - Input
+<br>	X = Time in Ticks (Used Value: 0x30, 0x60)
+<br>
+<br>0x101 X - Setup
+<br>	0 - Real Game
+<br>	1 - Practice
+<br>
+<br>0x102 X - Dim Lights
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x103 - Practice Speak (Leftover)
+<br>
+<br>0x104 X - Breath
+<br>	X = Time in Ticks during which it can happen (it's possible for it to never happen)
+<br>	Used values: 0x18, 0x24, 0x30, 0x48, 0x60, 0x90, 0xC0, 0x120
+<br>
+<br>0x105<X> - Face Reset
+<br>	0 - Disable
+<br>	1 - Enable (Normal)
+<br>	2 - Enable (Game Over)
+<br>
+<br>0x106 - Fall Over
+<br>
+<br>0x107 - Sets condvar to 1 if player failed
+<br>
+<br>0x108 X - Score Goal (Used Values: 0, 0xA, 0xF, 0x14)
+<br>0x108<1> - Sets condvar to 1 if player has achieved the score goal
+<br>0x108<2> - Save Score
+<br>---------------------
+<br>Subs:
+<br>0x56 - Karate Chop (2.0 Beats)
+<br>0x57 - Randomize Tempo (4, Slow) (Unused)
+<br>0x58 - Randomize Tempo (3, Slow) (Saltwater Trial/Endless Game)
+<br>0x59 - Randomize Tempo (3, Fast) (Practice/Saffron Trial/Saltwater Trial/Endless Game)
+<br>0x5A - Randomize Tempo (4, Fast) (Saltwater Trial/Endless Game)
+<br>0x5B - Randomize Tempo (4, Faster) (Unused)
+<br>0x5C - Randomize Tempo (7) (Endless Game)
+<br>0x5D - Randomize Tempo (10) (Endless Game)
+<br>0x5E - Randomize Tempo (8) (Endless Game)
+<br>0x5F - Randomize Tempo (11) (Paprika Trial/Endless Game)
+<br>0x60 - Randomize Delay (2) (Unused)
+<br>0x61 - Randomize Delay (3, Slow) (Practice/Saffron Trial/Saltwater Trial/Endless Game)
+<br>0x62 - Randomize Delay (3, Fast) (Unused)
+<br>0x63 - Randomize Delay (8) (Paprika Trial/Endless Game)
+<br>0x64 - Clap Trap (Saffron Trial)
+<br>0x65 - Clap Trap (Saltwater Trial)
+<br>0x66 - Clap Trap (Paprika Trial)
+<br>0x67 - Clap Trap (Endless Game)
+<br>0x68 - Clap Trap (Saffron Trial, Practice)
+<br>0x69 - Clap Trap (Saltwater Trial, Practice)
+<br>0x6A - Clap Trap (Paprika, Practice)
+<br>0x6B - Clap Trap (Gate, Practice)
+<br>0x6C - Clap Trap (Saffron Trial, Skipped Practice)
+<br>0x6D - Clap Trap (Saltwater Trial, Skipped Practice)
+<br>0x6E - Clap Trap (Paprika Trial, Skipped Practice)
+<br>0x6F - Clap Trap (Practice)</body>

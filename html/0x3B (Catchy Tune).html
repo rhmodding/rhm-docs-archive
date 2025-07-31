@@ -1,0 +1,32 @@
+<html><body style = "font-family: monospace;">Catchy Tune
+<br>---------------------
+<br>0x100 X, Y, T, Z - Input
+<br>0x101 X, Y, T, U, Z - Input (Remix Transitions)
+<br>	X = Type
+<br>	0 - Orange (T = 0x30)
+<br>	1 - Pineapple (T = 0x60)
+<br>	2+- Pineapple (Broken) (Unused)
+<br>	Y = Side
+<br>	0 - Right
+<br>	1 - Left
+<br>	T = Time in Ticks until catch (Used values: 0x30, 0x60)
+<br>	U = Time in Ticks until first bounce (Used values: 6, 0x36)
+<br>	(If 0, the object bounces only twice, but still falls from the top, which looks awkward)
+<br>	Z = Used if two are to be caught at once
+<br>	0 - No
+<br>	1 - Yes
+<br>
+<br>0x102 X - Beat Animations
+<br>	0 - Left
+<br>	1 - Right
+<br>
+<br>0x103 - Smile (if both are currently in the "catch" animation) Ignores 0x102 from now on
+<br>
+<br>0x104 - Restore normal animation
+<br>---------------------
+<br>Subs:
+<br>0x56 - Nothing (Unused)
+<br>0x57 - Catchy Tune (Practice)
+<br>0x58 - Catchy Tune (Real Game)
+<br>0x59 - Catchy Tune 2 (Real Game)
+<br>0x5A - Catchy Tune (Skipped Practice)</body>

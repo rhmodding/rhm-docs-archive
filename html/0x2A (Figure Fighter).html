@@ -1,0 +1,125 @@
+<html><body style = "font-family: monospace;">Figure Fighter
+<br>---------------------
+<br>0x100 X, Y - Input
+<br>	X = Type
+<br>	0 - "Jab!"
+<br>	1 - "One, Two!" Punch 1
+<br>	2 - "One, Two!" Punch 2
+<br>	3 - "One-Two!" Punch 1
+<br>	4 - "One-Two!" Punch 2
+<br>	5 - "Go, go, go!" Punch 1, 2
+<br>	6 - "Go, go, go!" Punch 3
+<br>	Y = Time in Ticks (Used Value: 0x30)
+<br>
+<br>0x101 X - Beat Animation
+<br>0x101<1> - Ready
+<br>	0 - for "Jab!"
+<br>	1 - for "One, Two!" & "Go, go, go!"
+<br>	2 - for "One-Two!"
+<br>
+<br>0x102<X> - Background
+<br>	0 - Spotlight
+<br>	1 - Normal
+<br>
+<br>0x103 X - Silhouettes
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x104<X> - Fade
+<br>	0 - Fade to White
+<br>	1 - Fade from White
+<br>
+<br>0x105<X> - ??? (Unused)
+<br>
+<br>0x106 0xXXXXXX - Text
+<br>	0x50C0BE - "Grrr...!"
+<br>	0x50C19C - "Let's do this!"
+<br>0x106<1> - Remove Text
+<br>
+<br>0x107 X - Black Frame
+<br>	0 - Widescreen
+<br>	1 - Narrowscreen
+<br>	2 - Tightscreen
+<br>
+<br>0x108 X - Punching Bag
+<br>	0 - Show
+<br>	1 - Hide
+<br>
+<br>0x109<X> - Punching Bag
+<br>	0 - Hide
+<br>	1 - Show
+<br>	2 - Strong Punch
+<br>
+<br>0x10A X - ??? currScene->field_0x109 = (char)puVar6 (I have no idea)
+<br>	0 - Disable (Unused)
+<br>	1 - Enable
+<br>
+<br>0x10B X - Crowd
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x10B<1> X - Beat Animation
+<br>	0 - Normal
+<br>	1 - Raised Hands
+<br>	2 - More Raised Hands
+<br>
+<br>0x10C<X> - White Spotlight
+<br>	0 - On
+<br>	1 - Off
+<br>
+<br>0x10D<X> Y - Lights
+<br>	X = Action
+<br>	0 - On
+<br>	1 - Beat
+<br>	2 - Off (Fast)
+<br>	3 - Off (Flash)
+<br>	Y = Lights (from outmost to inmost)
+<br>	0 - Overhead
+<br>	1 - Pair 1
+<br>	2 - Pair 2
+<br>	3 - Pair 3
+<br>	4 - Pair 4
+<br>	5 - Pair 5
+<br>	6 - Pair 6
+<br>
+<br>0x10E X - Color of Full Screen Light (Figure Fighter 3)
+<br>This seems to not work in Megamix, but is used anyway
+<br>	0 - Blue
+<br>	1 - Red
+<br>	2 - Yellow
+<br>	3 - Green
+<br>
+<br>0x10F X - Something to do with frames
+<br>	0 - Widescreen
+<br>	1 - Narrowscreen
+<br>
+<br>0x110 X - ???
+<br>	0 - Disable (Seen everywhere else)
+<br>	1 - Enable (Seen in Figure Fighter 3)
+<br>---------------------
+<br>Subs:
+<br>0x56 - Strong Punch (1.0 Beats)
+<br>0x57 - Strong Punch (2.0 Beats) (Unused)
+<br>0x58 - Strong Punch (4.0 Beats) (Unused)
+<br>0x59 - Frame ("One, Two!")
+<br>0x5A - Frame ("One, Two!") (Alt)
+<br>0x5B - Frame ("Go, go, go!")
+<br>0x5C - "Jab"
+<br>0x5D - "One, Two!"
+<br>0x5E - "One-Two!"
+<br>0x5F - "Go, go, go!"
+<br>0x60 - "One, Two!" w/ frame
+<br>0x61 - "One, Two!" w/ frame (Alt)
+<br>0x62 - "Go, go, go!" w/ frame
+<br>0x63 - "And (Jab)"
+<br>0x64 - "And (One-Two!)"
+<br>0x65 - Beat Animation for "Jab!"
+<br>0x66 - Beat Animation for "One-Two!"
+<br>0x67 - Beat Animation for "One, Two!" & "Go, go, go!" (Unused)
+<br>0x68 - Ready
+<br>0x69 - Figure Fighter (Practice)
+<br>0x6A - Figure Fighter 2 (Practice)
+<br>0x6B - Figure Fighter (Real Game)
+<br>0x6C - Figure Fighter 2 (Real Game)
+<br>0x6D - Figure Fighter 3 (Real Game)
+<br>0x6E - Figure Fighter (Skipped Practice)
+<br>0x6F - Figure Fighter 2 (Skipped Practice)</body>

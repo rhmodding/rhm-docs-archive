@@ -1,0 +1,90 @@
+<html><body style = "font-family: monospace;">Working Dough
+<br>---------------------
+<br>0x100 X, Y, Z, S, T - Spawn Orb
+<br>	X = Type
+<br>	0 - Small
+<br>	1 - Big
+<br>	2 - Big w/ Mr. Game & Watch
+<br>	Y = Flash
+<br>	0 - No
+<br>	1 - Yes
+<br>	Z = Time in ticks (CPU) (Used value: 0x30) (Affects speed)
+<br>	S = Time in ticks (You) (Used values: 0xC0, 0x180)
+<br>	T = Unrest (Doesn't affect speed, used for remix transitions)
+<br>	Used values: 0, 0xC, 0x18, 0x24
+<br>
+<br>0x101<V> W, X, Y, Z - Box
+<br>	V = Interpolation
+<br>	0 - Gradual
+<br>	1 - Instant
+<br>	W = Outer Side
+<br>	0 - Left Box
+<br>	1 - Middle Box
+<br>	2 - Right Box
+<br>	X = Inner Side
+<br>	0 - Right
+<br>	1 - Left
+<br>	Y = Action
+<br>	0 - Close
+<br>	1 - Open
+<br>	Z = Size
+<br>	0 - Small
+<br>	1 - Large
+<br>
+<br>0x102 X - Move Ship/Lady Dough
+<br>	X = Position
+<br>	Used values: 0 (Like other things, these are nullified when code.bin is decompiled, which is incorrect. The values below are from Fever halved are likely the intended ones)
+<br>	0xA0 - Working Dough
+<br>	0xC8 - Working Dough 2
+<br>0x102<1> X, Y, Z - Take Off
+<br>	X = Position from (Used value: 0x1E)
+<br>	Y = Position to
+<br>	Used values:
+<br>	-0x1F4 - Working Dough
+<br>	-0x28A - Working Dough 2
+<br>	Z = Time in ticks (Used value: 0x30)
+<br>0x102<2> X, Y - Gradually Reposition
+<br>	X = Position (Used value: 0x1E)
+<br>	Y = Time in ticks (Used value: 0x180)
+<br>0x102<3> X - Vibe (vibration)
+<br>	0 - Start
+<br>	1 - More Violently
+<br>0x102<4> - Cover Break
+<br>0x102<5> X - Ship/Lady Dough
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x102<6> X - Lady Dough Drinks
+<br>	0 - Down
+<br>	1 - Up
+<br>
+<br>0x103 X - Mr. Game & Watch
+<br>	0 - Disable
+<br>	1 - Enable
+<br>0x103<1> - Moves from the truck to the lever
+<br>0x103<2> - At the lever
+<br>0x103<3> - Walk Away
+<br>
+<br>0x104<X> - Practice Background (Unused)
+<br>	0 - Disable
+<br>	1 - Enable
+<br>
+<br>0x105<X> - Intro Platforms
+<br>	0 - Puts Dough Dudes on the platforms
+<br>	1 - Puts Dough Dudes off the platforms
+<br>	2 - Platforms react to inertia upon landing
+<br>0x105<3> X, Y, Z - Platform movement
+<br>	X = Position from (Used values: -0x96, 0x60)
+<br>	Y = Position to (Used values: -0xFA, 0xC0)
+<br>	Z = Time in ticks (Used values: 0x30, 0x240)
+<br>
+<br>0x106<X> - Space-Rabbits
+<br>	0 - Start Spawning
+<br>	1 - Stop Spawning
+<br>---------------------
+<br>Subs:
+<br>0x56 - CPU's Turn (Close your boxes and pull lever down)
+<br>0x57 - Your Turn (Close their boxes and push lever up)
+<br>0x58 - Working Dough (Real Game)
+<br>0x59 - Working Dough (Practice)
+<br>0x5A - Working Dough (Skipped Practice)
+<br>0x5B - Working Dough 2 (Real Game)</body>
